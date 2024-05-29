@@ -1,0 +1,14 @@
+.main_wrapper {
+  padding: 10px 10%;
+  background-color: var(--primarycolor);
+}
+
+.dekstop_navBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NavBar_right_sideBox {
+  display: flex;
+  column-gap: 20px;
+}

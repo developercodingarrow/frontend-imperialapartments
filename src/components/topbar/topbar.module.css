@@ -1,0 +1,41 @@
+.main_wrapper {
+  padding: 7px 10%;
+}
+
+.inner_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topBar_contactBox {
+  display: flex;
+  column-gap: 20px;
+}
+
+.topBar_mobileNumberBox {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.topBar_emailBox {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.topBar_socialMediaBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 10px;
+}
+
+.topBar_iconBox {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.topBar_iconBox:hover {
+  color: var(--primarycolor);
+}
