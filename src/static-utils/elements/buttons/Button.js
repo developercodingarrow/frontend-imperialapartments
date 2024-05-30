@@ -1,13 +1,21 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "./button.module.css";
 import BtnLoading from "../loading/BtnLoading";
 
-export default function Button(props) {
-  const { btnText } = props;
-  const [loading, setloading] = useState(false);
+export default function SubmitBtn(props) {
+  const { btnText, disabled, loadindData } = props;
+
+  console.log("disabled", disabled);
+
+  const btnClasses = `${styles.btn_container} ${
+    disabled ? styles.disabledBtn : ""
+  }`;
+
   return (
-    <div className={styles.btn_container}>
-      {loading ? <BtnLoading /> : btnText}
-    </div>
+    <button disabled={disabled} className={btnClasses}>
+      {loadindData ? <BtnLoading /> : btnText}
+    </button>
   );
 }

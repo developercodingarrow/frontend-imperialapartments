@@ -1,40 +1,33 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "./registerfrom.module.css";
-import useCustomeAuthForm from "../../../custome-hooks/useCustomeAuthForm";
-import { signUpInputs } from "../../../JsonData/authFormFied";
-import SubmitBtn from "../../../static-utils/elements/buttons/Button";
-import AuthFormFooter from "../../../components/authfrom/AuthFormFooter";
-import { userRegister } from "../../../Actions/authAction";
-import { useRouter } from "next/navigation";
+import styles from "./new_password.module.css";
+import { newPasswordInputs } from "../../../../JsonData/authFormFied";
+import useCustomeAuthForm from "../../../../custome-hooks/useCustomeAuthForm";
+import SubmitBtn from "../../../../static-utils/elements/buttons/Button";
+import { useParams } from "next/navigation";
+import { resetPassword } from "../../../../Actions/authAction";
 
-export default function UserRegistraionPage() {
+export default function NewPasswor() {
   const [loading, setloading] = useState(false);
-  const router = useRouter();
+  const params = useParams();
+  const { resetToken } = params;
   const { renderInput, handleSubmit, updatedInputs, isValid, errors } =
-    useCustomeAuthForm(signUpInputs, "SINGUP");
+    useCustomeAuthForm(newPasswordInputs, "RESETPASSWORD");
 
   const handleForm = async (data) => {
-    setloading(true);
     try {
-      const res = await userRegister(data);
+      const res = await resetPassword(data, resetToken);
       console.log(res);
-      if (res.data.status === "success") {
-        router.push(`/opt-verification/${res.data.UrlToken}`);
-      }
-      setloading(false);
     } catch (error) {
       console.log(error);
-      setloading(false);
     }
   };
-
   return (
     <div className={styles.form_mainContainer}>
       <div className={styles.form_container}>
-        <h2 className="bottom_margin">create an account </h2>
-        <h4 className="bottom_margin">Welcome to imperial apartments. </h4>
+        <h2 className="bottom_margin">Create Your New Password </h2>
+        <h4 className="bottom_margin">Please enter your new password </h4>
         <div style={{ marginBottom: "20px" }}>
           <form onSubmit={handleSubmit(handleForm)}>
             <div>
@@ -51,19 +44,13 @@ export default function UserRegistraionPage() {
             </div>
             <div>
               <SubmitBtn
-                btnText="Register"
+                btnText="Create New Password"
                 disabled={!isValid}
                 loadindData={loading}
               />
             </div>
           </form>
         </div>
-
-        <AuthFormFooter
-          linkInfo="already have an account ? "
-          linkText="Login"
-          linkPath="login"
-        />
       </div>
     </div>
   );

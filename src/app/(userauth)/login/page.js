@@ -1,21 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import styles from "./login.module.css";
 import useCustomeAuthForm from "../../../custome-hooks/useCustomeAuthForm";
 import { loginInputs } from "../../../JsonData/authFormFied";
-import Button from "../../../static-utils/elements/buttons/Button";
+import SubmitBtn from "../../../static-utils/elements/buttons/Button";
 import Image from "next/image";
 import googleIcon from "../../../../public/web-statice-img/google-logo-icon-png-transparent-background.png";
 import facbookLogo from "../../../../public/web-statice-img/Facebook-logo.png";
+import Link from "next/link";
+import AuthFormFooter from "../../../components/authfrom/AuthFormFooter";
 
 export default function LoginPage() {
-  const { renderInput, handleSubmit, updatedInputs } = useCustomeAuthForm(
-    loginInputs,
-    "Login"
-  );
+  const [loading, setloading] = useState(false);
+  const { renderInput, handleSubmit, updatedInputs, isValid, errors } =
+    useCustomeAuthForm(loginInputs, "Login");
 
   const handleForm = () => {
+    setloading(true);
     alert("form submit");
   };
   return (
@@ -31,36 +33,16 @@ export default function LoginPage() {
               })}
             </div>
             <div>
-              <Button btnText="Login" />
+              <SubmitBtn btnText="Login" />
             </div>
           </form>
         </div>
-        <div>
-          <div className={styles.border_lineBox}>
-            <span className={styles.border_line}></span> <span>OR</span>
-            <span className={styles.border_line}></span>
-          </div>
 
-          <div className={styles.social_login_wrapper}>
-            <div className={styles.social_iconsBox}>
-              <Image
-                src={googleIcon}
-                width={500}
-                height={500}
-                className={styles.socialIcon_imageStyle}
-              />
-            </div>
-
-            <div className={styles.social_iconsBox}>
-              <Image
-                src={facbookLogo}
-                width={500}
-                height={500}
-                className={styles.socialIcon_imageStyle}
-              />
-            </div>
-          </div>
-        </div>
+        <AuthFormFooter
+          linkInfo="Don't have an account yet ? "
+          linkText="Sign Up"
+          linkPath="user-registration"
+        />
       </div>
     </div>
   );

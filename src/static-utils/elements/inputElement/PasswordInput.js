@@ -5,7 +5,7 @@ import styles from "./passwordinput.module.css";
 import { IoEye } from "../../../components/ApplicationIcon";
 
 function PasswordInput(props, ref) {
-  const { lable, ...inputProps } = props;
+  const { lable, inputtype, ...inputProps } = props;
 
   const [toggleinputText, settoggleinputText] = useState(true);
 

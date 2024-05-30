@@ -10,4 +10,11 @@
   text-transform: capitalize;
   background-color: var(--primarycolor);
   color: var(--whiteColor);
+  margin: 10px 0px;
+}
+
+.disabledBtn {
+  background-color: var(--primareyDisable) !important;
+  border: 1px solid var(--primareyDisable);
+  cursor: not-allowed;
 }

@@ -1,0 +1,28 @@
+.border_lineBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.border_line {
+  border: 1px solid var(--separator);
+  flex-grow: 1;
+}
+
+.socialIcon_imageStyle {
+  width: 30px;
+  height: 30px;
+}
+
+.social_login_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.social_iconsBox {
+  cursor: pointer;
+}

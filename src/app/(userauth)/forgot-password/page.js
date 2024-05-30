@@ -1,36 +1,44 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "./optverification.module.css";
-import useCustomeAuthForm from "../../../../custome-hooks/useCustomeAuthForm";
-import { otpVerifation } from "../../../../JsonData/authFormFied";
-import SubmitBtn from "../../../../static-utils/elements/buttons/Button";
-import { useParams } from "next/navigation";
-import { otpVerfication } from "../../../../Actions/authAction";
+import styles from "./forgotePassword.module.css";
+import { ForgotPasswordInput } from "../../../JsonData/authFormFied";
+import useCustomeAuthForm from "../../../custome-hooks/useCustomeAuthForm";
+import SubmitBtn from "../../../static-utils/elements/buttons/Button";
+import { forgotPassword } from "../../../Actions/authAction";
+import { useRouter } from "next/navigation";
 
-export default function page() {
+export default function ForgotPassword() {
   const [loading, setloading] = useState(false);
-  const params = useParams();
-  const { otp } = params;
+  const router = useRouter();
   const { renderInput, handleSubmit, updatedInputs, isValid, errors } =
-    useCustomeAuthForm(otpVerifation, "OTP");
+    useCustomeAuthForm(ForgotPasswordInput, "Forgot_Pass");
+
+  console.log(isValid);
 
   const handleForm = async (data) => {
     try {
       setloading(true);
-      const res = await otpVerfication(data, otp);
+      console.log("click");
+      const res = await forgotPassword(data);
       console.log(res);
+      if (res.data.status === "success") {
+        router.push(`/new-password/${res.data.resetToken}`);
+      }
       setloading(false);
     } catch (error) {
       console.log(error);
       setloading(false);
     }
   };
+
   return (
     <div className={styles.form_mainContainer}>
       <div className={styles.form_container}>
-        <h2 className="bottom_margin">Enter your OTP </h2>
-        <h4 className="bottom_margin">your otp sent to your gmail address </h4>
+        <h2 className="bottom_margin">Find Your Account </h2>
+        <h4 className="bottom_margin">
+          Please enter your email address to search for your account..{" "}
+        </h4>
         <div style={{ marginBottom: "20px" }}>
           <form onSubmit={handleSubmit(handleForm)}>
             <div>
@@ -40,7 +48,7 @@ export default function page() {
             </div>
             <div>
               <SubmitBtn
-                btnText="OTP"
+                btnText="Send Email"
                 disabled={!isValid}
                 loadindData={loading}
               />

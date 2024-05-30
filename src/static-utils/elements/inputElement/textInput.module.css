@@ -2,7 +2,7 @@
 }
 
 .input_wrapper {
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .inputStyle {
@@ -19,6 +19,5 @@
   transition: border-color 0.15s ease-in-out;
   outline: none;
   padding: 5px 10px;
-  text-transform: capitalize;
   font-family: sans-serif;
 }

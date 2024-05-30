@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import TextInput from "../static-utils/elements/inputElement/TextInput";
 import PasswordInput from "../static-utils/elements/inputElement/PasswordInput";
+import FormLink from "../components/authfrom/FormLink";
 
 export default function useCustomeAuthForm(customeInputs, formType) {
   const {
@@ -42,7 +43,6 @@ export default function useCustomeAuthForm(customeInputs, formType) {
         name: "passwordConfirm",
         type: "text",
         placeholder: "Re-Enter New Password",
-        // label: "Confirm Email",
         validation: {
           required: "Confirm Password is required.",
           validate: (value) =>
@@ -69,7 +69,25 @@ export default function useCustomeAuthForm(customeInputs, formType) {
         specificProps = {
           inputplaceholder: input.placeholder,
           filed_container: "filedContainer",
+        };
+
+        break;
+
+      case "email":
+        InputComponent = TextInput;
+        specificProps = {
+          inputplaceholder: input.placeholder,
+          filed_container: "filedContainer",
           inputType: input.type,
+        };
+
+        break;
+
+      case "link":
+        InputComponent = FormLink;
+        specificProps = {
+          text: input.name,
+          linkPath: input.linkPath,
         };
 
         break;

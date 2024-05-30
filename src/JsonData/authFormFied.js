@@ -1,7 +1,7 @@
 export const signUpInputs = [
   {
     id: 1,
-    name: "name",
+    name: "fullName",
     type: "text",
     placeholder: "User Name",
     lable: "Name",
@@ -67,6 +67,37 @@ export const loginInputs = [
     lable: "password",
     validation: {
       required: "Password is required.",
+    },
+  },
+  {
+    id: 3,
+    name: "forgot password",
+    type: "link",
+    linkPath: "forgot-password",
+  },
+];
+
+export const ForgotPasswordInput = [
+  {
+    id: 1,
+    name: "email",
+    type: "email",
+    placeholder: "email Your Register email",
+    validation: {
+      required: "Email is required.",
+    },
+  },
+];
+
+export const newPasswordInputs = [
+  {
+    id: 1,
+    name: "password",
+    type: "password",
+    placeholder: "New Password",
+    lable: "password",
+    validation: {
+      required: "new Password is required.",
     },
   },
 ];
