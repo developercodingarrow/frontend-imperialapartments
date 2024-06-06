@@ -1,0 +1,17 @@
+.form_container {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 0 6px #2734451f;
+  width: 100%;
+  padding: 20px 10px;
+  border-radius: 10px;
+}
+
+.form_title {
+  margin-bottom: 20px;
+}
+
+.contact_deatail {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}

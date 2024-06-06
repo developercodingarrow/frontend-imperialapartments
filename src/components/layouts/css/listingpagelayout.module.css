@@ -1,0 +1,20 @@
+.layout_mainContainer {
+  width: 100%;
+  padding: 50px 50px;
+  display: flex;
+  column-gap: 30px;
+  justify-content: space-between;
+  background-color: #eef4fd;
+  min-height: 100vh;
+}
+
+.fillter_wrapper {
+}
+
+.childre_wrapper {
+  flex-grow: 1;
+}
+
+.side_barContainer {
+  width: 450px;
+}

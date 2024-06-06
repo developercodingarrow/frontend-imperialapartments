@@ -1,0 +1,106 @@
+.card_container {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 6px #2734451f;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 15px 10px;
+  display: flex;
+  height: 200px;
+  column-gap: 15px;
+}
+
+.card_imageBox {
+  border-radius: 5px;
+  width: 350px;
+  height: 100%;
+}
+
+.card_imageStyle {
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+}
+
+.card_contentBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card_title {
+  margin-bottom: 10px;
+}
+
+.meta_descreptionBox {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.comman_amninites {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  color: #46484d;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.amnitesBox {
+  display: flex;
+  column-gap: 10px;
+}
+
+.card_action_box {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tag_box {
+  font-size: 12px;
+  background-color: #ffb700;
+  padding: 4px 3px;
+  text-align: center;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.price_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.small_text {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.larg_text {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.button_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_link {
+  display: flex;
+  background-color: #0057b8;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}

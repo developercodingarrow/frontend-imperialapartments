@@ -1,0 +1,42 @@
+.fillter_container {
+  border-radius: 10px;
+  width: 250px;
+  background-color: rgb(255, 255, 255);
+  margin: 0px 0px 1rem;
+  box-shadow: 2px 0 6px #2734451f;
+  padding: 5px 10px;
+  font-family: sans-serif;
+}
+
+.fillter_header {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+}
+
+.section_hedaing {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+.fillter_section {
+  font-family: sans-serif;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.fillter_optionsBox {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  margin-bottom: 5px;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.option_names {
+}
