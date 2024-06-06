@@ -2,6 +2,8 @@ import React from "react";
 import "../global.css";
 import TopBar from "../../components/topbar/TopBar";
 import NavBar from "../../components/navbar/NavBar";
+import { ThemeContextProvider } from "../../contextApi/ThemeContextApi";
+import HeroSection from "../../components/homepagesections/HeroSection";
 
 export const metadata = {
   title: "Imperial Service Apartments Gurgaon",
@@ -20,11 +22,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <TopBar />
-        <NavBar />
-        <div className="page_wrapper">{children}</div>
+        <ThemeContextProvider>
+          <TopBar />
+          <NavBar />
+          <HeroSection />
+          <div className="page_wrapper">{children}</div>
 
-        <span>Footer</span>
+          <span>Footer</span>
+        </ThemeContextProvider>
       </body>
     </html>
   );

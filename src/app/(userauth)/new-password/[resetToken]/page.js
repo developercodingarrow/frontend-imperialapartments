@@ -47,6 +47,7 @@ export default function NewPasswor() {
                 btnText="Create New Password"
                 disabled={!isValid}
                 loadindData={loading}
+                btn_style="btn_container"
               />
             </div>
           </form>

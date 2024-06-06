@@ -1,9 +1,10 @@
 import React from "react";
+import HeroSection from "../../components/homepagesections/HeroSection";
 
 export default function HomePage() {
   return (
     <div>
-      <h1>React js Imperial website start.....</h1>
+      <p>Home Page</p>
     </div>
   );
 }

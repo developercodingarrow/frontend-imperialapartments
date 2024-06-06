@@ -1,0 +1,45 @@
+.layout_container {
+  border: 1px solid red;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.side_barDrawer {
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 2px 0 6px #2734451f;
+  position: fixed;
+  top: 75px;
+  left: 0px;
+  height: 100%;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.close_side_barDrawer {
+  width: 0px;
+  background-color: #fff;
+  box-shadow: 2px 0 6px #2734451f;
+  position: fixed;
+  top: 75px;
+  left: -250px;
+  height: 100%;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.content_container {
+  width: calc(100% - 280px);
+  position: relative;
+  left: 270px;
+  margin-top: 70px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.close_content_container {
+  width: calc(100%);
+  position: relative;
+  left: 0px;
+  margin-top: 70px;
+  transition: width 0.3s ease, left 0.3s ease;
+}

@@ -1,0 +1,16 @@
+.btn_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.btnContainer {
+  display: flex;
+  padding: 5px 10px;
+  font-size: 20px;
+  background: var(--primarycolor);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}

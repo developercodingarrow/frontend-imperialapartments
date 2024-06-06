@@ -1,0 +1,32 @@
+.section_container {
+  background-image: url("../../../../public/web-statice-img/hero-image.jpg");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  position: relative;
+}
+
+.backgound_overlay {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000000;
+  background-color: #00000060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.hero_search_barWrapper {
+  width: 60%;
+}
+
+.hero_headingBox {
+  width: 60%;
+  font-size: 50px;
+  text-transform: capitalize;
+  color: #fff;
+  margin-bottom: 10px;
+}

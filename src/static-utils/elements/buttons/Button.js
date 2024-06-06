@@ -5,9 +5,7 @@ import styles from "./button.module.css";
 import BtnLoading from "../loading/BtnLoading";
 
 export default function SubmitBtn(props) {
-  const { btnText, disabled, loadindData } = props;
-
-  console.log("disabled", disabled);
+  const { btnText, disabled, loadindData, btn_style } = props;
 
   const btnClasses = `${styles.btn_container} ${
     disabled ? styles.disabledBtn : ""

@@ -1,0 +1,63 @@
+.main_wrapper {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  flex-direction: row;
+  box-shadow: 2px 0 6px #2734451f;
+  z-index: 99;
+  align-items: center;
+  background-color: #fff;
+  height: 76px;
+  justify-content: space-between;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  font-family: var(--font-family-default);
+}
+
+.left_side,
+.right_side {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.nav_hangbugBox {
+  cursor: pointer;
+}
+
+.nav_logo {
+  cursor: pointer;
+}
+
+.right_side {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 10px;
+}
+.right_side:hover {
+  background-color: #005ca81b;
+}
+.user_imageBox {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.userImag_style {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.user_nameBox {
+  display: flex;
+  column-gap: 5px;
+  cursor: pointer;
+  align-items: center;
+  font-family: sans-serif;
+  text-transform: capitalize;
+}

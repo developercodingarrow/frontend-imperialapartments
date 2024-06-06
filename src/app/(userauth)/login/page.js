@@ -10,15 +10,26 @@ import googleIcon from "../../../../public/web-statice-img/google-logo-icon-png-
 import facbookLogo from "../../../../public/web-statice-img/Facebook-logo.png";
 import Link from "next/link";
 import AuthFormFooter from "../../../components/authfrom/AuthFormFooter";
+import { authenticate, userLogin } from "../../../Actions/authAction";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [loading, setloading] = useState(false);
   const { renderInput, handleSubmit, updatedInputs, isValid, errors } =
     useCustomeAuthForm(loginInputs, "Login");
 
-  const handleForm = () => {
+  const handleForm = async (data) => {
     setloading(true);
-    alert("form submit");
+    try {
+      const res = await userLogin(data);
+      console.log(res);
+      authenticate(res.data.user, res.data.token, () => {
+        router.push("/user-dashboard/user-profile");
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className={styles.form_mainContainer}>
@@ -42,6 +53,7 @@ export default function LoginPage() {
           linkInfo="Don't have an account yet ? "
           linkText="Sign Up"
           linkPath="user-registration"
+          btn_style="btn_container"
         />
       </div>
     </div>

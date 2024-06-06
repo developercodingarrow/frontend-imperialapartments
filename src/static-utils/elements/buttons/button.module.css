@@ -11,6 +11,17 @@
   background-color: var(--primarycolor);
   color: var(--whiteColor);
   margin: 10px 0px;
+  letter-spacing: 1px;
+}
+
+.smallBtn {
+  border: 1px solid var(--primarycolor);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 7px;
+  border-radius: 5px;
 }
 
 .disabledBtn {

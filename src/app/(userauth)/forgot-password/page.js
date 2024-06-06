@@ -51,6 +51,7 @@ export default function ForgotPassword() {
                 btnText="Send Email"
                 disabled={!isValid}
                 loadindData={loading}
+                btn_style="btn_container"
               />
             </div>
           </form>

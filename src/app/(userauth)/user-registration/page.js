@@ -63,6 +63,7 @@ export default function UserRegistraionPage() {
           linkInfo="already have an account ? "
           linkText="Login"
           linkPath="login"
+          btn_style="btn_container"
         />
       </div>
     </div>

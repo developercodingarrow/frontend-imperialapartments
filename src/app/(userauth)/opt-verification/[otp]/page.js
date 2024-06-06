@@ -43,6 +43,7 @@ export default function page() {
                 btnText="OTP"
                 disabled={!isValid}
                 loadindData={loading}
+                btn_style="btn_container"
               />
             </div>
           </form>
