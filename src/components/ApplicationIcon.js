@@ -10,6 +10,7 @@ import { IoWifi } from "react-icons/io5";
 import { Ri24HoursFill } from "react-icons/ri";
 import { TbAirConditioning } from "react-icons/tb";
 import { LuIndianRupee } from "react-icons/lu";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 export {
   IoIosCall,
@@ -27,4 +28,5 @@ export {
   IoWifi,
   TbAirConditioning,
   LuIndianRupee,
+  MdKeyboardArrowRight,
 };

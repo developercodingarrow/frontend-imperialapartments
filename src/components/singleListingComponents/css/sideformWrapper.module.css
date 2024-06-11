@@ -1,0 +1,12 @@
+.main_container {
+  position: relative;
+}
+
+.sticky {
+  position: -webkit-sticky; /* For Safari */
+  position: fixed;
+  top: 50px;
+  z-index: 100; /* Adjust as necessary */
+  width: 20%;
+  right: 170px;
+}

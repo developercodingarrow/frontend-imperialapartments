@@ -13,6 +13,7 @@
   --input-height: 2.25rem;
   --separator: #dddddd;
   --border-radius-md: 10px;
+  --box-shadow: 2px 0 6px #2734451f;
 }
 
 * {
@@ -53,7 +54,6 @@ h4 {
   font-family: sans-serif;
 }
 
-
 .bottom_margin {
   margin-bottom: 10px;
 }
@@ -80,4 +80,14 @@ span {
 .input_error {
   font-size: 12px;
   color: red;
+}
+
+/* Listing single page body layout */
+.single_page_bodyLayout {
+}
+
+@media screen and (max-width: 600px) {
+  .single_page_bodyLayout {
+    width: 100%;
+  }
 }

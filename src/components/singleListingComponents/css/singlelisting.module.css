@@ -1,0 +1,48 @@
+.main_container {
+  overflow-x: scroll;
+}
+
+.container_tabsWrapper {
+  box-shadow: var(--th-box-shadow);
+  background: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  column-gap: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.sticky {
+  position: -webkit-sticky; /* For Safari */
+  position: fixed;
+  top: 0px;
+  z-index: 100; /* Adjust as necessary */
+  width: 58%;
+}
+
+.content_tab {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primarycolor);
+  border: 1px solid var(--primarycolor);
+  cursor: pointer;
+}
+
+.active_tab {
+  background: var(--primarycolor);
+  color: #fff;
+}
+
+.tab_content_Container {
+  padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+}
