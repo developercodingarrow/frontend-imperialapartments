@@ -39,3 +39,16 @@
 .topBar_iconBox:hover {
   color: var(--primarycolor);
 }
+
+@media screen and (max-width: 600px) {
+  .main_wrapper {
+    display: none;
+  }
+  .topBar_socialMediaBox {
+    display: none;
+  }
+
+  .inner_wrapper {
+    display: none;
+  }
+}

@@ -4,6 +4,9 @@ import TopBar from "../../components/topbar/TopBar";
 import NavBar from "../../components/navbar/NavBar";
 import { ThemeContextProvider } from "../../contextApi/ThemeContextApi";
 import HeroSection from "../../components/homepagesections/HeroSection";
+import { AppContextProvider } from "../../contextApi/AppContextApi";
+import AppDrawerWrapper from "../../components/homepagesections/AppDrawerWrapper";
+import AppFooter from "../../components/footer/AppFooter";
 
 export const metadata = {
   title: "Imperial Service Apartments Gurgaon",
@@ -21,14 +24,19 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className="home_pageBody">
         <ThemeContextProvider>
-          <TopBar />
-          <NavBar />
-          <HeroSection />
-          <div className="page_wrapper">{children}</div>
+          <AppContextProvider>
+            <TopBar />
+            <NavBar />
+            <HeroSection />
+            <AppDrawerWrapper />
+            <div> {children}</div>
 
-          <span>Footer</span>
+            <div className="footer_wrapper">
+              <AppFooter />
+            </div>
+          </AppContextProvider>
         </ThemeContextProvider>
       </body>
     </html>

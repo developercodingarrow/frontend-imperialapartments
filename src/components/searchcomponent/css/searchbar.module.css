@@ -79,3 +79,37 @@
   text-decoration: none;
   color: #fff;
 }
+
+@media screen and (max-width: 600px) {
+  .search_bar_container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .search_bar {
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  .search_textBox {
+    width: 100%;
+    height: 25px;
+  }
+
+  .date_inputBox {
+    width: 100%;
+    height: 25px;
+  }
+  .numer_inputBox {
+    width: 100%;
+    height: 25px;
+  }
+
+  .quick_linkContainer {
+    display: none;
+  }
+
+  .btn_wrapper {
+    width: 100%;
+    height: 25px;
+  }
+}

@@ -75,6 +75,7 @@ span {
 .page_wrapper {
   width: calc(100% - 10%);
   margin: auto;
+  position: relative;
 }
 
 .input_error {
@@ -86,8 +87,21 @@ span {
 .single_page_bodyLayout {
 }
 
+.home_pageBody {
+  position: relative;
+}
+
+.footer_wrapper {
+}
+
 @media screen and (max-width: 600px) {
   .single_page_bodyLayout {
+    width: 100%;
+  }
+
+  .footer_wrapper {
+    position: fixed;
+    bottom: 0px;
     width: 100%;
   }
 }

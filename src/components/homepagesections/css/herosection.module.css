@@ -30,3 +30,29 @@
   color: #fff;
   margin-bottom: 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .section_container {
+    height: 300px;
+  }
+
+  .backgound_overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+  }
+
+  .hero_headingBox {
+    width: 100%;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .hero_search_barWrapper {
+    /* display: none; */
+    width: 100%;
+  }
+}

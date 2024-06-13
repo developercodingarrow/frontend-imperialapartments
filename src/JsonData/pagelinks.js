@@ -26,3 +26,49 @@ export const quicksearchLinks = [
     hrfLink: "/service-aparmnets",
   },
 ];
+
+export const main_menu = [
+  {
+    id: 1,
+    name: "Home",
+    hrfLink: "/",
+  },
+  {
+    id: 2,
+    name: "About US",
+    hrfLink: "/",
+  },
+  {
+    id: 3,
+    name: "Listing",
+    hrfLink: "/listing",
+  },
+];
+
+export const feature_links = [
+  {
+    id: 1,
+    name: "Service Apartments",
+    hrfLink: "/",
+  },
+  {
+    id: 2,
+    name: "Hotel Rooms",
+    hrfLink: "/",
+  },
+  {
+    id: 3,
+    name: "Guest House",
+    hrfLink: "/",
+  },
+  {
+    id: 4,
+    name: "Studio Apartents",
+    hrfLink: "/",
+  },
+  {
+    id: 5,
+    name: "Bead and Breafast",
+    hrfLink: "/",
+  },
+];

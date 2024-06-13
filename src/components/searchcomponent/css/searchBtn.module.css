@@ -30,3 +30,12 @@
   font-size: 20px;
   font-weight: 500;
 }
+
+@media screen and (max-width: 600px) {
+  .btn_container {
+    width: 100%;
+    padding: 0px;
+    margin-left: 0px;
+    height: 25px;
+  }
+}

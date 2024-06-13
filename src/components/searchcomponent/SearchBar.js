@@ -27,7 +27,7 @@ export default function SearchBar() {
           <input type="number" className={styles.number_input} />
         </div>
 
-        <div>
+        <div className={styles.btn_wrapper}>
           <SearchBtn />
         </div>
       </div>

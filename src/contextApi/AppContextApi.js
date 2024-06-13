@@ -5,10 +5,15 @@ export const AppContext = createContext();
 
 export function AppContextProvider({ children }) {
   const [drawerToggel, setdrawerToggel] = useState(true);
+  const [appDrawer, setappDrawer] = useState(false);
 
   const handelDrawerToggel = () => {
     setdrawerToggel(!drawerToggel);
     console.log(drawerToggel);
+  };
+
+  const handelAppDrawerToggle = () => {
+    setappDrawer(!appDrawer);
   };
 
   return (
@@ -17,6 +22,9 @@ export function AppContextProvider({ children }) {
         drawerToggel,
         setdrawerToggel,
         handelDrawerToggel,
+        appDrawer,
+        setappDrawer,
+        handelAppDrawerToggle,
       }}
     >
       {children}

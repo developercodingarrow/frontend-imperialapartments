@@ -1,0 +1,7 @@
+.card_wrapper {
+  display: flex;
+  padding: 50px;
+  column-gap: 20px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
