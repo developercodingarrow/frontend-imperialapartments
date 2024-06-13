@@ -89,6 +89,7 @@ span {
 
 .home_pageBody {
   position: relative;
+  background-color: #eff3f8;
 }
 
 .footer_wrapper {
@@ -103,5 +104,15 @@ span {
     position: fixed;
     bottom: 0px;
     width: 100%;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 500;
   }
 }

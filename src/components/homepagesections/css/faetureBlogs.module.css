@@ -1,0 +1,29 @@
+.section_wrapper {
+  min-height: 350px;
+}
+
+.section_heading {
+  margin-bottom: 20px;
+}
+
+.card_wrapper {
+  display: flex;
+  column-gap: 10px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .section_wrapper {
+    padding: 5px;
+  }
+
+  .section_heading {
+    margin-bottom: 10px;
+  }
+
+  .card_wrapper {
+    column-gap: 5px;
+  }
+}
