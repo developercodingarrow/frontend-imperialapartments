@@ -8,7 +8,7 @@ import ListingPageLayout from "../../components/layouts/ListingPageLayout";
 import SinglePageListingContextApi from "../../contextApi/SinglePageListingContextApi";
 import { AppContextProvider } from "../../contextApi/AppContextApi";
 
-export default function SingleListingLayout({ children }) {
+export default function PormotionalLayout({ children }) {
   return (
     <html lang="en">
       <body className="single_page_bodyLayout">
