@@ -4,7 +4,7 @@ import { createContext, useEffect, useRef, useState } from "react";
 export const AdminContext = createContext();
 
 export default function AdminContextProvider({ children }) {
-  const [asideDrawer, setasideDrawer] = useState(false);
+  const [asideDrawer, setasideDrawer] = useState(true);
 
   const handelAsidDrawerToggle = () => {
     setasideDrawer(!asideDrawer);

@@ -18,6 +18,10 @@ import { MdOutlineBedroomParent } from "react-icons/md";
 import { RiMailSendLine } from "react-icons/ri";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
+import { IoFunnelOutline } from "react-icons/io5";
+import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io";
+import { LiaRupeeSignSolid } from "react-icons/lia";
+import { RxDotsVertical } from "react-icons/rx";
 
 export {
   IoIosCall,
@@ -43,4 +47,9 @@ export {
   RiMailSendLine,
   IoNewspaperOutline,
   FaWhatsapp,
+  IoFunnelOutline,
+  IoIosArrowRoundUp,
+  IoIosArrowRoundDown,
+  LiaRupeeSignSolid,
+  RxDotsVertical,
 };

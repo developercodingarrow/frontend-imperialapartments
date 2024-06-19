@@ -1,0 +1,17 @@
+.com_container {
+  overflow: auto;
+  color: rgb(42, 53, 71);
+  font-size: 0.875rem;
+}
+
+.inner_container {
+  min-height: 52px;
+  padding-right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer_rightSide {
+  display: flex;
+}
