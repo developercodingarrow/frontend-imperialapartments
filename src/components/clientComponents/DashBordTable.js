@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./css/dashbordTable.module.css";
 import {
@@ -72,54 +73,58 @@ export default function DashBordTable() {
             </tr>
           </thead>
           <tbody className={styles.table_body_style}>
-            <tr className={styles.tr_style}>
-              <td className={styles.checkBoxtr_style}>
-                <span className={styles.check_box_td_span}>
-                  <input type="checkbox" />
-                  <span></span>
-                </span>
-              </td>
-              <td className={styles.td_style}>
-                <div className={styles.image_contnet_td_div}>
-                  <div className={styles.circleimage_td_div}>
-                    <Image
-                      src={tablCircleImage}
-                      width={50}
-                      className={styles.circle_imagStyle}
-                    />
-                  </div>
-                  <div className={styles.content_td_div}>
-                    <h6 className={styles.td_text}>Little Angel Toy</h6>
-                    <h6 className={styles.td_small_text}>Toys</h6>
-                  </div>
-                </div>
-              </td>
+            {[1, 2, 3].map(() => {
+              return (
+                <tr className={styles.tr_style}>
+                  <td className={styles.checkBoxtr_style}>
+                    <span className={styles.check_box_td_span}>
+                      <input type="checkbox" />
+                      <span></span>
+                    </span>
+                  </td>
+                  <td className={styles.td_style}>
+                    <div className={styles.image_contnet_td_div}>
+                      <div className={styles.circleimage_td_div}>
+                        <Image
+                          src={tablCircleImage}
+                          width={50}
+                          className={styles.circle_imagStyle}
+                        />
+                      </div>
+                      <div className={styles.content_td_div}>
+                        <h6 className={styles.td_text}>Little Angel Toy</h6>
+                        <h6 className={styles.td_small_text}>Toys</h6>
+                      </div>
+                    </div>
+                  </td>
 
-              <td className={styles.td_style}>
-                <p className={styles.table_tr_td_date}>Mon, jun 10 2024</p>{" "}
-              </td>
-              <td className={styles.td_style}>
-                <div className={styles.custom_icon_text_td_div}>
-                  <div className={styles.custome_icon_td_div}></div>
-                  <h6 className={styles.td_text}>InStock</h6>
-                </div>
-              </td>
+                  <td className={styles.td_style}>
+                    <p className={styles.table_tr_td_date}>Mon, jun 10 2024</p>{" "}
+                  </td>
+                  <td className={styles.td_style}>
+                    <div className={styles.custom_icon_text_td_div}>
+                      <div className={styles.custome_icon_td_div}></div>
+                      <h6 className={styles.td_text}>InStock</h6>
+                    </div>
+                  </td>
 
-              <td className={styles.td_style}>
-                <div className={styles.icon_text_td_div}>
-                  <div className={styles.icon_td_div}>
-                    {" "}
-                    <LiaRupeeSignSolid />{" "}
-                  </div>
-                  <h6 className={styles.td_text}>3000</h6>
-                </div>
-              </td>
-              <td className={styles.td_style}>
-                <div className={styles.dot_iconBox}>
-                  <RxDotsVertical />
-                </div>
-              </td>
-            </tr>
+                  <td className={styles.td_style}>
+                    <div className={styles.icon_text_td_div}>
+                      <div className={styles.icon_td_div}>
+                        {" "}
+                        <LiaRupeeSignSolid />{" "}
+                      </div>
+                      <h6 className={styles.td_text}>3000</h6>
+                    </div>
+                  </td>
+                  <td className={styles.td_style}>
+                    <div className={styles.dot_iconBox}>
+                      <RxDotsVertical />
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

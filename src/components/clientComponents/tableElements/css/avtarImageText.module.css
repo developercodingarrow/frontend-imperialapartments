@@ -1,0 +1,51 @@
+.image_contnet_td_div {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.circleimage_td_div {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: sans-serif Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  user-select: none;
+  width: 56px;
+  height: 56px;
+}
+
+.circle_imagStyle {
+  width: 100%;
+  height: 100%;
+}
+
+.content_td_div {
+  margin-left: 16px;
+}
+
+.td_text {
+  margin: 0px 0px 0px 8px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 1.57;
+  color: rgb(42, 53, 71);
+}
+
+.td_small_text {
+  margin: 0px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 1.57;
+  color: rgb(42, 53, 71);
+}

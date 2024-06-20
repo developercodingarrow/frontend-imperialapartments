@@ -15,3 +15,61 @@
 .footer_rightSide {
   display: flex;
 }
+
+.footer_leftSide {
+  flex-grow: 1;
+}
+
+.custome_selector_container {
+  display: flex;
+  position: relative;
+  column-gap: 5px;
+  margin: 0px 5px;
+}
+
+.selector_inputStyle {
+  bottom: 0px;
+  left: 0px;
+  pointer-events: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  max-width: 40px;
+  color: rgba(0, 0, 0, 0.54);
+  border: none;
+}
+
+.selector_iconBox {
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentcolor;
+  flex-shrink: 0;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 0px;
+  top: calc(50% - 0.5em);
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.row_numberBox {
+  display: flex;
+  column-gap: 5px;
+  margin: 0px 5px;
+}
+
+.navigation_arrowBox {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.icon_wrapper {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

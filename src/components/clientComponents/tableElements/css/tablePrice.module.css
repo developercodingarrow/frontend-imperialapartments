@@ -1,0 +1,19 @@
+.custom_icon_text_td_div,
+.icon_text_td_div {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.icon_td_div {
+  font-size: 16px;
+}
+
+.td_text {
+  margin: 0px 0px 0px 8px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 1.57;
+  color: rgb(42, 53, 71);
+}

@@ -5,6 +5,16 @@ import SearchBar from "./SearchBar";
 import { IoFunnelOutline } from "../ApplicationIcon";
 import DashBordTable from "./DashBordTable";
 import DashBordTableFooter from "./DashBordTableFooter";
+import DynimicTable from "./DynimicTable";
+import {
+  userDataColoum,
+  tableColumns,
+  tableData,
+  handleCheckboxChange,
+  handleDelete,
+  handleUpdate,
+  handleView,
+} from "../../JsonData/tableData";
 export default function DashBordListTable() {
   return (
     <div className={styles.main_container}>
@@ -23,6 +33,17 @@ export default function DashBordListTable() {
         </div>
         <DashBordTable />
         <DashBordTableFooter />
+
+        <div>
+          <DynimicTable
+            tableColumns={tableColumns}
+            tableData={tableData}
+            handleCheckboxChange={handleCheckboxChange}
+            handleDelete={handleDelete}
+            handleUpdate={handleUpdate}
+            handleView={handleView}
+          />
+        </div>
       </div>
     </div>
   );

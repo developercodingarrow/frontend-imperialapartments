@@ -1,0 +1,223 @@
+.inner_container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #dfe5ef;
+  border-radius: 7px;
+}
+
+.table_style {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  min-width: 750px;
+}
+
+.table_head_style {
+  display: table-header-group;
+}
+
+.thead_tr_style {
+  color: inherit;
+  display: table-row;
+  vertical-align: middle;
+  outline: 0px;
+}
+
+.table_th_style {
+  font-size: 0.75rem;
+  letter-spacing: 0rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  font-family: __Plus_Jakarta_Sans_a182b8, __Plus_Jakarta_Sans_Fallback_a182b8,
+    Helvetica, Arial, sans-serif;
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: left;
+  padding: 0px 0px 0px 4px;
+  color: rgb(42, 53, 71);
+  width: 48px;
+  border-bottom: 1px solid rgb(229, 234, 239);
+}
+
+.th_span_style {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0px;
+  border: 0px;
+  margin: 0px;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  padding: 9px;
+  color: rgb(42, 53, 71);
+}
+
+.span_icon_style {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentcolor;
+  flex-shrink: 0;
+  font-size: 20px;
+  margin-right: 4px;
+  margin-left: 4px;
+  /* opacity: 0; */
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  user-select: none;
+  transform: rotate(180deg);
+}
+
+.table_body_style {
+  display: table-row-group;
+}
+
+.tr_style {
+  color: inherit;
+  display: table-row;
+  vertical-align: middle;
+  outline: 0px;
+  padding: 20px;
+}
+
+.checkBoxtr_style {
+  font-family: sans-serif;
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: left;
+  padding: 16px 16px 16px 4px;
+  color: rgb(42, 53, 71);
+  width: 48px;
+  border-bottom: 1px solid rgb(229, 234, 239);
+}
+
+.td_style {
+  font-size: 0.75rem;
+  letter-spacing: 0rem;
+  font-weight: 400;
+  line-height: 1rem;
+  font-family: sans-serif;
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: left;
+  padding: 16px 16px 16px 4px;
+  color: rgb(42, 53, 71);
+  width: 48px;
+  border-bottom: 1px solid rgb(229, 234, 239);
+}
+
+.check_box_td_span {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  outline: 0px;
+  border: 0px;
+  margin: 0px;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  padding: 9px;
+  border-radius: 50%;
+  color: rgb(42, 53, 71);
+}
+
+.image_contnet_td_div {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.circleimage_td_div {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: sans-serif Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  user-select: none;
+  width: 56px;
+  height: 56px;
+}
+
+.circle_imagStyle {
+  width: 100%;
+  height: 100%;
+}
+
+.content_td_div {
+  margin-left: 16px;
+}
+
+.table_tr_td_date {
+  margin: 0px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.334rem;
+  font-family: sans-serif Helvetica, Arial, sans-serif;
+}
+
+.custom_icon_text_td_div,
+.icon_text_td_div {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.custome_icon_td_div {
+  background-color: rgb(19, 222, 185);
+  border-radius: 100%;
+  height: 10px;
+  width: 10px;
+}
+
+.icon_td_div {
+  font-size: 16px;
+}
+
+.td_text {
+  margin: 0px 0px 0px 8px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 1.57;
+  color: rgb(42, 53, 71);
+}
+
+.td_small_text {
+  margin: 0px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 1.57;
+  color: rgb(42, 53, 71);
+}
+
+.dot_iconBox {
+  padding: 0px 0px 0px 16px;
+  cursor: pointer;
+}

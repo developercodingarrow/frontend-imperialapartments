@@ -22,6 +22,9 @@ import { IoFunnelOutline } from "react-icons/io5";
 import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { RxDotsVertical } from "react-icons/rx";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { RiArrowRightSLine } from "react-icons/ri";
+import { RiArrowLeftSLine } from "react-icons/ri";
 
 export {
   IoIosCall,
@@ -52,4 +55,7 @@ export {
   IoIosArrowRoundDown,
   LiaRupeeSignSolid,
   RxDotsVertical,
+  IoMdArrowDropdown,
+  RiArrowRightSLine,
+  RiArrowLeftSLine,
 };
