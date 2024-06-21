@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./css/dashboardListtable.module.css";
 import SearchBar from "./SearchBar";
 import { IoFunnelOutline } from "../ApplicationIcon";
@@ -15,14 +15,43 @@ import {
   handleUpdate,
   handleView,
 } from "../../JsonData/tableData";
+import useTableFillters from "../../custome-hooks/useTableFillters";
+import { DashBordContext } from "../../contextApi/DashBordContextApi";
+import DateRange from "./tableElements/DateRange";
+
 export default function DashBordListTable() {
+  const { visibalRows } = useContext(DashBordContext);
+  const {
+    totalRows,
+    rowsPerPage,
+    updateVisibleRows,
+    handleRowsPerPageChange,
+    nextPage,
+    prevPage,
+    currentPage,
+    upToPage,
+    endPage,
+    searchByTableFiled,
+  } = useTableFillters(tableData);
+
+  useEffect(() => {
+    updateVisibleRows();
+  }, []);
+
   return (
     <div className={styles.main_container}>
       <div className={styles.inner_container}>
         <div className={styles.table_fillterBar}>
           <div className={styles.header_left}>
             <div>
-              <SearchBar />
+              <SearchBar
+                handelTableDatasearch={searchByTableFiled}
+                fieldName="userName"
+                placeholder="Search By User Name"
+              />
+            </div>
+            <div>
+              <DateRange />
             </div>
           </div>
           <div className={styles.header_right}>
@@ -31,17 +60,25 @@ export default function DashBordListTable() {
             </div>
           </div>
         </div>
-        <DashBordTable />
-        <DashBordTableFooter />
 
         <div>
           <DynimicTable
             tableColumns={tableColumns}
-            tableData={tableData}
+            tableData={visibalRows}
             handleCheckboxChange={handleCheckboxChange}
             handleDelete={handleDelete}
             handleUpdate={handleUpdate}
             handleView={handleView}
+          />
+          <DashBordTableFooter
+            totalRows={totalRows}
+            rowsPerPage={rowsPerPage}
+            currentPage={currentPage}
+            upToPage={upToPage}
+            endPage={endPage}
+            handelRowPerPage={handleRowsPerPageChange}
+            handelNext={nextPage}
+            handelPrev={prevPage}
           />
         </div>
       </div>

@@ -1,0 +1,29 @@
+.date_range_container {
+  position: relative;
+}
+
+.calender_btn {
+  border: 1px solid #dfe5ef;
+  padding: 8px 14px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.4375em;
+  color: rgb(33, 37, 44);
+  color: currentcolor;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.date_rangeBox {
+  position: absolute;
+  top: 50px;
+  border: 1px solid #dfe5ef;
+  border-radius: 7px;
+  padding: 7px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(145, 158, 171, 0.3) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+  z-index: 10;
+}

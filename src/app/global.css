@@ -31,6 +31,15 @@ a {
   text-decoration: none;
 }
 
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+li {
+  list-style: none;
+}
+
 /* Title */
 h1 {
   font-size: var(--font24);

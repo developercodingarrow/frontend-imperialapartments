@@ -10,7 +10,6 @@ import {
 export default function TableActionPoint(props) {
   const { onClick, itemId } = props;
 
-  console.log(itemId);
   return (
     <div className={styles.dot_iconBox}>
       <RxDotsVertical onClick={() => onClick(itemId)} />

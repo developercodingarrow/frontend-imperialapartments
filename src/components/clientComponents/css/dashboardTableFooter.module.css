@@ -1,7 +1,7 @@
 .com_container {
-  overflow: auto;
   color: rgb(42, 53, 71);
   font-size: 0.875rem;
+  margin-bottom: 10px;
 }
 
 .inner_container {
@@ -72,4 +72,37 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.selector_listBox {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  z-index: 100;
+  background-color: rgb(255, 255, 255);
+  color: rgb(42, 53, 71);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  box-shadow: rgba(145, 158, 171, 0.3) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+  min-width: 45px;
+}
+
+.list_ul_wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.selector_list {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.selector_list:hover {
+  background-color: #eef3ff;
 }
