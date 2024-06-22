@@ -1,14 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import styles from "./css/dynimicTable.module.css";
-import {
-  IoIosArrowRoundUp,
-  IoIosArrowRoundDown,
-  LiaRupeeSignSolid,
-  RxDotsVertical,
-} from "../ApplicationIcon";
-import tablCircleImage from "../../../public/web-statice-img/table-circle-imag.jpg";
-import Image from "next/image";
+import { IoIosArrowRoundDown } from "../ApplicationIcon";
 import TableCheckBox from "./tableElements/TableCheckBox";
 import TableDate from "./tableElements/TableDate";
 import TableStatus from "./tableElements/TableStatus";
@@ -16,6 +9,17 @@ import TablePrice from "./tableElements/TablePrice";
 import TableActionPoint from "./tableElements/TableActionPoint";
 import AvtarImageText from "./tableElements/AvtarImageText";
 export default function DynimicTable(props) {
+  // Initialize sort states object
+  const initialSortStates = {};
+  props.tableColumns.forEach((column) => {
+    if (column.sortable) {
+      initialSortStates[column.key] = true; // Default sort direction (true for ascending)
+    }
+  });
+
+  const [sortStates, setSortStates] = useState(initialSortStates);
+  const [dataOder, setdataOder] = useState(true);
+
   const {
     tableData,
     tableColumns,
@@ -23,6 +27,8 @@ export default function DynimicTable(props) {
     handleDelete,
     handleUpdate,
     handleView,
+    handlePriceSorting,
+    handleDateSorting,
   } = props;
 
   const handlers = {
@@ -31,7 +37,29 @@ export default function DynimicTable(props) {
     switch: handleCheckboxChange,
     view: handleView,
     singleImage: handleView,
+    price: handlePriceSorting,
+    updatedAt: handleDateSorting,
   };
+
+  const handleSorting = (columnKey) => {
+    if (handlers[columnKey]) {
+      setdataOder(!dataOder);
+      handlers[columnKey](dataOder);
+
+      // Toggle sort direction for the clicked column
+      setSortStates((prevSortStates) => ({
+        ...prevSortStates,
+        [columnKey]: !prevSortStates[columnKey],
+      }));
+    }
+  };
+
+  const getSortIconStyle = (columnKey) => {
+    return sortStates[columnKey]
+      ? `${styles.span_icon_style} ${styles.span_down_icon}`
+      : `${styles.span_icon_style} ${styles.span_up_icon}`;
+  };
+
   return (
     <div className={styles.com_container}>
       <div className={styles.inner_container}>
@@ -49,8 +77,11 @@ export default function DynimicTable(props) {
                     ) : (
                       <>
                         {column.label}
-                        <span className={styles.span_icon_style}>
-                          <IoIosArrowRoundUp />
+                        <span
+                          className={getSortIconStyle(column.key)}
+                          onClick={() => handleSorting(column.key)}
+                        >
+                          <IoIosArrowRoundDown />
                         </span>
                       </>
                     )}
@@ -67,11 +98,12 @@ export default function DynimicTable(props) {
                     no,
                     row[column.key],
                     row._id,
-                    row.date,
+                    row.updatedAt,
                     row.imageSrc,
                     row.slug,
                     column.component,
                     row.userName,
+                    row.email,
                     handlers[column.component]
                   );
 
@@ -102,6 +134,7 @@ const renderCellContent = (
   slug,
   componentType,
   userName,
+  email,
   handler
 ) => {
   let content = null;
@@ -154,7 +187,9 @@ const renderCellContent = (
       break;
     case "singleImage":
       if (handler) {
-        content = <AvtarImageText image={image} name={userName} />;
+        content = (
+          <AvtarImageText image={image} name={userName} email={email} />
+        );
       }
       break;
     default:

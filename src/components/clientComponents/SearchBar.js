@@ -6,7 +6,6 @@ export default function SearchBar(props) {
 
   const handelSearch = (e) => {
     const searchTerm = e.target.value;
-
     handelTableDatasearch(searchTerm, fieldName);
   };
   return (

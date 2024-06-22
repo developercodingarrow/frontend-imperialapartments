@@ -1,13 +1,26 @@
-export const sortByDate = (data, order) => {
-  console.log(order);
+export const sortByDate = (data, sortOrder) => {
   const sortedData = data.slice().sort((a, b) => {
-    if (order === "old") {
+    if (sortOrder === true) {
       return new Date(a.updatedAt) - new Date(b.updatedAt);
-    } else if (order === "new") {
+    } else {
       return new Date(b.updatedAt) - new Date(a.updatedAt);
     }
-    // If the order is not specified, return the original data
-    return 0;
+  });
+
+  return sortedData;
+};
+
+export const sortByPrice = (data, sortOrder) => {
+  // Sorting logic by price
+  const sortedData = [...data].sort((a, b) => {
+    const priceA = parseFloat(a.price);
+    const priceB = parseFloat(b.price);
+
+    if (sortOrder === true) {
+      return priceA - priceB;
+    } else {
+      return priceB - priceA;
+    }
   });
 
   return sortedData;

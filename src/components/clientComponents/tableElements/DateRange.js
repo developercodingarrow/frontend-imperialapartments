@@ -6,7 +6,8 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
 import { compareAsc, format } from "date-fns";
 
-export default function DateRange() {
+export default function DateRange(props) {
+  const { handelDateRange } = props;
   const [toggleClender, settoggleClender] = useState(false);
   const [date, setdate] = useState({
     startDate: new Date(),
@@ -17,8 +18,10 @@ export default function DateRange() {
   console.log(date);
 
   const handelChnage = (ranges) => {
-    console.log(ranges.selection.startDate);
+    const startDate = ranges.selection.startDate;
+    const endDate = ranges.selection.endDate;
     setdate(ranges.selection);
+    handelDateRange(startDate, endDate);
   };
 
   const handelToggleCender = () => {

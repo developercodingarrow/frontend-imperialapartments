@@ -9,6 +9,7 @@ import DynimicTable from "./DynimicTable";
 import {
   userDataColoum,
   tableColumns,
+  tableSampleData,
   tableData,
   handleCheckboxChange,
   handleDelete,
@@ -32,7 +33,10 @@ export default function DashBordListTable() {
     upToPage,
     endPage,
     searchByTableFiled,
-  } = useTableFillters(tableData);
+    filterByDate,
+    PriceSorting,
+    DateSorting,
+  } = useTableFillters(tableSampleData);
 
   useEffect(() => {
     updateVisibleRows();
@@ -50,8 +54,16 @@ export default function DashBordListTable() {
                 placeholder="Search By User Name"
               />
             </div>
+
             <div>
-              <DateRange />
+              <SearchBar
+                handelTableDatasearch={searchByTableFiled}
+                fieldName="email"
+                placeholder="Search By Email Address..."
+              />
+            </div>
+            <div>
+              <DateRange handelDateRange={filterByDate} />
             </div>
           </div>
           <div className={styles.header_right}>
@@ -69,6 +81,8 @@ export default function DashBordListTable() {
             handleDelete={handleDelete}
             handleUpdate={handleUpdate}
             handleView={handleView}
+            handlePriceSorting={PriceSorting}
+            handleDateSorting={DateSorting}
           />
           <DashBordTableFooter
             totalRows={totalRows}

@@ -5,6 +5,11 @@ import {
   goToPreviousPage,
 } from "../components/clientComponents/tablefillterLogic/tablepaginationLogic";
 import { DashBordContext } from "../contextApi/DashBordContextApi";
+import { filterByDateRange } from "../components/clientComponents/tablefillterLogic/dateRangeFilter";
+import {
+  sortByDate,
+  sortByPrice,
+} from "../components/clientComponents/tablefillterLogic/sortingFunctions";
 
 export default function useTableFillters(initialRows, initialRowsPerPage = 5) {
   const { visibalRows, setvisibalRows } = useContext(DashBordContext);
@@ -60,6 +65,26 @@ export default function useTableFillters(initialRows, initialRowsPerPage = 5) {
     updateVisibleRows(filteredData);
   };
 
+  // table Date Rage selector
+  const filterByDate = (startDate, endDate) => {
+    console.log(startDate);
+    console.log(endDate);
+    const filteredData = filterByDateRange(initialRows, startDate, endDate);
+    console.log(filteredData);
+    updateVisibleRows(filteredData);
+  };
+
+  const PriceSorting = (dataOder) => {
+    const sortData = sortByPrice(initialRows, dataOder);
+    console.log(sortData);
+    updateVisibleRows(sortData);
+  };
+
+  const DateSorting = (dataOder) => {
+    const sortData = sortByDate(initialRows, dataOder);
+    updateVisibleRows(sortData);
+  };
+
   const updateVisibleRows = (data) => {
     let rowsToDisplay = data || initialRows; // Use sorted data if available
     let startpageIndex = (currentPage - 1) * rowsPerPage;
@@ -80,7 +105,10 @@ export default function useTableFillters(initialRows, initialRowsPerPage = 5) {
     nextPage,
     prevPage,
     searchByTableFiled,
-    updateVisibleRows,
+    filterByDate,
     handleRowsPerPageChange,
+    PriceSorting,
+    DateSorting,
+    updateVisibleRows,
   };
 }
