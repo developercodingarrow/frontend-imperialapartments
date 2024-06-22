@@ -22,7 +22,7 @@ export const tableData = [
     status: false,
     price: 3000,
     actions: "/",
-    userName: "Suresh ",
+    userName: "Suresh",
   },
   // more rows...
 ];

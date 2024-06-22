@@ -15,8 +15,6 @@ export default function DateRange(props) {
     key: "selection",
   });
 
-  console.log(date);
-
   const handelChnage = (ranges) => {
     const startDate = ranges.selection.startDate;
     const endDate = ranges.selection.endDate;

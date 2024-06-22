@@ -19,6 +19,7 @@ import {
 import useTableFillters from "../../custome-hooks/useTableFillters";
 import { DashBordContext } from "../../contextApi/DashBordContextApi";
 import DateRange from "./tableElements/DateRange";
+import LoadingData from "./LoadingData";
 
 export default function DashBordListTable() {
   const { visibalRows } = useContext(DashBordContext);
@@ -73,27 +74,33 @@ export default function DashBordListTable() {
           </div>
         </div>
 
-        <div>
-          <DynimicTable
-            tableColumns={tableColumns}
-            tableData={visibalRows}
-            handleCheckboxChange={handleCheckboxChange}
-            handleDelete={handleDelete}
-            handleUpdate={handleUpdate}
-            handleView={handleView}
-            handlePriceSorting={PriceSorting}
-            handleDateSorting={DateSorting}
-          />
-          <DashBordTableFooter
-            totalRows={totalRows}
-            rowsPerPage={rowsPerPage}
-            currentPage={currentPage}
-            upToPage={upToPage}
-            endPage={endPage}
-            handelRowPerPage={handleRowsPerPageChange}
-            handelNext={nextPage}
-            handelPrev={prevPage}
-          />
+        <div className={styles.table_wrapper}>
+          {visibalRows.length >= 1 ? (
+            <div>
+              <DynimicTable
+                tableColumns={tableColumns}
+                tableData={visibalRows}
+                handleCheckboxChange={handleCheckboxChange}
+                handleDelete={handleDelete}
+                handleUpdate={handleUpdate}
+                handleView={handleView}
+                handlePriceSorting={PriceSorting}
+                handleDateSorting={DateSorting}
+              />
+              <DashBordTableFooter
+                totalRows={totalRows}
+                rowsPerPage={rowsPerPage}
+                currentPage={currentPage}
+                upToPage={upToPage}
+                endPage={endPage}
+                handelRowPerPage={handleRowsPerPageChange}
+                handelNext={nextPage}
+                handelPrev={prevPage}
+              />
+            </div>
+          ) : (
+            <LoadingData />
+          )}
         </div>
       </div>
     </div>

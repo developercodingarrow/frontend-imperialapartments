@@ -1,0 +1,13 @@
+.container_top_Header {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: wrap;
+  width: 100%;
+  background-color: rgb(236, 242, 255);
+  border-radius: 12.25px;
+  padding: 30px 25px 20px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}

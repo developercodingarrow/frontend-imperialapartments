@@ -25,6 +25,7 @@ import { RxDotsVertical } from "react-icons/rx";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { RiArrowLeftSLine } from "react-icons/ri";
+import { PiSquaresFourLight } from "react-icons/pi";
 
 export {
   IoIosCall,
@@ -58,4 +59,5 @@ export {
   IoMdArrowDropdown,
   RiArrowRightSLine,
   RiArrowLeftSLine,
+  PiSquaresFourLight,
 };
