@@ -6,22 +6,20 @@ import { IoFunnelOutline } from "../ApplicationIcon";
 import DashBordTable from "./DashBordTable";
 import DashBordTableFooter from "./DashBordTableFooter";
 import DynimicTable from "./DynimicTable";
-import {
-  userDataColoum,
-  tableColumns,
-  tableSampleData,
-  tableData,
-  handleCheckboxChange,
-  handleDelete,
-  handleUpdate,
-  handleView,
-} from "../../JsonData/tableData";
 import useTableFillters from "../../custome-hooks/useTableFillters";
 import { DashBordContext } from "../../contextApi/DashBordContextApi";
 import DateRange from "./tableElements/DateRange";
 import LoadingData from "./LoadingData";
 
-export default function DashBordListTable() {
+export default function DashBordListTable(props) {
+  const {
+    tableColumns,
+    tableSampleData,
+    handleCheckboxChange,
+    handleDelete,
+    handleUpdate,
+    handleView,
+  } = props;
   const { visibalRows } = useContext(DashBordContext);
   const {
     totalRows,

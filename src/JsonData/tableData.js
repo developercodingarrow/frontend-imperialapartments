@@ -1,10 +1,3 @@
-export const userDataColoum = [
-  { label: "S No", key: "_id", component: "number" },
-  { label: "Image", key: "userImage", component: "singleAvtar" },
-  { label: "Date", key: "updatedAt", component: "date" },
-  { label: "Status", key: "isActive", component: "dot_text" },
-];
-
 export const tableColumns = [
   { label: "", key: "_id", component: "checkbox" },
   { label: "user", key: "imageSrc", component: "singleImage" },
@@ -12,19 +5,6 @@ export const tableColumns = [
   { label: "Status", key: "status", component: "switch" },
   { label: "Price", key: "price", component: "price" },
   { label: "Actions", key: "actions", component: "view" },
-];
-
-export const tableData = [
-  {
-    _id: 20,
-    date: "2024-07-10",
-    imageSrc: "/web-statice-img/table-circle-imag.jpg",
-    status: false,
-    price: 3000,
-    actions: "/",
-    userName: "Suresh",
-  },
-  // more rows...
 ];
 
 export const tableSampleData = [
@@ -210,6 +190,32 @@ export const tableSampleData = [
   },
 ];
 
+export const BlogColumns = [
+  { label: "", key: "_id", component: "checkbox" },
+  { label: "Blog", key: "blogThumblin", component: "blogImage" },
+  { label: "Date", key: "updatedAt", component: "date" },
+  { label: "Featured", key: "featured", component: "switchBtn" },
+  { label: "categories", key: "categories", component: "blogCategories" },
+  { label: "Actions", key: "actions", component: "view" },
+];
+
+export const blogsampleData = [
+  {
+    _id: "667659286b30f4e5104fdc82",
+    title: "service apartment in gurgaon",
+    blogThumblin: "/web-statice-img/table-circle-imag.jpg",
+    updatedAt: "2024-06-22T04:55:04.371Z",
+    categories: [
+      "service apartment , hotel rooms",
+      "deluxe rooms",
+      "luxury Rooms",
+    ],
+    tags: ["serviceApartment", "rooms", "rent"],
+    featured: false,
+    author: "sandeep",
+  },
+];
+
 export const handleCheckboxChange = (id) => {
   /* handle checkbox change */
   alert("check box");
@@ -220,6 +226,7 @@ export const handleDelete = (id) => {
 export const handleUpdate = (id) => {
   alert("update box");
 };
+
 export const handleView = (id) => {
-  console.log("check id", id);
+  console.log("Viewing item with id:", id);
 };

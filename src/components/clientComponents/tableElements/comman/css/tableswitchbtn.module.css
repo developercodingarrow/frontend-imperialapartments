@@ -1,0 +1,32 @@
+.wrapper {
+  display: inline-block;
+}
+
+.switch {
+  width: 30px;
+  height: 15px;
+  background: #ccc;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.switchOn {
+  background: #4caf50;
+}
+
+.circle {
+  width: 13px;
+  height: 13px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: left 0.3s;
+}
+
+.circleOn {
+  left: 16px;
+}

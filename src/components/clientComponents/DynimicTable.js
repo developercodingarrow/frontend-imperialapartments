@@ -8,6 +8,10 @@ import TableStatus from "./tableElements/TableStatus";
 import TablePrice from "./tableElements/TablePrice";
 import TableActionPoint from "./tableElements/TableActionPoint";
 import AvtarImageText from "./tableElements/AvtarImageText";
+import BlogImage from "./tableElements/blogTable/BlogImage";
+import TableSwitchBtn from "./tableElements/comman/TableSwitchBtn";
+import { BlogColumns } from "../../JsonData/tableData";
+import BlogCategories from "./tableElements/blogTable/BlogCategories";
 export default function DynimicTable(props) {
   // Initialize sort states object
   const initialSortStates = {};
@@ -39,6 +43,12 @@ export default function DynimicTable(props) {
     singleImage: handleView,
     price: handlePriceSorting,
     updatedAt: handleDateSorting,
+    blogImage: handleView,
+  };
+
+  const actionhandler = {
+    view: handleView,
+    delete: handleDelete,
   };
 
   const handleSorting = (columnKey) => {
@@ -100,11 +110,16 @@ export default function DynimicTable(props) {
                     row._id,
                     row.updatedAt,
                     row.imageSrc,
+                    row.BlogThumblin,
+                    row.title,
+                    row.author,
+                    row.categories,
                     row.slug,
                     column.component,
                     row.userName,
                     row.email,
-                    handlers[column.component]
+                    handlers[column.component],
+                    actionhandler
                   );
 
                   return (
@@ -131,11 +146,16 @@ const renderCellContent = (
   id,
   date,
   image,
+  blogImage,
+  blogTitle,
+  blogAuther,
+  blogCategories,
   slug,
   componentType,
   userName,
   email,
-  handler
+  handler,
+  handlers
 ) => {
   let content = null;
   let className = "";
@@ -182,7 +202,7 @@ const renderCellContent = (
       break;
     case "view":
       if (handler) {
-        content = <TableActionPoint onClick={handler} itemId={id} />;
+        content = <TableActionPoint handlers={handlers} itemId={id} />;
       }
       break;
     case "singleImage":
@@ -191,6 +211,23 @@ const renderCellContent = (
           <AvtarImageText image={image} name={userName} email={email} />
         );
       }
+      break;
+
+    case "blogImage":
+      if (handler) {
+        content = (
+          <BlogImage image={blogImage} title={blogTitle} auther={blogAuther} />
+        );
+      }
+      break;
+
+    case "switchBtn":
+      content = <TableSwitchBtn />;
+
+      break;
+    case "blogCategories":
+      content = <BlogCategories catList={blogCategories} />;
+
       break;
     default:
       content = data;

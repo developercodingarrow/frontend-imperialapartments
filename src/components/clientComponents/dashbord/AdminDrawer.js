@@ -50,29 +50,29 @@ export default function AdminDrawer() {
 
         <div className={styles.options_wrappers}>
           <div className={styles.options_headingBox}>
-            <h4>SEO</h4>
+            <h4>Lists</h4>
           </div>
           <ul>
             <li className={styles.option_li}>
-              <Link href={"/"}>
+              <Link href={"/admin-panel/user-list"}>
                 <div className={styles.option_tab}>
                   <div className={styles.option_icon}>
                     {" "}
                     <PiSquaresFourLight />{" "}
                   </div>
-                  <div className={styles.option_text}>DashBoard</div>
+                  <div className={styles.option_text}>User List</div>
                 </div>
               </Link>
             </li>
 
             <li className={styles.option_li}>
-              <Link href={"/"}>
+              <Link href={"/admin-panel/blog-list"}>
                 <div className={styles.option_tab}>
                   <div className={styles.option_icon}>
                     {" "}
                     <PiSquaresFourLight />{" "}
                   </div>
-                  <div className={styles.option_text}>DashBoard</div>
+                  <div className={styles.option_text}>Blog List</div>
                 </div>
               </Link>
             </li>

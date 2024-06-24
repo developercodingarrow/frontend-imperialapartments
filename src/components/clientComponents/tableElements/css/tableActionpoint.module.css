@@ -1,4 +1,40 @@
 .dot_iconBox {
   padding: 0px 0px 0px 16px;
   cursor: pointer;
+  position: relative;
+}
+
+.action_pop_Over {
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  border: 1px solid rgba(125, 122, 122, 0.234);
+  box-shadow: rgba(145, 158, 171, 0.3) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+  z-index: 100;
+}
+
+.action_optionBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 5px;
+  row-gap: 5px;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.action_optionBox:hover {
+  background-color: aliceblue;
+}
+
+.action_icon {
+  font-size: 10px;
+  font-family: sans-serif;
+  letter-spacing: 0.8px;
+}
+
+.action_text {
+  font-size: 12px;
+  flex-grow: 1;
 }
