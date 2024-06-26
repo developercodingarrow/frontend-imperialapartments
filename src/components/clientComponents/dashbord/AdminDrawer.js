@@ -92,17 +92,17 @@ export default function AdminDrawer() {
 
         <div className={styles.options_wrappers}>
           <div className={styles.options_headingBox}>
-            <h4>SEO</h4>
+            <h4>CREATE</h4>
           </div>
           <ul>
             <li className={styles.option_li}>
-              <Link href={"/"}>
+              <Link href={"/admin-panel/create-blog"}>
                 <div className={styles.option_tab}>
                   <div className={styles.option_icon}>
                     {" "}
                     <PiSquaresFourLight />{" "}
                   </div>
-                  <div className={styles.option_text}>DashBoard</div>
+                  <div className={styles.option_text}>CREATE BLOG</div>
                 </div>
               </Link>
             </li>

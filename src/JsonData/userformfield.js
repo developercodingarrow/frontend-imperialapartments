@@ -54,3 +54,27 @@ export const sideformFiled = [
     },
   },
 ];
+
+export const blogInfoForm = [
+  {
+    id: 1,
+    name: "title",
+    lable: "Title",
+    type: "text",
+    placeholder: "Enter Blog Title",
+    validation: {
+      required: "Blog Title is required.",
+    },
+  },
+
+  {
+    id: 1,
+    name: "MetaDescreption",
+    lable: "Meta Descreption",
+    type: "textarea",
+    placeholder: "Meta Descreption",
+    validation: {
+      required: "Meta Descreption is required.",
+    },
+  },
+];

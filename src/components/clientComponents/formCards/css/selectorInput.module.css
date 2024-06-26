@@ -1,0 +1,53 @@
+.lable_wrapper {
+  margin-bottom: 10px;
+}
+
+.input_wrapper {
+  border: 1px solid #dddddd;
+  width: 100%;
+  padding: 8px 12px;
+  outline: none;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  position: relative;
+}
+
+.selector_input {
+  flex-grow: 1;
+  padding: 3px 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.selector_Icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.selector_listBox {
+  position: absolute;
+  border: 1px solid #dddddd;
+  width: 100%;
+  top: 40px;
+  left: 0px;
+  border-radius: 5px;
+  z-index: 100;
+  padding: 5px 0px;
+}
+
+.selector_list {
+  padding: 7px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: sans-serif;
+  text-transform: capitalize;
+}
+
+.selector_list:hover {
+  background-color: #dddddd;
+}

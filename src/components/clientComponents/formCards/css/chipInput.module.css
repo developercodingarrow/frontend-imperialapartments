@@ -1,0 +1,35 @@
+.inputContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  background-color: #ffff;
+  padding: 6px 10px;
+  margin-bottom: 20px;
+}
+
+.chip {
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  padding: 5px 7px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.removeIcon {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.input {
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  flex-grow: 1;
+  outline: none;
+}

@@ -1,0 +1,19 @@
+.btn_wrapper {
+  display: inline-block;
+}
+
+.btn_style {
+  background-color: #ed6789;
+  padding: 9px 20px;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  border: initial;
+  box-shadow: initial !important;
+  transition: all 200ms;
+  transition-property: color, background-color, background-image, background;
+  border-radius: 5px;
+  color: #fff;
+  white-space: nowrap;
+  cursor: pointer;
+}

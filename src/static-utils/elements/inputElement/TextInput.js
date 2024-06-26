@@ -10,8 +10,8 @@ function TextInput(props, ref) {
         <input
           ref={ref}
           {...inputProps}
-          className={styles.inputStyle}
           suppressHydrationWarning={true}
+          className={styles.inputStyle}
         />
       </div>
     </div>

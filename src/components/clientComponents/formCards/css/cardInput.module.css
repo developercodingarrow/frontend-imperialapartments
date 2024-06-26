@@ -1,0 +1,16 @@
+.container {
+  margin-bottom: 20px;
+}
+.form_label {
+  color: #7c7c7c;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.input_styles {
+  border: 1px solid #dddddd;
+  width: 100%;
+  padding: 8px 12px;
+  outline: none;
+  font-size: 14px;
+}

@@ -1,0 +1,20 @@
+.container {
+}
+
+.inner_container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 5%;
+}
+
+.left_sideContainer {
+  width: 60%;
+}
+
+.formcard_wrapper {
+  margin-bottom: 30px;
+}
+
+.Right_sideContainer {
+  width: 35%;
+}
