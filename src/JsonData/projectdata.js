@@ -56,6 +56,7 @@ export const blogCategories = [
     name: "categories",
     lable: "categories",
     type: "checkbox",
+    valueKey: "categoriName",
   },
 ];
 
@@ -70,6 +71,21 @@ export const dynimicCategories = [
   },
   {
     categoriName: "Ac Rooms",
+    slug: "/service-apartment",
+  },
+];
+
+export const dynimicTag = [
+  {
+    TagName: "service apartment",
+    slug: "/service-apartment",
+  },
+  {
+    TagName: "hotel rooms",
+    slug: "/service-apartment",
+  },
+  {
+    TagName: "Deluxe rooms",
     slug: "/service-apartment",
   },
 ];

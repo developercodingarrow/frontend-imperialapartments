@@ -37,6 +37,7 @@ export default function CreateBlogPage() {
                 cardTitle="Categories"
                 inputData={blogCategories}
                 dynimicData={dynimicCategories}
+                
               />
             </div>
 

@@ -4,6 +4,7 @@ import styles from "./css/cardInput.module.css";
 
 function CardInput(props, ref) {
   const { lable, ...inputProps } = props;
+
   return (
     <div className={styles.container}>
       <label className={styles.form_label}>{lable}</label>

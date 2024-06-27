@@ -82,6 +82,7 @@ export function useCustomApiForm(apiData) {
           defaultValue: defaultValues || [],
           checkBoxStyle: "inLine_customCheckbox_wrapper",
           checkBoxContainerStyle: "inLine_checkBox_container",
+          valueKey: input.blogCategories,
         };
         break;
       //   case "radio":
