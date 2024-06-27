@@ -10,7 +10,6 @@ import TableActionPoint from "./tableElements/TableActionPoint";
 import AvtarImageText from "./tableElements/AvtarImageText";
 import BlogImage from "./tableElements/blogTable/BlogImage";
 import TableSwitchBtn from "./tableElements/comman/TableSwitchBtn";
-import { BlogColumns } from "../../JsonData/tableData";
 import BlogCategories from "./tableElements/blogTable/BlogCategories";
 import DelectIconBtn from "./tableElements/DelectIconBtn";
 import EditIconBtn from "./tableElements/EditIconBtn";
@@ -36,6 +35,7 @@ export default function DynimicTable(props) {
     handlePriceSorting,
     handleDateSorting,
     handelSingleDelete,
+    handelSingleEdit,
   } = props;
 
   const handlers = {
@@ -48,6 +48,7 @@ export default function DynimicTable(props) {
     updatedAt: handleDateSorting,
     blogImage: handleView,
     deleteIconBtn: handelSingleDelete,
+    editIconBtn: handelSingleEdit,
   };
 
   const actionhandler = {
@@ -198,7 +199,9 @@ const renderCellContent = (
       }
       break;
     case "editIconBtn":
-      content = <EditIconBtn />;
+      if (handler) {
+        content = <EditIconBtn actionhandler={handler} itemId={id} />;
+      }
 
       break;
     case "delete":

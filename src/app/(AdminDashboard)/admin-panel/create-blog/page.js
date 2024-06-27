@@ -14,12 +14,14 @@ import {
 import ChipCard from "../../../../components/clientComponents/formCards/ChipCard";
 import SelectorCard from "../../../../components/clientComponents/formCards/SelectorCard";
 import CheckBoxCard from "../../../../components/clientComponents/formCards/CheckBoxCard";
+import SingleImageUploader from "../../../../components/clientComponents/layouts/SingleImageUploader";
+import ImageUplodModel from "../../../../components/clientComponents/models/ImageUplodModel";
 
 export default function CreateBlogPage() {
   return (
     <AdminDashBordLayout>
       <PageHeader />
-
+      <ImageUplodModel />
       <div className={styles.container}>
         <div className={styles.inner_container}>
           <div className={styles.left_sideContainer}>
@@ -28,7 +30,6 @@ export default function CreateBlogPage() {
             </div>
 
             <div className={styles.formcard_wrapper}>
-              {/* <ChipCard cardTitle="Tags" /> */}
               <FormCard cardTitle="Tags" inputData={blogTags} />
             </div>
 
@@ -37,7 +38,6 @@ export default function CreateBlogPage() {
                 cardTitle="Categories"
                 inputData={blogCategories}
                 dynimicData={dynimicCategories}
-                
               />
             </div>
 
@@ -46,7 +46,9 @@ export default function CreateBlogPage() {
             </div>
           </div>
 
-          <div className={styles.Right_sideContainer}>Right side</div>
+          <div className={styles.Right_sideContainer}>
+            <SingleImageUploader />
+          </div>
         </div>
       </div>
     </AdminDashBordLayout>

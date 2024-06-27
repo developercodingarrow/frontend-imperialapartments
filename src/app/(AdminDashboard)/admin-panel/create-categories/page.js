@@ -8,7 +8,9 @@ import {
   cateroriesSampleData,
   handelCategoriesDelete,
   handleCheckboxChange,
+  handelCategoriesEdit,
 } from "../../../../JsonData/tableData";
+import { createCategoriesForm } from "../../../../JsonData/projectdata";
 
 export default function CreateCategories() {
   return (
@@ -20,7 +22,9 @@ export default function CreateCategories() {
             tablecolums={categoriesColumns}
             tableData={cateroriesSampleData}
             deleteHandel={handelCategoriesDelete}
+            edithandel={handelCategoriesEdit}
             checkboxhandler={handleCheckboxChange}
+            sideFormFiled={createCategoriesForm}
           />
         </div>
       </AdminDashBordLayout>

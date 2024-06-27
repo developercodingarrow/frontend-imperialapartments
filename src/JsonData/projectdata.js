@@ -89,3 +89,94 @@ export const dynimicTag = [
     slug: "/service-apartment",
   },
 ];
+
+export const createCategoriesForm = [
+  {
+    id: 1,
+    name: "categorieName",
+    lable: "Create Categorie",
+    type: "text",
+    placeholder: "Enter new Categorie Name",
+    validation: {
+      required: "Categories Name is Required",
+    },
+  },
+];
+
+export const imageUplaodInputs = [
+  {
+    id: 1,
+    name: "altText",
+    lable: "Alt Text",
+    type: "text",
+    placeholder: "Enter the image alt text",
+    validation: {
+      required: "Alt Text Name is Required",
+    },
+  },
+  {
+    id: 2,
+    name: "imageDescreption",
+    lable: "image Descreption",
+    type: "text",
+    placeholder: "Enter the image descreption",
+    validation: {
+      required: "descreption  is Required",
+    },
+  },
+  {
+    id: 3,
+    name: "caption",
+    lable: "image Caption",
+    type: "text",
+    placeholder: "Enter the image Caption",
+    validation: {
+      required: "Caption  is Required",
+    },
+  },
+  {
+    id: 3,
+    name: "ImageTitle",
+    lable: "Image Title",
+    type: "text",
+    placeholder: "Enter the image Title",
+    validation: {
+      required: "Title is Required",
+    },
+  },
+];
+
+export const imageApiData = {
+  _id: "667659286b30f4e5104fdc82",
+  altText: "service apartment",
+  imageDescreption: "this is image descreption",
+  caption: "this is image caption",
+  ImageTitle: "This is image title",
+};
+
+export const inputConfig = [
+  {
+    type: "text",
+    name: "altText",
+    placeholder: "Write alt text",
+    label: "Alt Text",
+  },
+  {
+    type: "text",
+    name: "imageDescription",
+    placeholder: "Write image description",
+    label: "Description",
+  },
+  {
+    type: "text",
+    name: "caption",
+    placeholder: "Write image caption",
+    label: "Caption",
+  },
+  {
+    type: "text",
+    name: "imageTitle",
+    placeholder: "Write image title",
+    label: "Image Title",
+  },
+];

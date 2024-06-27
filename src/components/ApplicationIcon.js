@@ -28,6 +28,8 @@ import { RiArrowLeftSLine } from "react-icons/ri";
 import { PiSquaresFourLight } from "react-icons/pi";
 import { MdDeleteForever } from "react-icons/md";
 import { LiaEditSolid } from "react-icons/lia";
+import { TiCloudStorage } from "react-icons/ti";
+import { IoCloseCircle } from "react-icons/io5";
 
 export {
   IoIosCall,
@@ -64,4 +66,6 @@ export {
   PiSquaresFourLight,
   MdDeleteForever,
   LiaEditSolid,
+  TiCloudStorage,
+  IoCloseCircle,
 };

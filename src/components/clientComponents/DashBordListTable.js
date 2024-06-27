@@ -20,6 +20,7 @@ export default function DashBordListTable(props) {
     handleUpdate,
     handleView,
     handelSingleDelete,
+    handelSingleEdit,
   } = props;
   const { visibalRows } = useContext(DashBordContext);
   const {
@@ -86,6 +87,7 @@ export default function DashBordListTable(props) {
                 handlePriceSorting={PriceSorting}
                 handleDateSorting={DateSorting}
                 handelSingleDelete={handelSingleDelete}
+                handelSingleEdit={handelSingleEdit}
               />
               <DashBordTableFooter
                 totalRows={totalRows}

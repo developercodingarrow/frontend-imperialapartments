@@ -268,3 +268,8 @@ export const handelCategoriesDelete = (dataId) => {
   console.log(dataId);
   alert("delete Categories", dataId);
 };
+
+export const handelCategoriesEdit = (dataId) => {
+  console.log(dataId);
+  alert("Edit Categories", dataId);
+};

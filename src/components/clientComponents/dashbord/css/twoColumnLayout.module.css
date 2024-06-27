@@ -8,4 +8,9 @@
 }
 .form_side {
   width: 35%;
+  padding: 0px 20px;
+}
+
+.form_side_innerContainer {
+  /* border: 1px solid gray; */
 }
