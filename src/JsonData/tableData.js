@@ -230,3 +230,41 @@ export const handleUpdate = (id) => {
 export const handleView = (id) => {
   console.log("Viewing item with id:", id);
 };
+
+export const categoriesColumns = [
+  { label: "", key: "_id", component: "checkbox" },
+  { label: "Date", key: "updatedAt", component: "date" },
+  { label: "Categories Name", key: "categorieName", component: "text" },
+  { label: "Delete", key: "_id", component: "deleteIconBtn" },
+  { label: "Edit", key: "_id", component: "editIconBtn" },
+];
+
+export const cateroriesSampleData = [
+  {
+    _id: "667659286b30f4e5104fdc82",
+    updatedAt: "2024-06-22T04:55:04.371Z",
+    status: false,
+    slug: "service-aparment",
+    categorieName: "service aprtment",
+  },
+  {
+    _id: "667659286b30f4e5104fdc83",
+    updatedAt: "2024-06-21T14:20:04.371Z",
+    status: false,
+    slug: "hotel-rooms",
+    categorieName: "Hotel rooms",
+  },
+
+  {
+    _id: "667659286b30f4e5104fdc84",
+    updatedAt: "2024-06-16T09:40:04.371Z",
+    status: false,
+    slug: "deluxe-room",
+    categorieName: "Deluxe Room",
+  },
+];
+
+export const handelCategoriesDelete = (dataId) => {
+  console.log(dataId);
+  alert("delete Categories", dataId);
+};

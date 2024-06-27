@@ -1,0 +1,20 @@
+.conatiner {
+  display: flex;
+  align-items: center;
+}
+
+.icon_wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 5px;
+  cursor: pointer;
+  color: gray;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.icon_wrapper:hover {
+  background-color: #ecf2ff;
+  color: rgb(93, 135, 255);
+}

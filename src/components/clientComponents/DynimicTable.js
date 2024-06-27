@@ -12,6 +12,8 @@ import BlogImage from "./tableElements/blogTable/BlogImage";
 import TableSwitchBtn from "./tableElements/comman/TableSwitchBtn";
 import { BlogColumns } from "../../JsonData/tableData";
 import BlogCategories from "./tableElements/blogTable/BlogCategories";
+import DelectIconBtn from "./tableElements/DelectIconBtn";
+import EditIconBtn from "./tableElements/EditIconBtn";
 export default function DynimicTable(props) {
   // Initialize sort states object
   const initialSortStates = {};
@@ -33,6 +35,7 @@ export default function DynimicTable(props) {
     handleView,
     handlePriceSorting,
     handleDateSorting,
+    handelSingleDelete,
   } = props;
 
   const handlers = {
@@ -44,6 +47,7 @@ export default function DynimicTable(props) {
     price: handlePriceSorting,
     updatedAt: handleDateSorting,
     blogImage: handleView,
+    deleteIconBtn: handelSingleDelete,
   };
 
   const actionhandler = {
@@ -188,12 +192,22 @@ const renderCellContent = (
         content = <TableStatus status={data} />;
       }
       break;
+    case "deleteIconBtn":
+      if (handler) {
+        content = <DelectIconBtn actionhandler={handler} itemId={id} />;
+      }
+      break;
+    case "editIconBtn":
+      content = <EditIconBtn />;
+
+      break;
     case "delete":
       if (handler) {
         content = <button onClick={() => handler(id)}>Delete</button>;
         className = "delete-cell";
       }
       break;
+
     case "update":
       if (handler) {
         content = <button onClick={() => handler(id)}>Update</button>;

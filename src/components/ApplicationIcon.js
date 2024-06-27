@@ -26,6 +26,8 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { PiSquaresFourLight } from "react-icons/pi";
+import { MdDeleteForever } from "react-icons/md";
+import { LiaEditSolid } from "react-icons/lia";
 
 export {
   IoIosCall,
@@ -60,4 +62,6 @@ export {
   RiArrowRightSLine,
   RiArrowLeftSLine,
   PiSquaresFourLight,
+  MdDeleteForever,
+  LiaEditSolid,
 };

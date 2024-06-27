@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  column-gap: 5%;
+}
+
+.table_side {
+  width: 60%;
+}
+.form_side {
+  width: 35%;
+}
