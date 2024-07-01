@@ -8,8 +8,14 @@ import { useCustomApiForm } from "../../../custome-hooks/useCutomeApiform";
 import { blogApiData } from "../../../JsonData/projectdata";
 
 export default function FormCard(props) {
-  const { cardTitle, inputData, dynimicData, submitFormHandel, apiData } =
-    props;
+  const {
+    cardTitle,
+    inputData,
+    dynimicData,
+    submitFormHandel,
+    apiData,
+    paramData,
+  } = props;
   const {
     handleSubmit,
     formState,
@@ -22,7 +28,10 @@ export default function FormCard(props) {
 
   const handleForm = async (data) => {
     try {
-      const res = await submitFormHandel(data);
+      console.log(data);
+      const res = (await paramData)
+        ? submitFormHandel(paramData, data)
+        : submitFormHandel(data);
       console.log(res);
       if (res.data.status === "success") {
         console.log("sucess");

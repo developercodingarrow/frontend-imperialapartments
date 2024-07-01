@@ -8,6 +8,7 @@ export function AppContextProvider({ children }) {
   const [appDrawer, setappDrawer] = useState(false);
   const [editForm, seteditForm] = useState(false);
   const [editModelData, seteditModelData] = useState({});
+  const [chips, setChips] = useState([]);
 
   const handelEdiFormOpen = (id, data) => {
     seteditModelData(data);
@@ -40,6 +41,8 @@ export function AppContextProvider({ children }) {
         editForm,
         editModelData,
         handelClodeEditModel,
+        chips,
+        setChips,
       }}
     >
       {children}

@@ -30,6 +30,8 @@ export default function CreateCategories() {
   const { handelEdiFormOpen, editForm, editModelData, handelClodeEditModel } =
     useContext(AppContext);
 
+  console.log(handelCreateNewCategoric);
+
   useEffect(() => {
     handelGetAll();
   }, [toggleAction]);

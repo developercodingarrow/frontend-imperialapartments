@@ -20,10 +20,10 @@ export const blogApiData = {
 export const blogInfoForm = [
   {
     id: 1,
-    name: "title",
+    name: "blogTitle",
     lable: "Title",
     type: "text",
-    placeholder: "Enter Blog Title",
+    placeholder: "Enter Blog Title....",
     validation: {
       required: "Blog Title is required.",
     },
@@ -31,7 +31,7 @@ export const blogInfoForm = [
 
   {
     id: 1,
-    name: "MetaDescreption",
+    name: "metaDescription",
     lable: "Meta Descreption",
     type: "textarea",
     placeholder: "Meta Descreption",
@@ -58,8 +58,8 @@ export const staticSelector = [
 export const blogTags = [
   {
     id: 2,
-    name: "tags",
-    lable: "Tags",
+    name: "blogTags",
+    lable: "blogTags",
     type: "chip",
   },
 ];
@@ -67,7 +67,7 @@ export const blogTags = [
 export const blogCategories = [
   {
     id: 2,
-    name: "categories",
+    name: "blogCategories",
     lable: "categories",
     type: "checkbox",
     valueKey: "categoriName",

@@ -12,7 +12,7 @@ export default function CheckBoxInput(props) {
     valueKey,
     ...inputProps
   } = props;
-
+  console.log(checkBoxOptions);
   const [checkedOptions, setCheckedOptions] = useState(defaultValue || []);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function CheckBoxInput(props) {
         <label>{inputLabel}</label>
       </div>
       <div className={styles.checkbox_container}>
-        {checkBoxOptions.map((option, i) => {
+        {checkBoxOptions?.map((option, i) => {
           const value = option[valueKey];
           const isChecked = checkedOptions.includes(option);
           return (
@@ -56,7 +56,7 @@ export default function CheckBoxInput(props) {
                 {isChecked ? <span className={styles.checkedMark}>✔</span> : ""}
               </div>
               <span className={styles.checkBox_label}>
-                {option.categoriName}
+                {option.categoryName}
               </span>
             </label>
           );

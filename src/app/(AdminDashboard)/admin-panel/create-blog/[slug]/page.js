@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { usePathname, useParams } from "next/navigation";
 import styles from "../createblogpage.module.css";
 import AdminDashBordLayout from "../../../../../components/clientComponents/layouts/AdminDashBordLayout";
 import PageHeader from "../../../../../components/clientComponents/layouts/pageHeader";
@@ -14,8 +15,23 @@ import {
   dynimicCategories,
   staticSelector,
 } from "../../../../../JsonData/projectdata";
+import { BlogContext } from "../../../../../contextApi/BlogContextApi";
+import ChipCard from "../../../../../components/clientComponents/formCards/ChipCard";
+import { BlogCategoriesContext } from "../../../../../contextApi/BlogCategoriesContextApi";
 
 export default function BlogCreatePage() {
+  const params = useParams();
+  const { slug } = params;
+  const { handelGetSingleBlog, singleBlogApi, handelUpdate, handelTagUpdate } =
+    useContext(BlogContext);
+  const { allBlogCategories } = useContext(BlogCategoriesContext);
+
+  console.log(slug);
+
+  useEffect(() => {
+    handelGetSingleBlog(slug);
+  }, [slug]);
+
   return (
     <AdminDashBordLayout>
       <PageHeader />
@@ -25,21 +41,29 @@ export default function BlogCreatePage() {
         <div className={styles.inner_container}>
           <div className={styles.left_sideContainer}>
             <div className={styles.formcard_wrapper}>
-              <FormCard cardTitle="info" inputData={blogInfoForm} />
+              <FormCard
+                cardTitle="info"
+                inputData={blogInfoForm}
+                apiData={singleBlogApi}
+                paramData={slug}
+                submitFormHandel={handelUpdate}
+              />
             </div>
 
             <div className={styles.formcard_wrapper}>
-              <FormCard cardTitle="@Artical Type" inputData={staticSelector} />
-            </div>
-            <div className={styles.formcard_wrapper}>
-              <FormCard cardTitle="Tags" inputData={blogTags} />
+              <ChipCard
+                apiData={singleBlogApi.blogTags}
+                submitFormHandel={handelTagUpdate}
+                paramData={slug}
+              />
             </div>
 
             <div className={styles.formcard_wrapper}>
               <FormCard
                 cardTitle="Categories"
                 inputData={blogCategories}
-                dynimicData={dynimicCategories}
+                apiData={singleBlogApi}
+                dynimicData={allBlogCategories}
               />
             </div>
 

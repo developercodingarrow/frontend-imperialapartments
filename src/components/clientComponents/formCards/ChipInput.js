@@ -1,13 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./css/chipInput.module.css";
+import { AppContext } from "../../../contextApi/AppContextApi";
 
 export default function ChipInput(props) {
   const { chipoptions } = props;
-
+  const { chips, setChips } = useContext(AppContext);
+  let extractName;
   const [inputValue, setInputValue] = useState("");
-  const [chips, setChips] = useState(chipoptions);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleChipRemove = (index) => {
     const updatedChips = [...chips];
@@ -26,6 +28,15 @@ export default function ChipInput(props) {
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
+
+  useEffect(() => {
+    if (chipoptions) {
+      extractName = chipoptions.map((items) => items.tagName);
+      setChips(extractName);
+      setIsLoading(false);
+    }
+  }, [chipoptions]);
+
   return (
     <div className={styles.inputContainer}>
       {chips?.map((chip, index) => {

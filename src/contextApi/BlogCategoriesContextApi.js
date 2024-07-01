@@ -14,6 +14,10 @@ export function BlogCategoriesContextProvider({ children }) {
   const [allBlogCategories, setallBlogCategories] = useState([]);
   const [toggleAction, settoggleAction] = useState(false);
 
+  useEffect(() => {
+    handelGetAll();
+  }, []);
+
   // GET ALL DATA
   const handelGetAll = async () => {
     try {
