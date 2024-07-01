@@ -30,6 +30,9 @@ import { MdDeleteForever } from "react-icons/md";
 import { LiaEditSolid } from "react-icons/lia";
 import { TiCloudStorage } from "react-icons/ti";
 import { IoCloseCircle } from "react-icons/io5";
+import { IoRemoveCircleOutline } from "react-icons/io5";
+import { FiPlus } from "react-icons/fi";
+import { IoCloseSharp } from "react-icons/io5";
 
 export {
   IoIosCall,
@@ -68,4 +71,7 @@ export {
   LiaEditSolid,
   TiCloudStorage,
   IoCloseCircle,
+  IoRemoveCircleOutline,
+  FiPlus,
+  IoCloseSharp,
 };

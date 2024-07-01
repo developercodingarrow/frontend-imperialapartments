@@ -9,7 +9,7 @@ import SelectorInput from "../components/clientComponents/formCards/SelectorInpu
 import CheckBoxInput from "../components/clientComponents/formCards/CheckBoxInput";
 import ChipInput from "../components/clientComponents/formCards/ChipInput";
 
-export function useCustomApiForm(apiData) {
+export function useCustomApiForm(apiData = {}) {
   const { handleSubmit, formState, control, watch, setValue } = useForm({
     mode: "all",
     defaultValues: apiData,
@@ -51,6 +51,16 @@ export function useCustomApiForm(apiData) {
           inputLabel: input.label,
           lableStyle: "lable_style",
           inputContainer: "block_container",
+        };
+        break;
+      case "static_selector":
+        InputComponent = SelectorInput;
+        specificProps = {
+          selectorOptions: input.options || [],
+          inputLabel: input.label,
+          lableStyle: "lable_style",
+          inputContainer: "block_container",
+          defaultSelected: input.slectedValue || "select",
         };
         break;
       case "apiSelectList":

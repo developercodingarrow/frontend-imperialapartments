@@ -6,6 +6,17 @@ export const AppContext = createContext();
 export function AppContextProvider({ children }) {
   const [drawerToggel, setdrawerToggel] = useState(true);
   const [appDrawer, setappDrawer] = useState(false);
+  const [editForm, seteditForm] = useState(false);
+  const [editModelData, seteditModelData] = useState({});
+
+  const handelEdiFormOpen = (id, data) => {
+    seteditModelData(data);
+    seteditForm(true);
+  };
+
+  const handelClodeEditModel = () => {
+    seteditForm(false);
+  };
 
   const handelDrawerToggel = () => {
     setdrawerToggel(!drawerToggel);
@@ -25,6 +36,10 @@ export function AppContextProvider({ children }) {
         appDrawer,
         setappDrawer,
         handelAppDrawerToggle,
+        handelEdiFormOpen,
+        editForm,
+        editModelData,
+        handelClodeEditModel,
       }}
     >
       {children}

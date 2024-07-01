@@ -5,7 +5,9 @@ export default function CardBtn(props) {
   const { btnText } = props;
   return (
     <div className={styles.btn_wrapper}>
-      <button className={styles.btn_style}>{btnText}</button>{" "}
+      <button type="submit" className={styles.btn_style}>
+        {btnText}
+      </button>
     </div>
   );
 }

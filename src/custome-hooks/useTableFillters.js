@@ -20,6 +20,18 @@ export default function useTableFillters(initialRows, initialRowsPerPage = 5) {
   const [startPage, setstartPage] = useState(1);
   const [endPage, setendPage] = useState(initialRowsPerPage);
 
+  const toggleRef = useRef(true);
+  const toggle = toggleRef.current;
+
+  const settoggle = (value) => {
+    toggleRef.current = value;
+  };
+
+  useEffect(() => {
+    // Ensure initial state consistency between server and client
+    settoggle(true);
+  }, []);
+
   // For Next page
   const nextPage = () => {
     const totalPages = Math.ceil(totalRows / rowsPerPage);
@@ -110,5 +122,7 @@ export default function useTableFillters(initialRows, initialRowsPerPage = 5) {
     PriceSorting,
     DateSorting,
     updateVisibleRows,
+    toggle,
+    settoggle,
   };
 }

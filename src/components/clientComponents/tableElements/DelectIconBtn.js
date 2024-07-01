@@ -5,10 +5,12 @@ import { MdDeleteForever } from "../../ApplicationIcon";
 
 export default function DelectIconBtn(props) {
   const { itemId, actionhandler } = props;
-  console.log(itemId);
 
   const handelClick = () => {
-    actionhandler(itemId);
+    const idObj = {
+      id: itemId,
+    };
+    actionhandler(idObj);
   };
   return (
     <div className={styles.conatiner}>

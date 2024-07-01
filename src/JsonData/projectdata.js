@@ -1,6 +1,6 @@
 export const blogApiData = {
   _id: "667659286b30f4e5104fdc82",
-  title: "imperial service apartment in gurgaon",
+  title: "imperial service apartment in",
   MetaDescreption:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
   blogThumblin: "/web-statice-img/table-circle-imag.jpg",
@@ -35,6 +35,20 @@ export const blogInfoForm = [
     lable: "Meta Descreption",
     type: "textarea",
     placeholder: "Meta Descreption",
+    validation: {
+      required: "Meta Descreption is required.",
+    },
+  },
+];
+
+export const staticSelector = [
+  {
+    id: 1,
+    name: "postType",
+    label: "@ Articel Type",
+    type: "static_selector",
+    options: ["NewsArticle", "BlogPosting", "Article"],
+    slectedValue: "BlogPosting",
     validation: {
       required: "Meta Descreption is required.",
     },
@@ -93,10 +107,23 @@ export const dynimicTag = [
 export const createCategoriesForm = [
   {
     id: 1,
-    name: "categorieName",
+    name: "categoryName",
     lable: "Create Categorie",
     type: "text",
     placeholder: "Enter new Categorie Name",
+    validation: {
+      required: "Categories Name is Required",
+    },
+  },
+];
+
+export const UpdateCategoriesForm = [
+  {
+    id: 1,
+    name: "categoryName",
+    lable: "Create Categorie",
+    type: "text",
+    placeholder: "Update categorie",
     validation: {
       required: "Categories Name is Required",
     },
@@ -180,3 +207,5 @@ export const inputConfig = [
     label: "Image Title",
   },
 ];
+
+export const postTypeOption = ["NewsArticle", "BlogPosting", "Article"];

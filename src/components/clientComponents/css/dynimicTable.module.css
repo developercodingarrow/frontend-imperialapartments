@@ -5,6 +5,8 @@
   border-radius: 7px;
   /* scrollbar-width: thin; "auto" may also be used */
   /* scrollbar-color: #ed6789 #e5e7eb; */
+  max-height: 600px;
+  min-height: 300px;
 }
 
 .inner_container::-webkit-scrollbar {

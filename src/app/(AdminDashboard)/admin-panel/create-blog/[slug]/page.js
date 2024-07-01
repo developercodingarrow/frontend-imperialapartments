@@ -1,28 +1,26 @@
 "use client";
-
-import React from "react";
-import AdminDashBordLayout from "../../../../components/clientComponents/layouts/AdminDashBordLayout";
-import PageHeader from "../../../../components/clientComponents/layouts/pageHeader";
-import styles from "./createblogpage.module.css";
-import FormCard from "../../../../components/clientComponents/formCards/FormCard";
+import React, { useEffect } from "react";
+import styles from "../createblogpage.module.css";
+import AdminDashBordLayout from "../../../../../components/clientComponents/layouts/AdminDashBordLayout";
+import PageHeader from "../../../../../components/clientComponents/layouts/pageHeader";
+import ImageUplodModel from "../../../../../components/clientComponents/models/ImageUplodModel";
+import FormCard from "../../../../../components/clientComponents/formCards/FormCard";
+import SelectorCard from "../../../../../components/clientComponents/formCards/SelectorCard";
+import SingleImageUploader from "../../../../../components/clientComponents/layouts/SingleImageUploader";
 import {
   blogInfoForm,
   blogTags,
   blogCategories,
   dynimicCategories,
   staticSelector,
-} from "../../../../JsonData/projectdata";
-import ChipCard from "../../../../components/clientComponents/formCards/ChipCard";
-import SelectorCard from "../../../../components/clientComponents/formCards/SelectorCard";
-import CheckBoxCard from "../../../../components/clientComponents/formCards/CheckBoxCard";
-import SingleImageUploader from "../../../../components/clientComponents/layouts/SingleImageUploader";
-import ImageUplodModel from "../../../../components/clientComponents/models/ImageUplodModel";
+} from "../../../../../JsonData/projectdata";
 
-export default function CreateBlogPage() {
+export default function BlogCreatePage() {
   return (
     <AdminDashBordLayout>
       <PageHeader />
       <ImageUplodModel />
+
       <div className={styles.container}>
         <div className={styles.inner_container}>
           <div className={styles.left_sideContainer}>

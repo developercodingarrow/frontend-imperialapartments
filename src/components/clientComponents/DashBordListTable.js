@@ -21,8 +21,10 @@ export default function DashBordListTable(props) {
     handleView,
     handelSingleDelete,
     handelSingleEdit,
+    dataloading,
   } = props;
   const { visibalRows } = useContext(DashBordContext);
+
   const {
     totalRows,
     rowsPerPage,
@@ -37,45 +39,23 @@ export default function DashBordListTable(props) {
     filterByDate,
     PriceSorting,
     DateSorting,
+    toggle,
+    settoggle,
   } = useTableFillters(tableSampleData);
 
   useEffect(() => {
-    updateVisibleRows();
-  }, []);
+    // Check if the hook is initialized before calling updateVisibleRows
+    if (visibalRows) {
+      settoggle(!toggle);
+      updateVisibleRows();
+    }
+  }, [currentPage, rowsPerPage, totalRows]);
 
   return (
     <div className={styles.main_container}>
       <div className={styles.inner_container}>
-        <div className={styles.table_fillterBar}>
-          <div className={styles.header_left}>
-            <div>
-              <SearchBar
-                handelTableDatasearch={searchByTableFiled}
-                fieldName="userName"
-                placeholder="Search By User Name"
-              />
-            </div>
-
-            <div>
-              <SearchBar
-                handelTableDatasearch={searchByTableFiled}
-                fieldName="email"
-                placeholder="Search By Email Address..."
-              />
-            </div>
-            <div>
-              <DateRange handelDateRange={filterByDate} />
-            </div>
-          </div>
-          <div className={styles.header_right}>
-            <div className={styles.fillter_iconWrapper}>
-              <IoFunnelOutline />
-            </div>
-          </div>
-        </div>
-
         <div className={styles.table_wrapper}>
-          {visibalRows.length >= 1 ? (
+          {visibalRows && (
             <div>
               <DynimicTable
                 tableColumns={tableColumns}
@@ -100,8 +80,6 @@ export default function DashBordListTable(props) {
                 handelPrev={prevPage}
               />
             </div>
-          ) : (
-            <LoadingData />
           )}
         </div>
       </div>

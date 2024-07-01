@@ -1,0 +1,24 @@
+.btn_container {
+  border: 1px solid #ed6789;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  padding: 7px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ed6789;
+}
+
+.icon_box,
+.text_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_container:hover {
+  background-color: #ed6789;
+  color: #fff;
+  transition: ease 0.3s;
+}

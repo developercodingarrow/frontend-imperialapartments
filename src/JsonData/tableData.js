@@ -234,7 +234,7 @@ export const handleView = (id) => {
 export const categoriesColumns = [
   { label: "", key: "_id", component: "checkbox" },
   { label: "Date", key: "updatedAt", component: "date" },
-  { label: "Categories Name", key: "categorieName", component: "text" },
+  { label: "Categories Name", key: "categoryName", component: "text" },
   { label: "Delete", key: "_id", component: "deleteIconBtn" },
   { label: "Edit", key: "_id", component: "editIconBtn" },
 ];

@@ -13,6 +13,7 @@ import TableSwitchBtn from "./tableElements/comman/TableSwitchBtn";
 import BlogCategories from "./tableElements/blogTable/BlogCategories";
 import DelectIconBtn from "./tableElements/DelectIconBtn";
 import EditIconBtn from "./tableElements/EditIconBtn";
+
 export default function DynimicTable(props) {
   // Initialize sort states object
   const initialSortStates = {};
@@ -111,6 +112,7 @@ export default function DynimicTable(props) {
                 {tableColumns.map((column) => {
                   const { content, className } = renderCellContent(
                     no,
+                    row,
                     row[column.key],
                     row._id,
                     row.updatedAt,
@@ -147,6 +149,7 @@ export default function DynimicTable(props) {
 
 const renderCellContent = (
   indexNo,
+  completeData,
   data,
   id,
   date,
@@ -200,7 +203,13 @@ const renderCellContent = (
       break;
     case "editIconBtn":
       if (handler) {
-        content = <EditIconBtn actionhandler={handler} itemId={id} />;
+        content = (
+          <EditIconBtn
+            actionhandler={handler}
+            itemId={id}
+            data={completeData}
+          />
+        );
       }
 
       break;

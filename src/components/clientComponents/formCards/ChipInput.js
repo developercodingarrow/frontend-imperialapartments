@@ -28,7 +28,7 @@ export default function ChipInput(props) {
   };
   return (
     <div className={styles.inputContainer}>
-      {chips.map((chip, index) => {
+      {chips?.map((chip, index) => {
         return (
           <div key={index} className={styles.chip}>
             {chip}
