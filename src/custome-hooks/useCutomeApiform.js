@@ -87,6 +87,7 @@ export function useCustomApiForm(apiData = {}) {
         InputComponent = CheckBoxInput;
         specificProps = {
           checkBoxOptions: dynamicData,
+          checkedOptionApi: apiData[input.name],
           inputLabel: input.label,
           onChange: (selectedOptions) => setValue(input.name, selectedOptions), // Update the form value
           defaultValue: defaultValues || [],

@@ -1,10 +1,13 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./css/singleimageuploader.module.css";
+import { AppContext } from "../../../contextApi/AppContextApi";
 
 export default function SingleImageUploader() {
+  const { isOpen, setisOpen, handelOpenModel, handleModelClose } =
+    useContext(AppContext);
   return (
-    <div className={styles.card_wrapper}>
+    <div className={styles.card_wrapper} onClick={handelOpenModel}>
       <div className={styles.card_titleBox}>
         <p>upload Image</p>
       </div>

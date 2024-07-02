@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import AdminDashBordLayout from "../../../../components/clientComponents/layouts/AdminDashBordLayout";
 import PageHeader from "../../../../components/clientComponents/layouts/pageHeader";
@@ -15,7 +15,12 @@ import PageActionHeader from "../../../../components/clientComponents/layouts/Pa
 import { BlogContext } from "../../../../contextApi/BlogContextApi";
 
 export default function BlogsList() {
-  const { handelCreateNewBlog } = useContext(BlogContext);
+  const { handelCreateNewBlog, handelGetAll, allBogs, toggleAction } =
+    useContext(BlogContext);
+
+  useEffect(() => {
+    handelGetAll();
+  }, [toggleAction]);
 
   return (
     <AdminDashBordLayout>
@@ -24,7 +29,7 @@ export default function BlogsList() {
       <div>
         <DashBordListTable
           tableColumns={BlogColumns}
-          tableSampleData={blogsampleData}
+          tableSampleData={allBogs}
           handleView={handleView}
           handleCheckboxChange={handleCheckboxChange}
         />

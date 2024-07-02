@@ -5,6 +5,8 @@ import {
   getSingleBlog,
   updateOneBlog,
   updateBlogTag,
+  updateBlogCategorie,
+  getAllBlog,
 } from "../Actions/blogAction";
 import {
   newgenericDataHandler,
@@ -16,7 +18,27 @@ export default function BlogContextApiProvider({ children }) {
   const [toggleAction, settoggleAction] = useState(false);
   const [singleBlogApi, setsingleBlogApi] = useState({});
 
-  // Create New Categories
+  useEffect(() => {
+    handelGetAll();
+  }, []);
+
+  // GET ALL DATA
+  const handelGetAll = async () => {
+    try {
+      settoggleAction(true);
+      const res = await getAllBlog();
+      if (res.data.status === "success") {
+        console.log(res.data.status);
+        setallBogs(res.data.result);
+        settoggleAction(false);
+      }
+    } catch (error) {
+      console.log(error);
+      settoggleAction(false);
+    }
+  };
+
+  // Create New BLOG
   const handelCreateNewBlog = newgenericDataHandler(
     createBlog,
     settoggleAction,
@@ -52,6 +74,15 @@ export default function BlogContextApiProvider({ children }) {
     }
   };
 
+  const handelCategoreUpdate = async (slug, data) => {
+    try {
+      const res = await updateBlogCategorie(slug, data);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <BlogContext.Provider
       value={{
@@ -62,6 +93,8 @@ export default function BlogContextApiProvider({ children }) {
         singleBlogApi,
         handelUpdate,
         handelTagUpdate,
+        handelCategoreUpdate,
+        handelGetAll, // Handler for GET ALL BLOGS
       }}
     >
       {children}

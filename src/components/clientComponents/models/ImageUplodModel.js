@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import Image from "next/image";
 import styles from "./css/imageuplaodmodel.module.css";
 import {
@@ -15,13 +15,19 @@ import {
 } from "../../ApplicationIcon";
 import CardInput from "../formCards/CardInput";
 import useImageUpload from "../../../custome-hooks/useImageUpload";
+import { AppContext } from "../../../contextApi/AppContextApi";
 
-export default function ImageUplodModel() {
+export default function ImageUplodModel(props) {
+  const { uploadHandler, imageFor, dataFor } = props;
   const fileInputRef = useRef(null);
-  const [isOpen, setisOpen] = useState(false);
+  const { isOpen, setisOpen, handelOpenModel, handleModelClose } =
+    useContext(AppContext);
   const {
     handleImageChange,
+    image,
+    originalFile,
     prevImage,
+    selectedFile,
     imageName,
     imageSize,
     sizePrefix,
@@ -31,13 +37,28 @@ export default function ImageUplodModel() {
     onSubmit,
   } = useImageUpload();
 
-  const handleModelClose = () => {
-    setisOpen(false);
-  };
-
   const handleClick = () => {
     if (fileInputRef.current) {
       fileInputRef.current.click();
+    }
+  };
+
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await uploadHandler(
+        originalFile,
+        formData,
+        imageFor,
+        dataFor
+      );
+      console.log(res);
+      // res.data.status === "success"
+      if (res.data.status === "success") {
+        console.log("succes");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -53,7 +74,7 @@ export default function ImageUplodModel() {
                 <IoCloseCircle onClick={handleModelClose} />{" "}
               </div>
             </div>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handelSubmit}>
               <div className={styles.model_Boody}>
                 {prevImage ? (
                   <div className={styles.prev_uplod_container}>

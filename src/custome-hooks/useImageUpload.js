@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const useImageUpload = (uploadHandler, initialImage = null, itemId = null) => {
+const useImageUpload = (uploadHandler, imageFor = null, itemId = null) => {
   const [image, setImage] = useState(null); // this is prevImage
   const [prevImage, setprevImage] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -13,9 +13,10 @@ const useImageUpload = (uploadHandler, initialImage = null, itemId = null) => {
 
   const [formData, setFormData] = useState({
     altText: "",
-    imageDescription: "",
+    alternativeText: "",
+    title: "",
     caption: "",
-    imageTitle: "",
+    description: "",
   });
 
   const handleInputChange = (e) => {
@@ -47,7 +48,7 @@ const useImageUpload = (uploadHandler, initialImage = null, itemId = null) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const formDataToSend = new FormData();
-    formDataToSend.append("file", selectedFile);
+    formDataToSend.append(`${imageFor}`, selectedFile);
 
     Object.keys(formData).forEach((key) => {
       formDataToSend.append(key, formData[key]);

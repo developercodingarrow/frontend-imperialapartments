@@ -8,6 +8,7 @@ import AdminDashBordLayout from "../../components/clientComponents/layouts/Admin
 import { BlogCategoriesContextProvider } from "../../contextApi/BlogCategoriesContextApi";
 import { AppContextProvider } from "../../contextApi/AppContextApi";
 import BlogContextApiProvider from "../../contextApi/BlogContextApi";
+import ImageHandlersContextApi from "../../contextApi/ImageHandlersContextApi";
 
 export default function AdminLayout({ children }) {
   return (
@@ -17,7 +18,9 @@ export default function AdminLayout({ children }) {
           <AdminContextProvider>
             <BlogCategoriesContextProvider>
               <BlogContextApiProvider>
-                <DashBordContextApi>{children}</DashBordContextApi>
+                <ImageHandlersContextApi>
+                  <DashBordContextApi>{children}</DashBordContextApi>
+                </ImageHandlersContextApi>
               </BlogContextApiProvider>
             </BlogCategoriesContextProvider>
           </AdminContextProvider>

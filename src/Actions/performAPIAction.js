@@ -49,3 +49,25 @@ export const performGetAPIAction = async (url, token = null) => {
     return error.response;
   }
 };
+
+export const ImageAPIAction = async (
+  method,
+  url,
+  requestData,
+  token = null
+) => {
+  const headers = { "Content-Type": "multipart/form-data" };
+
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  try {
+    const response = await axios[method](url, requestData, { headers });
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.log("Error Response:", error);
+    return error.response;
+  }
+};

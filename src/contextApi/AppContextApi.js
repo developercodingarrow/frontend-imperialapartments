@@ -9,6 +9,8 @@ export function AppContextProvider({ children }) {
   const [editForm, seteditForm] = useState(false);
   const [editModelData, seteditModelData] = useState({});
   const [chips, setChips] = useState([]);
+  const [checkedOptions, setCheckedOptions] = useState([]);
+  const [isOpen, setisOpen] = useState(false);
 
   const handelEdiFormOpen = (id, data) => {
     seteditModelData(data);
@@ -28,6 +30,14 @@ export function AppContextProvider({ children }) {
     setappDrawer(!appDrawer);
   };
 
+  const handelOpenModel = () => {
+    setisOpen(true);
+  };
+
+  const handleModelClose = () => {
+    setisOpen(false);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -43,6 +53,12 @@ export function AppContextProvider({ children }) {
         handelClodeEditModel,
         chips,
         setChips,
+        checkedOptions,
+        setCheckedOptions,
+        isOpen,
+        setisOpen,
+        handelOpenModel,
+        handleModelClose,
       }}
     >
       {children}

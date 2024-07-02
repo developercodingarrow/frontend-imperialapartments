@@ -70,7 +70,7 @@ export const blogCategories = [
     name: "blogCategories",
     lable: "categories",
     type: "checkbox",
-    valueKey: "categoriName",
+    valueKey: "categoryName",
   },
 ];
 
@@ -190,21 +190,27 @@ export const inputConfig = [
   },
   {
     type: "text",
-    name: "imageDescription",
-    placeholder: "Write image description",
-    label: "Description",
+    name: "alternativeText",
+    placeholder: "Write image alternative Text",
+    label: "alternative Text",
+  },
+  {
+    type: "text",
+    name: "title",
+    placeholder: "Write image title",
+    label: "title",
   },
   {
     type: "text",
     name: "caption",
     placeholder: "Write image caption",
-    label: "Caption",
+    label: "caption",
   },
   {
     type: "text",
-    name: "imageTitle",
-    placeholder: "Write image title",
-    label: "Image Title",
+    name: "description",
+    placeholder: "Write image description",
+    label: "description",
   },
 ];
 

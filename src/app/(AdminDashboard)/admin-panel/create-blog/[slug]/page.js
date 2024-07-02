@@ -1,5 +1,6 @@
 "use client";
-import React, { useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import axios from "axios";
 import { usePathname, useParams } from "next/navigation";
 import styles from "../createblogpage.module.css";
 import AdminDashBordLayout from "../../../../../components/clientComponents/layouts/AdminDashBordLayout";
@@ -18,12 +19,25 @@ import {
 import { BlogContext } from "../../../../../contextApi/BlogContextApi";
 import ChipCard from "../../../../../components/clientComponents/formCards/ChipCard";
 import { BlogCategoriesContext } from "../../../../../contextApi/BlogCategoriesContextApi";
+import CheckBoxCard from "../../../../../components/clientComponents/formCards/CheckBoxCard";
+import { ImagesContext } from "../../../../../contextApi/ImageHandlersContextApi";
+import { getLoginCookies, isAuth } from "../../../../../Actions/authAction";
+import { UploadBlogImag } from "../../../../../Actions/blogAction";
+import { genericSingleImageHandler } from "../../../../../generichandler/genericImagehandlers";
 
 export default function BlogCreatePage() {
+  const authToken = getLoginCookies();
+  console.log(authToken);
   const params = useParams();
   const { slug } = params;
-  const { handelGetSingleBlog, singleBlogApi, handelUpdate, handelTagUpdate } =
-    useContext(BlogContext);
+  const {
+    handelGetSingleBlog,
+    singleBlogApi,
+    handelUpdate,
+    handelTagUpdate,
+    handelCategoreUpdate,
+  } = useContext(BlogContext);
+  const { handelUploadBlogThumblin } = useContext(ImagesContext);
   const { allBlogCategories } = useContext(BlogCategoriesContext);
 
   console.log(slug);
@@ -35,7 +49,11 @@ export default function BlogCreatePage() {
   return (
     <AdminDashBordLayout>
       <PageHeader />
-      <ImageUplodModel />
+      <ImageUplodModel
+        uploadHandler={handelUploadBlogThumblin}
+        imageFor="blogThumblin"
+        dataFor={slug}
+      />
 
       <div className={styles.container}>
         <div className={styles.inner_container}>
@@ -52,18 +70,20 @@ export default function BlogCreatePage() {
 
             <div className={styles.formcard_wrapper}>
               <ChipCard
+                cardTitle="Tags"
                 apiData={singleBlogApi.blogTags}
                 submitFormHandel={handelTagUpdate}
                 paramData={slug}
               />
             </div>
-
             <div className={styles.formcard_wrapper}>
-              <FormCard
+              <CheckBoxCard
                 cardTitle="Categories"
-                inputData={blogCategories}
-                apiData={singleBlogApi}
-                dynimicData={allBlogCategories}
+                elementFor="categoryName"
+                inputData={allBlogCategories}
+                apiData={singleBlogApi.blogCategories}
+                paramData={slug}
+                submitFormHandel={handelCategoreUpdate}
               />
             </div>
 

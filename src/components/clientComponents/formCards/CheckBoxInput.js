@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import { useContext, useEffect, useState } from "react";
 import styles from "./css/checkBoxinput.module.css";
+import { AppContext } from "../../../contextApi/AppContextApi";
 
 export default function CheckBoxInput(props) {
+  const { checkedOptions, setCheckedOptions } = useContext(AppContext);
   const {
+    checkBoxFor,
     inputLabel,
-    onChange,
     checkBoxOptions,
-    defaultValue,
-    checkBoxStyle,
-    checkBoxContainerStyle,
-    valueKey,
-    ...inputProps
+    checkedOptionApi = [],
   } = props;
-  console.log(checkBoxOptions);
-  const [checkedOptions, setCheckedOptions] = useState(defaultValue || []);
-
   useEffect(() => {
-    console.log("defaultValue changed:", defaultValue);
-    setCheckedOptions(defaultValue || []);
-  }, [defaultValue]);
+    if (checkedOptionApi.length > 0) {
+      const initialCheckedOptions = checkedOptionApi.map(
+        (option) => option.category
+      );
+      setCheckedOptions(initialCheckedOptions);
+    }
+  }, [checkedOptionApi]);
 
   const handleCheckboxChange = (option, isChecked) => {
     console.log(option);
@@ -27,7 +28,6 @@ export default function CheckBoxInput(props) {
       : checkedOptions.filter((item) => item !== option);
 
     setCheckedOptions(updatedOptions);
-    onChange(updatedOptions); // Update form state
   };
 
   return (
@@ -37,15 +37,17 @@ export default function CheckBoxInput(props) {
       </div>
       <div className={styles.checkbox_container}>
         {checkBoxOptions?.map((option, i) => {
-          const value = option[valueKey];
-          const isChecked = checkedOptions.includes(option);
+          const value = option[checkBoxFor];
+          const isChecked = checkedOptions.includes(option[checkBoxFor]);
           return (
             <label className={styles.checkBox_wrapper} key={i}>
               <input
                 type="checkbox"
                 value={value}
                 className={styles.form_check_input}
-                onChange={(e) => handleCheckboxChange(option, e.target.checked)}
+                onChange={(e) =>
+                  handleCheckboxChange(option[checkBoxFor], e.target.checked)
+                }
                 checked={isChecked}
               />
               <div
@@ -56,7 +58,7 @@ export default function CheckBoxInput(props) {
                 {isChecked ? <span className={styles.checkedMark}>✔</span> : ""}
               </div>
               <span className={styles.checkBox_label}>
-                {option.categoryName}
+                {option[checkBoxFor]}
               </span>
             </label>
           );
