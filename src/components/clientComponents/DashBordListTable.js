@@ -21,6 +21,7 @@ export default function DashBordListTable(props) {
     handleView,
     handelSingleDelete,
     handelSingleEdit,
+    handelswitchToggle,
     dataloading,
   } = props;
   const { visibalRows } = useContext(DashBordContext);
@@ -44,7 +45,6 @@ export default function DashBordListTable(props) {
   } = useTableFillters(tableSampleData);
 
   useEffect(() => {
-    // Check if the hook is initialized before calling updateVisibleRows
     if (visibalRows) {
       settoggle(!toggle);
       updateVisibleRows();
@@ -64,6 +64,7 @@ export default function DashBordListTable(props) {
                 handleDelete={handleDelete}
                 handleUpdate={handleUpdate}
                 handleView={handleView}
+                handleSwitch={handelswitchToggle}
                 handlePriceSorting={PriceSorting}
                 handleDateSorting={DateSorting}
                 handelSingleDelete={handelSingleDelete}

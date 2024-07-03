@@ -37,7 +37,7 @@ export const sideformFiled = [
   },
   {
     id: 3,
-    name: "number",
+    name: "mobileNumber",
     type: "text",
     placeholder: "Enter Mobile Number",
     validation: {

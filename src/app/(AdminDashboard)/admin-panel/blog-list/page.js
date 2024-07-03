@@ -15,12 +15,21 @@ import PageActionHeader from "../../../../components/clientComponents/layouts/Pa
 import { BlogContext } from "../../../../contextApi/BlogContextApi";
 
 export default function BlogsList() {
-  const { handelCreateNewBlog, handelGetAll, allBogs, toggleAction } =
-    useContext(BlogContext);
+  const {
+    handelCreateNewBlog,
+    handelGetAll,
+    allBogs,
+    toggleAction,
+    handelDeleteBlog,
+    handelRedirect,
+    handelFeaturedBlog,
+  } = useContext(BlogContext);
 
   useEffect(() => {
     handelGetAll();
   }, [toggleAction]);
+
+  console.log(allBogs);
 
   return (
     <AdminDashBordLayout>
@@ -30,6 +39,9 @@ export default function BlogsList() {
         <DashBordListTable
           tableColumns={BlogColumns}
           tableSampleData={allBogs}
+          handleDelete={handelDeleteBlog}
+          handelswitchToggle={handelFeaturedBlog}
+          handleUpdate={handelRedirect}
           handleView={handleView}
           handleCheckboxChange={handleCheckboxChange}
         />

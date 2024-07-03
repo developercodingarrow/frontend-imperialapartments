@@ -6,18 +6,21 @@ import SearchBar from "../../components/searchcomponent/SearchBar";
 
 import ListingPageLayout from "../../components/layouts/ListingPageLayout";
 import { AppContextProvider } from "../../contextApi/AppContextApi";
+import EnquireContextApi from "../../contextApi/enquireContextApi";
 
 export default function ListingLayout({ children }) {
   return (
     <html lang="en">
       <body>
         <AppContextProvider>
-          <TopBar />
-          <NavBar />
-          <div>
-            <SearchBar />
-          </div>
-          <ListingPageLayout>{children}</ListingPageLayout>
+          <EnquireContextApi>
+            <TopBar />
+            <NavBar />
+            <div>
+              <SearchBar />
+            </div>
+            <ListingPageLayout>{children}</ListingPageLayout>
+          </EnquireContextApi>
         </AppContextProvider>
       </body>
     </html>

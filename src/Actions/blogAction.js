@@ -17,7 +17,7 @@ export const getAllBlog = async () => {
   return performGetAPIAction(url);
 };
 
-// CREATE CATEGORy
+// CREATE BLOG
 export const createBlog = async (requestData) => {
   const url = `${API}/blog/create-new-blog`;
   const method = "post";
@@ -32,7 +32,7 @@ export const getSingleBlog = async (slug) => {
   return performGetAPIAction(url, authToken);
 };
 
-// UPDATE ONE CATEGORy
+// UPDATE ONE BLOG
 export const updateOneBlog = async (slug, requestData) => {
   const url = `${API}/blog/update-single-blog/${slug}`;
   const method = "patch";
@@ -56,9 +56,29 @@ export const updateBlogCategorie = async (slug, requestData) => {
   return performAPIAction(method, url, requestData, authToken);
 };
 
+// UPDATE Featured
+export const updateIsFeatured = async (requestData) => {
+  const data = {
+    _id: requestData,
+  };
+  console.log(data);
+  const url = `${API}/blog/is-feaured-blog`;
+  const method = "post";
+  return performAPIAction(method, url, data, authToken);
+};
+
 export const UploadBlogImag = async (formData, projectId) => {
   console.log(formData);
   const url = `${API}/blog/update-blog-thumblin/${projectId}`;
   const method = "patch";
   return ImageAPIAction(method, url, formData, authToken);
+};
+
+export const deleteBlog = async (requestData) => {
+  const data = {
+    _id: requestData,
+  };
+  const url = `${API}/blog/delete-single-blog`;
+  const method = "DELETE";
+  return performAPIAction(method, url, data, authToken);
 };

@@ -13,6 +13,7 @@ import TableSwitchBtn from "./tableElements/comman/TableSwitchBtn";
 import BlogCategories from "./tableElements/blogTable/BlogCategories";
 import DelectIconBtn from "./tableElements/DelectIconBtn";
 import EditIconBtn from "./tableElements/EditIconBtn";
+import TableColumList from "./tableElements/TableColumList";
 
 export default function DynimicTable(props) {
   // Initialize sort states object
@@ -37,6 +38,7 @@ export default function DynimicTable(props) {
     handleDateSorting,
     handelSingleDelete,
     handelSingleEdit,
+    handleSwitch,
   } = props;
 
   const handlers = {
@@ -50,11 +52,13 @@ export default function DynimicTable(props) {
     blogImage: handleView,
     deleteIconBtn: handelSingleDelete,
     editIconBtn: handelSingleEdit,
+    switchBtn: handleSwitch,
   };
 
   const actionhandler = {
     view: handleView,
     delete: handleDelete,
+    edit: handleUpdate,
   };
 
   const handleSorting = (columnKey) => {
@@ -117,7 +121,7 @@ export default function DynimicTable(props) {
                     row._id,
                     row.updatedAt,
                     row.imageSrc,
-                    row.BlogThumblin,
+                    row.blogThumblin,
                     row.title,
                     row.author,
                     row.categories,
@@ -154,7 +158,7 @@ const renderCellContent = (
   id,
   date,
   image,
-  blogImage,
+  blogThumblin,
   blogTitle,
   blogAuther,
   blogCategories,
@@ -241,18 +245,20 @@ const renderCellContent = (
 
     case "blogImage":
       if (handler) {
-        content = (
-          <BlogImage image={blogImage} title={blogTitle} auther={blogAuther} />
-        );
+        content = <BlogImage img={blogThumblin} completeData={completeData} />;
       }
       break;
 
     case "switchBtn":
-      content = <TableSwitchBtn />;
+      if (handler) {
+        content = (
+          <TableSwitchBtn actionhandler={handler} itemId={id} data={data} />
+        );
+      }
 
       break;
     case "blogCategories":
-      content = <BlogCategories catList={blogCategories} />;
+      content = <TableColumList data={data} dataFor="category" />;
 
       break;
     default:

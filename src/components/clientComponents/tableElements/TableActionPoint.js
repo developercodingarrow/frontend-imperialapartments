@@ -1,13 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./css/tableActionpoint.module.css";
-import {
-  IoIosArrowRoundUp,
-  IoIosArrowRoundDown,
-  LiaRupeeSignSolid,
-  IoEye,
-  RxDotsVertical,
-} from "../../ApplicationIcon";
+import { IoEye, RxDotsVertical } from "../../ApplicationIcon";
 
 export default function TableActionPoint(props) {
   const { handlers, itemId } = props;
@@ -23,6 +17,7 @@ export default function TableActionPoint(props) {
   const handleAction = (action) => {
     if (handlers[action]) {
       handlers[action](itemId);
+      setactionPopUp(false);
     }
   };
 
@@ -46,7 +41,7 @@ export default function TableActionPoint(props) {
             </span>
             <span
               className={styles.action_text}
-              onClick={() => handleAction("update")}
+              onClick={() => handleAction("edit")}
             >
               Edit
             </span>
@@ -58,7 +53,7 @@ export default function TableActionPoint(props) {
             </span>
             <span
               className={styles.action_text}
-              onClick={() => handleAction("Delete")}
+              onClick={() => handleAction("delete")}
             >
               Delete
             </span>

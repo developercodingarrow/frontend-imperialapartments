@@ -32,3 +32,20 @@ export const genericSlugDataHandler = (
     }
   };
 };
+
+// GENERIC HANDLER FOR SEND DATA AND OPTIONAL UrlToken
+export const genericDeleteHandler = (
+  actionhandel,
+  settoggleState,
+  toggleState
+) => {
+  return async (slug, data) => {
+    try {
+      const result = await actionhandel(requestData);
+      settoggleState(!toggleState);
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

@@ -77,13 +77,13 @@ export default function AdminDrawer() {
               </Link>
             </li>
             <li className={styles.option_li}>
-              <Link href={"/"}>
+              <Link href={"/admin-panel/enquire-list"}>
                 <div className={styles.option_tab}>
                   <div className={styles.option_icon}>
                     {" "}
                     <PiSquaresFourLight />{" "}
                   </div>
-                  <div className={styles.option_text}>DashBoard</div>
+                  <div className={styles.option_text}>Enquires</div>
                 </div>
               </Link>
             </li>

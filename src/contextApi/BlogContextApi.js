@@ -1,4 +1,5 @@
 import { createContext, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 export const BlogContext = createContext();
 import {
   createBlog,
@@ -7,13 +8,16 @@ import {
   updateBlogTag,
   updateBlogCategorie,
   getAllBlog,
+  deleteBlog,
+  updateIsFeatured,
 } from "../Actions/blogAction";
 import {
   newgenericDataHandler,
-  genericSlugDataHandler,
+  genericDeleteHandler,
 } from "../generichandler/generichandler";
 
 export default function BlogContextApiProvider({ children }) {
+  const router = useRouter();
   const [allBogs, setallBogs] = useState([]);
   const [toggleAction, settoggleAction] = useState(false);
   const [singleBlogApi, setsingleBlogApi] = useState({});
@@ -41,6 +45,13 @@ export default function BlogContextApiProvider({ children }) {
   // Create New BLOG
   const handelCreateNewBlog = newgenericDataHandler(
     createBlog,
+    settoggleAction,
+    toggleAction
+  );
+
+  // Delete Blog
+  const handelDeleteBlog = newgenericDataHandler(
+    deleteBlog,
     settoggleAction,
     toggleAction
   );
@@ -83,6 +94,20 @@ export default function BlogContextApiProvider({ children }) {
     }
   };
 
+  const handelRedirect = (itemId) => {
+    console.log("done");
+    router.push(`/admin-panel/create-blog/${itemId}`);
+  };
+
+  const handelFeaturedBlog = async (itemId) => {
+    try {
+      console.log(itemId);
+      const res = await updateIsFeatured(itemId);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <BlogContext.Provider
       value={{
@@ -95,6 +120,9 @@ export default function BlogContextApiProvider({ children }) {
         handelTagUpdate,
         handelCategoreUpdate,
         handelGetAll, // Handler for GET ALL BLOGS
+        handelDeleteBlog, //Handel for Delete Blog
+        handelRedirect, // Handel for Re-direct
+        handelFeaturedBlog, // toogle featured
       }}
     >
       {children}

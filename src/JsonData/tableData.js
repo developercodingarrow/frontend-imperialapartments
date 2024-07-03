@@ -192,10 +192,10 @@ export const tableSampleData = [
 
 export const BlogColumns = [
   { label: "", key: "_id", component: "checkbox" },
-  { label: "Blog", key: "blogThumblin", component: "blogImage" },
+  { label: "Blogs..", key: "blogThumblin", component: "blogImage" },
   { label: "Date", key: "updatedAt", component: "date" },
   { label: "Featured", key: "featured", component: "switchBtn" },
-  { label: "categories", key: "categories", component: "blogCategories" },
+  { label: "categories", key: "blogCategories", component: "blogCategories" },
   { label: "Actions", key: "actions", component: "view" },
 ];
 
@@ -214,6 +214,15 @@ export const blogsampleData = [
     featured: false,
     author: "sandeep",
   },
+];
+
+export const enquireColumns = [
+  { label: "", key: "_id", component: "checkbox" },
+  { label: "Date", key: "updatedAt", component: "date" },
+  { label: "Name ", key: "userName", component: "text" },
+  { label: "Mobile Number", key: "mobileNumber", component: "text" },
+  { label: "Email", key: "email", component: "text" },
+  { label: "Message", key: "message", component: "text" },
 ];
 
 export const handleCheckboxChange = (id) => {

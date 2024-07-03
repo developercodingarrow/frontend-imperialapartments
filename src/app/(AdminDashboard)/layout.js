@@ -9,6 +9,7 @@ import { BlogCategoriesContextProvider } from "../../contextApi/BlogCategoriesCo
 import { AppContextProvider } from "../../contextApi/AppContextApi";
 import BlogContextApiProvider from "../../contextApi/BlogContextApi";
 import ImageHandlersContextApi from "../../contextApi/ImageHandlersContextApi";
+import EnquireContextApi from "../../contextApi/enquireContextApi";
 
 export default function AdminLayout({ children }) {
   return (
@@ -19,7 +20,9 @@ export default function AdminLayout({ children }) {
             <BlogCategoriesContextProvider>
               <BlogContextApiProvider>
                 <ImageHandlersContextApi>
-                  <DashBordContextApi>{children}</DashBordContextApi>
+                  <EnquireContextApi>
+                    <DashBordContextApi>{children}</DashBordContextApi>
+                  </EnquireContextApi>
                 </ImageHandlersContextApi>
               </BlogContextApiProvider>
             </BlogCategoriesContextProvider>
