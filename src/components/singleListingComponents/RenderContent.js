@@ -17,7 +17,7 @@ export default function RenderContent() {
             <OverView />
           </div>
         );
-      case "near-location":
+      case "nearlocation":
         return (
           <div>
             <NearLocation />

@@ -78,3 +78,11 @@ export const blogInfoForm = [
     },
   },
 ];
+
+export const userTableColumns = [
+  { label: "", key: "_id", component: "checkbox" },
+  { label: "Full Name", key: "fullName", component: "singleImage" },
+  { label: "Status", key: "isVerified", component: "switch" },
+  { label: "Role", key: "role", component: "text" },
+  { label: "Date", key: "updatedAt", component: "date" },
+];

@@ -199,6 +199,15 @@ export const BlogColumns = [
   { label: "Actions", key: "actions", component: "view" },
 ];
 
+export const projectColumns = [
+  { label: "", key: "_id", component: "checkbox" },
+  { label: "Projects", key: "ProjectThumblin", component: "projectimg" },
+  { label: "Date", key: "updatedAt", component: "date" },
+  { label: "Featured", key: "featured", component: "switchBtn" },
+  { label: "Status", key: "status", component: "switch" },
+  { label: "Price", key: "price", component: "price" },
+];
+
 export const blogsampleData = [
   {
     _id: "667659286b30f4e5104fdc82",

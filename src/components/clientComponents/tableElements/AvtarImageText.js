@@ -3,7 +3,7 @@ import styles from "./css/avtarImageText.module.css";
 import Image from "next/image";
 import tablCircleImage from "../../../../public/web-statice-img/table-circle-imag.jpg";
 export default function AvtarImageText(props) {
-  const { image, name, email } = props;
+  const { image, name, email, completeData } = props;
 
   return (
     <div className={styles.image_contnet_td_div}>
@@ -17,8 +17,8 @@ export default function AvtarImageText(props) {
         />
       </div>
       <div className={styles.content_td_div}>
-        <h6 className={styles.td_text}>{name}</h6>
-        <h6 className={styles.td_small_text}>{email}</h6>
+        <h6 className={styles.td_text}>{completeData.fullName}</h6>
+        <h6 className={styles.td_small_text}>{completeData.email}</h6>
       </div>
     </div>
   );

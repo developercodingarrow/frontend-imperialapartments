@@ -5,7 +5,7 @@ import DynimicBtn from "../btns/DynimicBtn";
 import { useRouter } from "next/navigation";
 
 export default function PageActionHeader(props) {
-  const { btnhandler } = props;
+  const { btnhandler, btnText, redirectURL } = props;
   const router = useRouter();
 
   const handelAddBlog = async () => {
@@ -13,7 +13,7 @@ export default function PageActionHeader(props) {
       const res = await btnhandler();
       if (res.data.status == "success") {
         console.log(res.data.result._id);
-        router.push(`create-blog/${res.data.result._id}`);
+        router.push(`${redirectURL}/${res.data.result._id}`);
       }
     } catch (error) {
       console.log(error);
@@ -22,7 +22,7 @@ export default function PageActionHeader(props) {
 
   return (
     <div className={styles.container}>
-      <DynimicBtn btnTxt="Create Blog" btnHandel={handelAddBlog} />
+      <DynimicBtn btnTxt={btnText} btnHandel={handelAddBlog} />
     </div>
   );
 }

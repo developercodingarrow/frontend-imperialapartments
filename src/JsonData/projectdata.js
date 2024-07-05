@@ -215,3 +215,67 @@ export const inputConfig = [
 ];
 
 export const postTypeOption = ["NewsArticle", "BlogPosting", "Article"];
+
+export const createProjectTab = [
+  {
+    tabText: "Basic Info",
+    tabLink: "BasicInfo",
+  },
+
+  {
+    tabText: "OverView",
+    tabLink: "OverView",
+  },
+
+  {
+    tabText: "Content",
+    tabLink: "content",
+  },
+  {
+    tabText: "Images",
+    tabLink: "Images",
+  },
+  {
+    tabText: "fandQ",
+    tabLink: "fandQ",
+  },
+];
+
+export const projectInfoForm = [
+  {
+    id: 1,
+    name: "blogTitle",
+    lable: "Title",
+    type: "text",
+    placeholder: "Enter Blog Title....",
+    validation: {
+      required: "Blog Title is required.",
+    },
+  },
+
+  {
+    id: 1,
+    name: "metaDescription",
+    lable: "Meta Descreption",
+    type: "textarea",
+    placeholder: "Meta Descreption",
+    validation: {
+      required: "Meta Descreption is required.",
+    },
+  },
+];
+
+export const projectFaq = [
+  {
+    title: "Accordion Item 1",
+    content: "Content for item 1.",
+  },
+  {
+    title: "Accordion Item 2",
+    content: "Content for item 2.",
+  },
+  {
+    title: "Accordion Item 3",
+    content: "Content for item 3.",
+  },
+];

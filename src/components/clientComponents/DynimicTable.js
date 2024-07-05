@@ -53,6 +53,7 @@ export default function DynimicTable(props) {
     deleteIconBtn: handelSingleDelete,
     editIconBtn: handelSingleEdit,
     switchBtn: handleSwitch,
+    projectimg: handleView,
   };
 
   const actionhandler = {
@@ -122,6 +123,7 @@ export default function DynimicTable(props) {
                     row.updatedAt,
                     row.imageSrc,
                     row.blogThumblin,
+                    row.ProjectThumblin,
                     row.title,
                     row.author,
                     row.categories,
@@ -159,6 +161,7 @@ const renderCellContent = (
   date,
   image,
   blogThumblin,
+  projecttThumimg,
   blogTitle,
   blogAuther,
   blogCategories,
@@ -171,6 +174,7 @@ const renderCellContent = (
 ) => {
   let content = null;
   let className = "";
+  console.log(projecttThumimg);
 
   switch (componentType) {
     case "number":
@@ -238,7 +242,12 @@ const renderCellContent = (
     case "singleImage":
       if (handler) {
         content = (
-          <AvtarImageText image={image} name={userName} email={email} />
+          <AvtarImageText
+            image={image}
+            name={userName}
+            email={email}
+            completeData={completeData}
+          />
         );
       }
       break;
@@ -246,6 +255,16 @@ const renderCellContent = (
     case "blogImage":
       if (handler) {
         content = <BlogImage img={blogThumblin} completeData={completeData} />;
+      }
+      break;
+
+    case "projectimg":
+      if (handler) {
+        console.log("projectimg", projecttThumimg);
+        console.log(completeData);
+        content = (
+          <projectImage img={projecttThumimg} completeData={completeData} />
+        );
       }
       break;
 

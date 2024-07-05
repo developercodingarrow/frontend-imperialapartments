@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import DashBordListTable from "../../../../components/clientComponents/DashBordListTable";
 import AdminDashBordLayout from "../../../../components/clientComponents/layouts/AdminDashBordLayout";
@@ -14,14 +14,22 @@ import {
   handleView,
 } from "../../../../JsonData/tableData";
 
+import { UserContext } from "../../../../contextApi/UserContextApi";
+import { userTableColumns } from "../../../../JsonData/userformfield";
+
 export default function UserListPage() {
+  const { handelGetAll, toggleAction, allUsers } = useContext(UserContext);
+
+  useEffect(() => {
+    handelGetAll();
+  }, [toggleAction]);
   return (
     <AdminDashBordLayout>
       <PageHeader />
       <div>
         <DashBordListTable
-          tableColumns={tableColumns}
-          tableSampleData={tableSampleData}
+          tableColumns={userTableColumns}
+          tableSampleData={allUsers}
           handleCheckboxChange={handleCheckboxChange}
           handleDelete={handleDelete}
           handleUpdate={handleUpdate}

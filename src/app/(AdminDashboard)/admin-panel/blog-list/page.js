@@ -33,7 +33,11 @@ export default function BlogsList() {
 
   return (
     <AdminDashBordLayout>
-      <PageActionHeader btnhandler={handelCreateNewBlog} />
+      <PageActionHeader
+        btnhandler={handelCreateNewBlog}
+        btnText="Create Blog"
+        redirectURL="create-blog"
+      />
       <PageHeader />
       <div>
         <DashBordListTable

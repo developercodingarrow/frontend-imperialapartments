@@ -11,6 +11,31 @@ import RenderContent from "../../../../components/singleListingComponents/Render
 import SideFormWrapper from "../../../../components/singleListingComponents/SideFormWrapper";
 
 export default function SingleListingPage() {
+  const tabOptions = [
+    {
+      tabText: "OverView",
+      tabLink: "overview",
+    },
+
+    {
+      tabText: "Near Location",
+      tabLink: "nearlocation",
+    },
+
+    {
+      tabText: "Content",
+      tabLink: "content",
+    },
+    {
+      tabText: "amenities",
+      tabLink: "amenities",
+    },
+    {
+      tabText: "fandQ",
+      tabLink: "fandQ",
+    },
+  ];
+
   return (
     <div className={styles.main_container}>
       <div className={styles.barchum_bar}>
@@ -67,7 +92,7 @@ export default function SingleListingPage() {
       </div>
       <div className={styles.listing_detailContainer}>
         <div className={styles.tab_containe}>
-          <SibgleListingTab />
+          <SibgleListingTab tabOptions={tabOptions} />
         </div>
         <div className={styles.content_container}>
           <div className={styles.render_content_wrapper}>

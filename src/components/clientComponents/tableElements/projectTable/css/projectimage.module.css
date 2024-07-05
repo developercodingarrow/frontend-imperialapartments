@@ -1,0 +1,38 @@
+.image_text_container {
+  display: flex;
+  column-gap: 5px;
+}
+
+.blog_imgWrapper {
+  border-radius: 5px;
+  width: 70px;
+  height: 70px;
+}
+
+.blog_imagStyle {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.content_td_div {
+  width: calc(100% - 70px);
+}
+
+.td_text {
+  margin: 0px 0px 0px 0px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 1.57;
+  color: rgb(42, 53, 71);
+}
+
+.td_small_text {
+  margin: 0px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: sans-serif;
+  line-height: 1.57;
+  color: rgb(42, 53, 71);
+}

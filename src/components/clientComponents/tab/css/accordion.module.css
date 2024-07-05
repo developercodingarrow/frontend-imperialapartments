@@ -1,0 +1,29 @@
+/* styles/globals.css */
+.accordion {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.accordionitem {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordionheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.accordionheader h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.accordionContent {
+  padding: 1rem;
+  background-color: #fff;
+}

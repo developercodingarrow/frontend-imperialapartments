@@ -3,6 +3,7 @@ import styles from "./css/tableStatus.module.css";
 
 export default function TableStatus(props) {
   const { status } = props;
+  console.log(status);
 
   return (
     <div className={styles.custom_icon_text_td_div}>

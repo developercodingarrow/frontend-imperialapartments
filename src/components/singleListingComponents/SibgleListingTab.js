@@ -5,7 +5,8 @@ import styles from "./css/singlelisting.module.css";
 
 import { SingleListingContext } from "../../contextApi/SinglePageListingContextApi";
 
-export default function SibgleListingTab() {
+export default function SibgleListingTab(props) {
+  const { tabOptions } = props;
   const { activeTab, handelListingTab, isSticky, setIsSticky } =
     useContext(SingleListingContext);
 
@@ -33,47 +34,18 @@ export default function SibgleListingTab() {
           isSticky ? styles.sticky : ""
         } `}
       >
-        <div
-          className={`${styles.content_tab} ${
-            activeTab === "overview" ? styles.active_tab : ""
-          }`}
-          onClick={() => handelListingTab("overview")}
-        >
-          OverView
-        </div>
-        <div
-          className={`${styles.content_tab} ${
-            activeTab === "near-location" ? styles.active_tab : ""
-          }`}
-          onClick={() => handelListingTab("near-location")}
-        >
-          Near Location
-        </div>
-        <div
-          className={`${styles.content_tab} ${
-            activeTab === "content" ? styles.active_tab : ""
-          }`}
-          onClick={() => handelListingTab("content")}
-        >
-          Content
-        </div>
-
-        <div
-          className={`${styles.content_tab} ${
-            activeTab === "amenities" ? styles.active_tab : ""
-          }`}
-          onClick={() => handelListingTab("amenities")}
-        >
-          AMENITIES
-        </div>
-        <div
-          className={`${styles.content_tab} ${
-            activeTab === "fandQ" ? styles.active_tab : ""
-          }`}
-          onClick={() => handelListingTab("fandQ")}
-        >
-          F & Q
-        </div>
+        {tabOptions.map((el, i) => {
+          return (
+            <div
+              className={`${styles.content_tab} ${
+                activeTab === `${el.tabLink}` ? styles.active_tab : ""
+              }`}
+              onClick={() => handelListingTab(`${el.tabLink}`)}
+            >
+              {el.tabText}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

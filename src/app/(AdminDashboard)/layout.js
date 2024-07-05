@@ -10,6 +10,9 @@ import { AppContextProvider } from "../../contextApi/AppContextApi";
 import BlogContextApiProvider from "../../contextApi/BlogContextApi";
 import ImageHandlersContextApi from "../../contextApi/ImageHandlersContextApi";
 import EnquireContextApi from "../../contextApi/enquireContextApi";
+import UserContextApi from "../../contextApi/UserContextApi";
+import SinglePageListingContextApi from "../../contextApi/SinglePageListingContextApi";
+import ProjectContextApi from "../../contextApi/ProjectContextApi";
 
 export default function AdminLayout({ children }) {
   return (
@@ -21,7 +24,13 @@ export default function AdminLayout({ children }) {
               <BlogContextApiProvider>
                 <ImageHandlersContextApi>
                   <EnquireContextApi>
-                    <DashBordContextApi>{children}</DashBordContextApi>
+                    <UserContextApi>
+                      <SinglePageListingContextApi>
+                        <ProjectContextApi>
+                          <DashBordContextApi>{children}</DashBordContextApi>
+                        </ProjectContextApi>
+                      </SinglePageListingContextApi>
+                    </UserContextApi>
                   </EnquireContextApi>
                 </ImageHandlersContextApi>
               </BlogContextApiProvider>
