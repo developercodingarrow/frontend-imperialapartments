@@ -117,6 +117,19 @@ export const createCategoriesForm = [
   },
 ];
 
+export const createRooomsForm = [
+  {
+    id: 1,
+    name: "name",
+    lable: "Create Room",
+    type: "text",
+    placeholder: "Enter new Room Type",
+    validation: {
+      required: "Room  Name is Required",
+    },
+  },
+];
+
 export const UpdateCategoriesForm = [
   {
     id: 1,
@@ -126,6 +139,19 @@ export const UpdateCategoriesForm = [
     placeholder: "Update categorie",
     validation: {
       required: "Categories Name is Required",
+    },
+  },
+];
+
+export const UpdateRoomForm = [
+  {
+    id: 1,
+    name: "name",
+    lable: "Create New Room Type",
+    type: "text",
+    placeholder: "Update Room Type",
+    validation: {
+      required: "Room Name is Required",
     },
   },
 ];

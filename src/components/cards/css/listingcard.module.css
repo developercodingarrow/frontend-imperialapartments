@@ -1,10 +1,14 @@
 .card_container {
   width: 100%;
-  background-color: #fff;
+  background-color: var(--th-white-color);
   box-shadow: 2px 0 6px #2734451f;
   margin-bottom: 20px;
   border-radius: 10px;
   padding: 15px 10px;
+  box-sizing: border-box;
+}
+
+.dekstop_card {
   display: flex;
   height: 200px;
   column-gap: 15px;
@@ -103,4 +107,76 @@
   font-size: 14px;
   font-family: sans-serif;
   letter-spacing: 1px;
+}
+
+.mobile_card {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .card_container {
+    padding: 10px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .dekstop_card {
+    display: none;
+  }
+
+  .mobile_card {
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .mobile_card_body {
+    display: flex;
+    column-gap: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gray;
+  }
+
+  .mobile_card_imgBox {
+    width: 300px;
+  }
+
+  .mobile_card_content {
+    width: calc(100% -300px);
+    box-sizing: border-box;
+  }
+
+  .mobile_card_title {
+    font-size: 8px;
+    margin-bottom: 5px;
+  }
+
+  .mobile_meta_descreptionBox {
+    font-size: 10px;
+  }
+
+  .mobile_amnitiesBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .mobile_card_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .mobile_footer_actionBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+  }
+  .mobile_card_priceBox {
+    display: flex;
+    align-items: center;
+  }
 }

@@ -3,7 +3,7 @@ import { createContext, useEffect, useRef, useState } from "react";
 export const SingleListingContext = createContext();
 
 export default function SinglePageListingContextApi({ children }) {
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState("nearlocation");
   const [isSticky, setIsSticky] = useState(false);
 
   const handelListingTab = (value) => {

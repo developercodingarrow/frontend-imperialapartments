@@ -21,13 +21,14 @@
 
 .hero_search_barWrapper {
   width: 60%;
+  background-color: var(--th-primary-darker);
 }
 
 .hero_headingBox {
   width: 60%;
   font-size: 50px;
   text-transform: capitalize;
-  color: #fff;
+  color: var(--th-white-color);
   margin-bottom: 10px;
 }
 

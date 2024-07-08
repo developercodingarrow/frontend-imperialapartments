@@ -8,7 +8,7 @@ export default function DelectIconBtn(props) {
 
   const handelClick = () => {
     const idObj = {
-      id: itemId,
+      _id: itemId,
     };
     actionhandler(idObj);
   };

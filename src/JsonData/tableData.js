@@ -257,6 +257,14 @@ export const categoriesColumns = [
   { label: "Edit", key: "_id", component: "editIconBtn" },
 ];
 
+export const roomTypeColumns = [
+  { label: "", key: "_id", component: "checkbox" },
+  { label: "Date", key: "updatedAt", component: "date" },
+  { label: "Categories Name", key: "name", component: "text" },
+  { label: "Delete", key: "_id", component: "deleteIconBtn" },
+  { label: "Edit", key: "_id", component: "editIconBtn" },
+];
+
 export const cateroriesSampleData = [
   {
     _id: "667659286b30f4e5104fdc82",

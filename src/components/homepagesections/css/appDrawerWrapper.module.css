@@ -21,6 +21,7 @@
     height: 100vh;
     display: block;
     transition: ease 0.7s;
+    z-index: 10;
   }
 
   .close_container {

@@ -4,6 +4,7 @@ import OverView from "./OverView";
 import NearLocation from "./NearLocation";
 import ContentTabContainer from "./ContentTabContainer";
 import { SingleListingContext } from "../../contextApi/SinglePageListingContextApi";
+import Amenities from "./Amenities";
 
 export default function RenderContent() {
   const { activeTab, setActiveTab, handelListingTab } =
@@ -32,7 +33,7 @@ export default function RenderContent() {
       case "amenities":
         return (
           <div>
-            <p>amenities</p>
+            <Amenities />
           </div>
         );
       case "fandQ":

@@ -1,0 +1,40 @@
+/* PriceSlider.module.css */
+
+.priceSliderContainer {
+  padding: 10px 0px;
+  position: relative;
+}
+
+.title {
+  color: var(--th-text-gray);
+  font-size: 14px;
+  padding: 0px;
+  font-family: var(--ts-font-family);
+  text-transform: uppercase;
+}
+
+.price_sliderWrapper {
+  padding: 5px;
+}
+
+.slider {
+  width: 100%;
+  background-color: var(--th-dark-text);
+  appearance: none;
+  height: 3px;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: var(--th-gap20);
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--th-primary-color);
+  border: 2px solid var(--th-white-color);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 0px;
+  transition: background-color 0.3s;
+}

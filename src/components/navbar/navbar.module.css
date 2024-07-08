@@ -1,6 +1,6 @@
 .main_wrapper {
   padding: 10px 10%;
-  background-color: var(--primarycolor);
+  background-color: var(--th-primary-darker);
 }
 
 .logo_style {
@@ -18,37 +18,37 @@
 .menu_wrapper {
   align-items: center;
   display: flex;
-  column-gap: 20px;
+  column-gap: var(--th-gap20);
 }
 
 .link_style {
-  color: #ffff;
-  font-size: 14px;
+  color: var(--th-white-color);
+  font-size: var(--th-font-size14);
   text-decoration: none;
   text-transform: capitalize;
 }
 
 .auth_btnWrapper {
   display: flex;
-  column-gap: 30px;
+  column-gap: var(--th-gap20);
   align-items: center;
 }
 
 .sign_inBtn {
-  background-color: #fff;
-  padding: 10px;
-  border: 1px solid var(--primarycolor);
+  background-color: var(--th-white-color);
+  padding: var(--th-gap10);
+  border: 1px solid var(--th-primary-color);
   border-radius: 5px;
-  color: var(--primarycolor);
+  color: var(--th-primary-color);
   text-decoration: none;
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: var(--th-font-size14);
 }
 
 .sign_inBtn:hover {
   background-color: transparent;
-  color: #fff;
-  border: 1px solid #fff;
+  color: var(--th-white-color);
+  border: 1px solid var(--th-white-color);
   transition: ease 0.3s;
 }
 
@@ -64,9 +64,9 @@
 }
 
 .outline_btn:hover {
-  background-color: #fff;
-  color: var(--primarycolor);
-  border: 1px solid var(--primarycolor);
+  background-color: var(--th-white-color);
+  color: var(--th-primary-color);
+  border: 1px solid var(--th-primary-color);
   border-radius: 5px;
   transition: ease 0.3s;
 }
@@ -78,7 +78,7 @@
 
 .NavBar_right_sideBox {
   display: flex;
-  column-gap: 20px;
+  column-gap: var(--th-gap20);
 }
 
 .mobile_navBar {
@@ -91,7 +91,7 @@
   }
   .mobile_navBar {
     display: flex;
-    column-gap: 20px;
+    column-gap: var(--th-gap20);
     align-items: center;
     z-index: 10;
   }
@@ -111,7 +111,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: var(--th-font-size18);
     font-weight: bolder;
     cursor: pointer;
   }
@@ -119,14 +119,14 @@
   .call_action {
     display: flex;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--th-white-color);
     padding: 2px 5px;
-    border-radius: 5px;
+    border-radius: var(--th-radius5);
     justify-content: space-between;
-    column-gap: 10px;
-    margin-left: 10px;
+    column-gap: var(--th-gap10);
+    margin-left: var(--th-gap10);
   }
   .Mobile_number {
-    font-size: 12px;
+    font-size: var(--th-font-mobile12);
   }
 }

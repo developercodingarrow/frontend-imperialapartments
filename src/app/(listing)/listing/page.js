@@ -1,10 +1,20 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ListingCard from "../../../components/cards/ListingCard";
+import { getAllListing } from "../../../Actions/ssrActions.js/projectSSRAction";
 
-export default function ListingPage() {
+async function getData() {
+  const res = await getAllListing();
+  await new Promise((resolve) => setTimeout(resolve, 10000));
+  return await res.data.result;
+}
+
+export default async function ListingPage() {
+  const data = await getData();
+  console.log(data);
   return (
     <div>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => {
+      <Suspense fallback={<h1>Loading.........</h1>}></Suspense>
+      {data.map(() => {
         return <ListingCard />;
       })}
     </div>

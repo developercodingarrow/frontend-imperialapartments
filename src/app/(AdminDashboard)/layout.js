@@ -13,6 +13,7 @@ import EnquireContextApi from "../../contextApi/enquireContextApi";
 import UserContextApi from "../../contextApi/UserContextApi";
 import SinglePageListingContextApi from "../../contextApi/SinglePageListingContextApi";
 import ProjectContextApi from "../../contextApi/ProjectContextApi";
+import { RoomTypeContextProvider } from "../../contextApi/RoomTypeContextApi";
 
 export default function AdminLayout({ children }) {
   return (
@@ -27,7 +28,9 @@ export default function AdminLayout({ children }) {
                     <UserContextApi>
                       <SinglePageListingContextApi>
                         <ProjectContextApi>
-                          <DashBordContextApi>{children}</DashBordContextApi>
+                          <RoomTypeContextProvider>
+                            <DashBordContextApi>{children}</DashBordContextApi>
+                          </RoomTypeContextProvider>
                         </ProjectContextApi>
                       </SinglePageListingContextApi>
                     </UserContextApi>

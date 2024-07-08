@@ -7,6 +7,8 @@ import SearchBar from "../../components/searchcomponent/SearchBar";
 import ListingPageLayout from "../../components/layouts/ListingPageLayout";
 import { AppContextProvider } from "../../contextApi/AppContextApi";
 import EnquireContextApi from "../../contextApi/enquireContextApi";
+import { RoomTypeContextProvider } from "../../contextApi/RoomTypeContextApi";
+import AppDrawerWrapper from "../../components/homepagesections/AppDrawerWrapper";
 
 export default function ListingLayout({ children }) {
   return (
@@ -14,12 +16,15 @@ export default function ListingLayout({ children }) {
       <body>
         <AppContextProvider>
           <EnquireContextApi>
-            <TopBar />
-            <NavBar />
-            <div>
-              <SearchBar />
-            </div>
-            <ListingPageLayout>{children}</ListingPageLayout>
+            <RoomTypeContextProvider>
+              <TopBar />
+              <NavBar />
+              <AppDrawerWrapper />
+              <div>
+                <SearchBar />
+              </div>
+              <ListingPageLayout>{children}</ListingPageLayout>
+            </RoomTypeContextProvider>
           </EnquireContextApi>
         </AppContextProvider>
       </body>

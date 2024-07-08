@@ -1,0 +1,93 @@
+.main_Container {
+  display: flex;
+  row-gap: var(--th-gap20);
+  column-gap: var(--th-gap20);
+  width: 100%;
+}
+
+.block_checkBox_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--th-gap10);
+  column-gap: var(--th-gap10);
+  padding-bottom: var(--th-gap20);
+  padding-top: var(--th-gap10);
+  padding-left: 5px;
+  padding-right: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  margin-bottom: var(--th-gap10);
+  width: 100%;
+}
+
+.block_checkBox_container::-webkit-scrollbar {
+  width: 3px; /* Width of the vertical scrollbar */
+}
+
+.block_checkBox_container::-webkit-scrollbar-thumb {
+  background-color: var(--th-primary-color); /* Color of the thumb */
+}
+
+.block_checkBox_container::-webkit-scrollbar-track {
+  background-color: var(--th-white-color); /* Color of the track */
+}
+
+/* Check Box style */
+
+.label_Box {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checked_lable {
+  color: var(--th-primary-color);
+}
+
+.title_box {
+  color: var(--th-text-gray);
+  font-size: 14px;
+  padding: 0px;
+  font-family: var(--ts-font-family);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.checkBoxLable {
+  color: var(--ts-gray);
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: var(--ts-font-weight-400);
+  line-height: 1.5;
+  font-family: var(--bs-font-family);
+}
+
+.lableChecked {
+  color: var(--ts-primary);
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: var(--ts-font-weight-400);
+  line-height: 1.5;
+  font-family: var(--bs-font-family);
+}
+
+.customCheckbox {
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--th-primary-color);
+  border-radius: 4px;
+  position: relative;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.checked {
+  color: var(--th-primary-color);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkedMark {
+  color: var(--ts-primary); /* Color for the checkmark */
+}

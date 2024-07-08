@@ -1,21 +1,21 @@
 .search_bar_container {
-  background-color: #05203c;
-  padding: 20px;
-  border-radius: 5px;
+  background-color: var(--th-dark-text);
+  padding: var(--th-gap20);
+  border-radius: var(--th-radius5);
 }
 
 .search_bar {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: var(--th-gap20);
 }
 
 .search_textBox {
   width: 50%;
-  border-top-left-radius: 3px;
+  border-top-left-radius: var(--th-radius3);
   border-bottom-left-radius: 3px;
   height: 40px;
-  border: 1px solid #fff;
+  border: 1px solid var(--th-white-color);
 }
 
 .search_input {
@@ -25,8 +25,8 @@
   border: none;
   font-family: sans-serif;
   padding: 0px 5px;
-  background-color: #fff;
-  color: gray;
+  background-color: var(--th-white-color);
+  color: var(--th-text-gray);
   font-size: 14px;
 }
 
@@ -39,7 +39,7 @@
   width: 100%;
   height: 100%;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: var(--th-font-size14);
 }
 .numer_inputBox {
   width: 10%;
@@ -53,15 +53,15 @@
 }
 
 .quick_linkContainer {
-  color: #fff;
+  color: var(--th-white-color);
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: var(--th-font-size14);
   font-family: sans-serif;
   letter-spacing: 1px;
 }
 
 .mini_sub_heading {
-  margin-bottom: 10px;
+  margin-bottom: var(--th-gap10);
 }
 
 .auick_links_wrapper {
@@ -71,19 +71,19 @@
 }
 
 .quick_link {
-  border: 1px solid gray;
-  border-radius: 20px;
+  border: 1px solid var(--th-text-gray);
+  border-radius: var(--th-gap20);
   padding: 5px 10px;
   font-size: 12px;
   cursor: pointer;
   text-decoration: none;
-  color: #fff;
+  color: var(--th-white-color);
 }
 
 @media screen and (max-width: 600px) {
   .search_bar_container {
     width: 100%;
-    padding: 10px;
+    padding: var(--th-gap10);
   }
 
   .search_bar {

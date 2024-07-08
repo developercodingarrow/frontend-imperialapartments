@@ -33,8 +33,25 @@ import { IoCloseCircle } from "react-icons/io5";
 import { IoRemoveCircleOutline } from "react-icons/io5";
 import { FiPlus } from "react-icons/fi";
 import { IoCloseSharp } from "react-icons/io5";
+import { TfiEmail } from "react-icons/tfi";
+import { CiWifiOn } from "react-icons/ci";
+import { LuParkingCircle } from "react-icons/lu";
+import { MdFamilyRestroom } from "react-icons/md";
+import { MdOutlineFastfood } from "react-icons/md";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { FaTrainSubway } from "react-icons/fa6";
+import { FaRegHospital } from "react-icons/fa";
+import { HiBuildingOffice2 } from "react-icons/hi2";
 
 export {
+  FaTrainSubway,
+  FaRegHospital,
+  HiBuildingOffice2,
+  CiWifiOn,
+  LuParkingCircle,
+  MdOutlineFastfood,
+  MdFamilyRestroom,
+  Ri24HoursFill,
   IoIosCall,
   IoMdMailOpen,
   TiSocialFacebook,
@@ -74,4 +91,6 @@ export {
   IoRemoveCircleOutline,
   FiPlus,
   IoCloseSharp,
+  TfiEmail,
+  IoIosCheckmarkCircleOutline,
 };

@@ -1,3 +1,6 @@
+.main_container {
+}
+
 .most_popularAmanities {
   margin-bottom: 20px;
 }
@@ -25,4 +28,16 @@
   font-size: 14px;
   font-family: var(--th-font-family-default);
   letter-spacing: inherit;
+}
+.all_amnities {
+  display: flex;
+  column-gap: 5%;
+  row-gap: 50px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.amninites_lists {
+  display: flex;
+  column-gap: 10px;
 }

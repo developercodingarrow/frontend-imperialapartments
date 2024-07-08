@@ -1,5 +1,6 @@
 .main_wrapper {
   padding: 7px 10%;
+  background-color: var(--th-white-color);
 }
 
 .inner_wrapper {
@@ -9,35 +10,39 @@
 
 .topBar_contactBox {
   display: flex;
-  column-gap: 20px;
+  column-gap: var(--th-gap20);
 }
 
 .topBar_mobileNumberBox {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: var(--th-gap10);
+  color: var(--th-text-gray);
+  cursor: pointer;
 }
 
 .topBar_emailBox {
   display: flex;
-  column-gap: 10px;
+  column-gap: var(--th-gap10);
   align-items: center;
+  color: var(--th-text-gray);
+  cursor: pointer;
 }
 
 .topBar_socialMediaBox {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  column-gap: 10px;
+  column-gap: var(--th-gap10);
 }
 
 .topBar_iconBox {
   cursor: pointer;
-  font-size: 18px;
+  font-size: var(--th-font-size18);
 }
 
 .topBar_iconBox:hover {
-  color: var(--primarycolor);
+  color: var(--th-primary-darker);
 }
 
 @media screen and (max-width: 600px) {
