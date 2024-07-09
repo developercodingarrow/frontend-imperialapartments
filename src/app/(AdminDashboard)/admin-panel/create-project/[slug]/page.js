@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { usePathname, useParams } from "next/navigation";
 import styles from "../createproject.module.css";
 import AdminDashBordLayout from "../../../../../components/clientComponents/layouts/AdminDashBordLayout";
@@ -7,10 +7,21 @@ import PageHeader from "../../../../../components/clientComponents/layouts/pageH
 import { createProjectTab } from "../../../../../JsonData/projectdata";
 import SibgleListingTab from "../../../../../components/singleListingComponents/SibgleListingTab";
 import RenderProjectCreateTab from "../../../../../components/clientComponents/tab/RenderProjectCreateTab";
+import { ProjectContext } from "../../../../../contextApi/ProjectContextApi";
 
 export default function CreateProjectpage() {
   const params = useParams();
   const { slug } = params;
+
+  const { singleProjectApi, handelGetSingleProject } =
+    useContext(ProjectContext);
+
+  console.log("slug-------", slug);
+
+  useEffect(() => {
+    handelGetSingleProject();
+  }, [slug]);
+
   return (
     <AdminDashBordLayout>
       <PageHeader />

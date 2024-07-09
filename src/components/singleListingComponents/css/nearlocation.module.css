@@ -26,3 +26,26 @@
   font-family: var(--th-font-family-default);
   letter-spacing: inherit;
 }
+
+/* all_loaction */
+
+.all_loaction {
+  display: flex;
+  column-gap: 5%;
+  row-gap: 50px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.location_box {
+  display: flex;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.loaction_prefrence {
+  display: flex;
+  column-gap: 5px;
+}

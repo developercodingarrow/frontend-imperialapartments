@@ -42,6 +42,7 @@ import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { FaTrainSubway } from "react-icons/fa6";
 import { FaRegHospital } from "react-icons/fa";
 import { HiBuildingOffice2 } from "react-icons/hi2";
+import { CiLocationOn } from "react-icons/ci";
 
 export {
   FaTrainSubway,
@@ -93,4 +94,5 @@ export {
   IoCloseSharp,
   TfiEmail,
   IoIosCheckmarkCircleOutline,
+  CiLocationOn,
 };

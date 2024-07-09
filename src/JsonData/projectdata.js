@@ -270,18 +270,18 @@ export const createProjectTab = [
 export const projectInfoForm = [
   {
     id: 1,
-    name: "blogTitle",
+    name: "projectTitle",
     lable: "Title",
     type: "text",
-    placeholder: "Enter Blog Title....",
+    placeholder: "Enter Project Title....",
     validation: {
-      required: "Blog Title is required.",
+      required: "Project Title is required.",
     },
   },
 
   {
     id: 1,
-    name: "metaDescription",
+    name: "metadescription",
     lable: "Meta Descreption",
     type: "textarea",
     placeholder: "Meta Descreption",

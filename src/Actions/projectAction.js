@@ -17,10 +17,27 @@ export const getAllProjectsAction = async () => {
   return performGetAPIAction(url, authToken);
 };
 
+//GET SINGLE PROJECT BY PARAM ID
+export const getSingleProject = async (slug) => {
+  const url = `${API}/project/get-single-project/${slug}`;
+  console.log("slug---------", slug);
+  return performGetAPIAction(url, authToken);
+};
+
 // CREATE BLOG
 export const createProject = async (requestData) => {
   const url = `${API}/project/create-new-project`;
   const method = "post";
+  console.log(requestData);
+  return performAPIAction(method, url, requestData, authToken);
+};
+
+// UPDATE ONE BLOG
+export const updateOneProject = async (slug, requestData) => {
+  console.log("slug ---", slug);
+  console.log("requesteData ---", requestData);
+  const url = `${API}/project/update-single-project/${slug}`;
+  const method = "patch";
   console.log(requestData);
   return performAPIAction(method, url, requestData, authToken);
 };

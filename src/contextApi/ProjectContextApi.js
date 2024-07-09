@@ -4,6 +4,8 @@ import {
   getAllProjectsAction,
   createProject,
   updateIsFeatured,
+  updateOneProject,
+  getSingleProject,
 } from "../Actions/projectAction";
 import {
   newgenericDataHandler,
@@ -15,6 +17,10 @@ export const ProjectContext = createContext();
 export default function ProjectContextApi({ children }) {
   const [toggleAction, settoggleAction] = useState(false);
   const [allProject, setallProject] = useState([]);
+  const [singleProjectApi, setsingleProjectApi] = useState({});
+  const [projectOverview, setprojectOverview] = useState("");
+  const [contentdata, setcontentdata] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handelGetAll = async () => {
     try {
@@ -23,6 +29,24 @@ export default function ProjectContextApi({ children }) {
         console.log(res.data);
         setallProject(res.data.result);
       }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Handel Single Blog By Id for Blog Update
+  const handelGetSingleProject = async (slug) => {
+    try {
+      setLoading(true);
+      const res = await getSingleProject(slug);
+      setsingleProjectApi(res.data.result);
+
+      const overview = res.data.result?.overview || "";
+      const resContent = res.data.result?.content || "";
+      setprojectOverview(overview);
+      setcontentdata(resContent);
+      setLoading(false);
+      return res;
     } catch (error) {
       console.log(error);
     }
@@ -45,6 +69,19 @@ export default function ProjectContextApi({ children }) {
     }
   };
 
+  // Update one Project
+  const handelUpdate = async (slug, data) => {
+    try {
+      console.log("project content api -------", slug);
+      const res = await updateOneProject(slug, data);
+
+      return res;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(singleProjectApi);
   return (
     <ProjectContext.Provider
       value={{
@@ -53,6 +90,14 @@ export default function ProjectContextApi({ children }) {
         handelGetAll,
         handelCreateNewProject,
         handelFeatured,
+        handelUpdate,
+        singleProjectApi,
+        handelGetSingleProject,
+        loading,
+        setLoading,
+        projectOverview,
+        setprojectOverview,
+        contentdata,
       }}
     >
       {children}

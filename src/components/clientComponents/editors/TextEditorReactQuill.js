@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { usePathname, useParams } from "next/navigation";
 import dynamic from "next/dynamic"; // If using Next.js
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
@@ -10,10 +10,14 @@ import {
 } from "../../../JsonData/editorData";
 
 export default function TextEditorReactQuill(props) {
-  const { editionHandel } = props;
+  const { editionHandel, apiData } = props;
   const params = useParams();
   const { slug } = params;
   const [editorValue, seteditorValue] = useState("");
+
+  useEffect(() => {
+    seteditorValue(apiData);
+  }, [apiData]);
 
   const handelEditorOnChange = (e) => {
     seteditorValue(e);
@@ -27,6 +31,7 @@ export default function TextEditorReactQuill(props) {
       e.preventDefault();
       const res = await editionHandel(slug, objData);
       console.log(res);
+      return res;
     } catch (error) {
       console.log(error);
     }

@@ -97,3 +97,111 @@ export const amnitiesData = [
     ],
   },
 ];
+
+export const locationData = [
+  {
+    title: "Popular Landmark",
+    locationPoint: [
+      {
+        location: "Huda City Center metro station",
+        distance: "200",
+        unit: "Meter",
+      },
+      {
+        location: "fortis hospital ",
+        distance: "300",
+        unit: "Meter",
+      },
+      {
+        location: "Max Hospital ",
+        distance: "400",
+        unit: "Meter",
+      },
+    ],
+  },
+
+  {
+    title: "Hospital",
+    locationPoint: [
+      {
+        location: "Fortis Hospital",
+        distance: "300",
+        unit: "Meter",
+      },
+
+      {
+        location: "Max Hospital",
+        distance: "400",
+        unit: "Meter",
+      },
+      {
+        location: "Medanta Hospital",
+        distance: "5",
+        unit: "KM",
+      },
+    ],
+  },
+
+  {
+    title: "shopping malls",
+    locationPoint: [
+      {
+        location: "MGF MALL",
+        distance: "2",
+        unit: "KM",
+      },
+
+      {
+        location: "DC Mall",
+        distance: "2",
+        unit: "KM",
+      },
+    ],
+  },
+
+  {
+    title: "Schools / colleges",
+    locationPoint: [
+      {
+        location: "K.R. Mangalam University",
+        distance: "500",
+        unit: "M",
+      },
+
+      {
+        location: "Delhi Public School ",
+        distance: "1",
+        unit: "KM",
+      },
+
+      {
+        location: "The Sixth Element School",
+        distance: "1",
+        unit: "KM",
+      },
+    ],
+  },
+
+  {
+    title: "MNC companies",
+    locationPoint: [
+      {
+        location: "Fretron Private Limited",
+        distance: "500",
+        unit: "M",
+      },
+
+      {
+        location: "Enuke Software ",
+        distance: "1",
+        unit: "KM",
+      },
+
+      {
+        location: "PaisaBazaar",
+        distance: "1",
+        unit: "KM",
+      },
+    ],
+  },
+];

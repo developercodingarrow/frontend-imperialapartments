@@ -3,19 +3,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--primarycolor);
+  border: 1px solid var(--th-primary-color);
   padding: 4px;
   height: var(--input-height);
   cursor: pointer;
   text-transform: capitalize;
-  background-color: var(--primarycolor);
+  background-color: var(--th-primary-color);
   color: var(--whiteColor);
   margin: 10px 0px;
   letter-spacing: 1px;
 }
 
 .smallBtn {
-  border: 1px solid var(--primarycolor);
+  border: 1px solid var(--th-primary-color);
   text-transform: uppercase;
   letter-spacing: 1px;
   display: inline-block;
@@ -25,7 +25,7 @@
 }
 
 .disabledBtn {
-  background-color: var(--primareyDisable) !important;
-  border: 1px solid var(--primareyDisable);
+  background-color: var(--th-primary-darker) !important;
+  border: 1px solid var(--th-primary-darker);
   cursor: not-allowed;
 }
