@@ -11,6 +11,7 @@ export function AppContextProvider({ children }) {
   const [chips, setChips] = useState([]);
   const [checkedOptions, setCheckedOptions] = useState([]);
   const [isOpen, setisOpen] = useState(false);
+  const [galleryModelIsopen, setgalleryModelIsopen] = useState(true);
 
   const handelEdiFormOpen = (id, data) => {
     seteditModelData(data);
@@ -38,6 +39,14 @@ export function AppContextProvider({ children }) {
     setisOpen(false);
   };
 
+  const handelOpengalleryModel = () => {
+    setgalleryModelIsopen(true);
+  };
+
+  const handelCloseGalleryModel = () => {
+    setgalleryModelIsopen(false);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -59,6 +68,10 @@ export function AppContextProvider({ children }) {
         setisOpen,
         handelOpenModel,
         handleModelClose,
+        galleryModelIsopen,
+        setgalleryModelIsopen,
+        handelOpengalleryModel,
+        handelCloseGalleryModel,
       }}
     >
       {children}

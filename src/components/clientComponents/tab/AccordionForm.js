@@ -26,33 +26,44 @@ const AccordionForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      {accordions.map((accordion, index) => (
-        <div key={index} className={styles.accordionformitem}>
-          <input
-            type="text"
-            name="title"
-            value={accordion.title}
-            onChange={(event) => handleInputChange(index, event)}
-            placeholder="Accordion Title"
-            required
-          />
-          <textarea
-            name="content"
-            value={accordion.content}
-            onChange={(event) => handleInputChange(index, event)}
-            placeholder="Accordion Content"
-            required
-          />
+    <div className={styles.main_container}>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.input_wrapper}>
+          {accordions.map((accordion, index) => (
+            <div key={index} className={styles.accordionformitem}>
+              <input
+                type="text"
+                name="title"
+                value={accordion.title}
+                onChange={(event) => handleInputChange(index, event)}
+                placeholder="Accordion Title"
+                required
+              />
+              <textarea
+                name="content"
+                value={accordion.content}
+                onChange={(event) => handleInputChange(index, event)}
+                placeholder="Accordion Content"
+                required
+              />
+            </div>
+          ))}
         </div>
-      ))}
-      <button type="button" className={styles.button} onClick={addAccordion}>
-        Add Accordion
-      </button>
-      <button className={styles.button} type="submit">
-        Submit
-      </button>
-    </form>
+
+        <div className={styles.btn_wrapper}>
+          <button
+            type="button"
+            className={styles.button}
+            onClick={addAccordion}
+          >
+            Add
+          </button>
+          <button className={styles.button} type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

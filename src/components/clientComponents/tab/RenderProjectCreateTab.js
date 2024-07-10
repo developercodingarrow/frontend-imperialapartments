@@ -7,6 +7,7 @@ import ProjectContent from "./ProjectContent";
 import AccordionItem from "./Accordion";
 import { projectFaq } from "../../../JsonData/projectdata";
 import AccordionForm from "./AccordionForm";
+import ProjectImageUploader from "./ProjectImageUploader";
 
 export default function RenderProjectCreateTab() {
   const { activeTab, setActiveTab, handelListingTab } =
@@ -30,7 +31,7 @@ export default function RenderProjectCreateTab() {
       case "Images":
         return (
           <div>
-            <p> Images</p>
+            <ProjectImageUploader />
           </div>
         );
 

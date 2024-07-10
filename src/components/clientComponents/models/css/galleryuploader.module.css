@@ -1,0 +1,130 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  border: 1px solid gray;
+  background-color: rgb(248, 248, 255);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.model_container {
+  box-shadow: 0 4px 10px rgba(231, 129, 129, 0.03) !important;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid rgb(229, 234, 239);
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.model_header {
+  display: flex;
+  justify-content: space-between;
+  font-family: sans-serif;
+  padding: 10px;
+}
+
+.close_iconBox {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.model_Boody {
+  border: 1px solid rgb(229, 234, 239);
+}
+
+.gallerybody_wrapper {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.upload_container {
+  border: 2px dashed #dcdcdc;
+  width: 60%;
+  padding: 5px;
+}
+
+.input_container {
+  border: 1px solid gray;
+}
+
+.btn_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.upload_btn {
+  background-color: var(--th-primary-color);
+  display: flex;
+  column-gap: 5px;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.upload_btn:hover {
+  background-color: var(--th-primary-darker);
+}
+
+/* card image  */
+.uploaded_images {
+  display: flex;
+  align-items: start;
+  column-gap: 20px;
+  row-gap: 20px;
+  border: 1px solid red;
+  flex-wrap: wrap;
+  overflow: auto;
+  height: 300px;
+}
+.image_container {
+  border: 1px solid var(--th-muted);
+  padding: 0px 0px 0px 0px;
+  background-color: var(--th-white-color);
+  box-shadow: var(--th-box-shadow);
+  border-radius: 5px;
+  position: relative;
+}
+
+.remove_iconBox {
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  color: var(--th-white-color);
+  background-color: var(--th-primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--th-box-shadow);
+  border-radius: 5px;
+  padding: 1px;
+}
+
+.image_info {
+  /* padding: 5px; */
+  /* border: 1px solid red; */
+}
+
+.model_footer {
+  border: 1px solid red;
+  display: flex;
+  justify-content: flex-end;
+}

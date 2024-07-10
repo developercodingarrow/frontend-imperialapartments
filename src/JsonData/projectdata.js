@@ -280,7 +280,7 @@ export const projectInfoForm = [
   },
 
   {
-    id: 1,
+    id: 2,
     name: "metadescription",
     lable: "Meta Descreption",
     type: "textarea",
@@ -288,6 +288,26 @@ export const projectInfoForm = [
     validation: {
       required: "Meta Descreption is required.",
     },
+  },
+
+  {
+    id: 3,
+    name: "price",
+    lable: "price",
+    type: "text",
+    placeholder: "example 3000",
+    validation: {
+      required: "Price is required.",
+    },
+  },
+
+  {
+    id: 4,
+    name: "roomTypes",
+    lable: "Select Room Type",
+    type: "apiSelectList",
+    slectedValue: "service apartmnet",
+    slectorfiledName: "name",
   },
 ];
 

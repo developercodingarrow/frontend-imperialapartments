@@ -8,6 +8,7 @@ import CardTextArea from "../components/clientComponents/formCards/CardTextArea"
 import SelectorInput from "../components/clientComponents/formCards/SelectorInput";
 import CheckBoxInput from "../components/clientComponents/formCards/CheckBoxInput";
 import ChipInput from "../components/clientComponents/formCards/ChipInput";
+import ApiSelectInput from "../components/clientComponents/formCards/ApiSelectInput";
 
 export function useCustomApiForm(apiData = {}) {
   const { handleSubmit, formState, control, watch, setValue } = useForm({
@@ -64,14 +65,18 @@ export function useCustomApiForm(apiData = {}) {
         };
         break;
       case "apiSelectList":
-        InputComponent = SelectorInput;
+        console.log(dynamicData);
+        console.log(input.slectorfiledName);
+        InputComponent = ApiSelectInput;
         specificProps = {
-          selectOptions: dynamicData.map((item) => item[input.name]) || [
-            "create data for this filed",
-          ],
+          selectOptions: dynamicData.map(
+            (item) => item[input.slectorfiledName]
+          ) || ["create data for this filed"],
+          defaultSelected: input.slectedValue || "select",
           inputLabel: input.label,
           lableStyle: "lable_style",
           inputContainer: "block_container",
+          onChange: (value) => setValue(input.name, value),
         };
         break;
       case "chip":

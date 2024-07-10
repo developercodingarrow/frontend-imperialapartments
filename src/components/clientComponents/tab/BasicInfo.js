@@ -4,6 +4,7 @@ import FormCard from "../formCards/FormCard";
 import { usePathname, useParams } from "next/navigation";
 import { projectInfoForm } from "../../../JsonData/projectdata";
 import { ProjectContext } from "../../../contextApi/ProjectContextApi";
+import { RoomTypeContext } from "../../../contextApi/RoomTypeContextApi";
 
 export default function BasicInfo() {
   const params = useParams();
@@ -16,9 +17,7 @@ export default function BasicInfo() {
     setLoading,
   } = useContext(ProjectContext);
 
-
-  console.log("baisi info", singleProjectApi);
-  console.log("slug---", slug);
+  const { allRoomTypes } = useContext(RoomTypeContext);
 
   const handelGetData = async () => {
     try {
@@ -37,6 +36,17 @@ export default function BasicInfo() {
     return <div>Loading...</div>;
   }
 
+  console.log("all room type", allRoomTypes);
+
+  const roomtypeData = [
+    {
+      roomTypes: "service apartmnet",
+    },
+    {
+      roomTypes: "hotel",
+    },
+  ];
+
   return (
     <div>
       <FormCard
@@ -45,6 +55,7 @@ export default function BasicInfo() {
         apiData={singleProjectApi}
         inputData={projectInfoForm}
         submitFormHandel={handelUpdate}
+        dynimicData={allRoomTypes}
       />
     </div>
   );

@@ -16,8 +16,6 @@ export default function CreateProjectpage() {
   const { singleProjectApi, handelGetSingleProject } =
     useContext(ProjectContext);
 
-  console.log("slug-------", slug);
-
   useEffect(() => {
     handelGetSingleProject();
   }, [slug]);

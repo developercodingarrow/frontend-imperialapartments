@@ -6,6 +6,7 @@ import {
   updateIsFeatured,
   updateOneProject,
   getSingleProject,
+  UploadProjectImag,
 } from "../Actions/projectAction";
 import {
   newgenericDataHandler,

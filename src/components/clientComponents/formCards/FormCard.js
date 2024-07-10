@@ -26,13 +26,9 @@ export default function FormCard(props) {
     isValid,
   } = useCustomApiForm(apiData);
 
-  console.log("formcard api daata --------", apiData);
-
-  console.log("form cards  ----------", paramData);
-
   const handleForm = async (data) => {
     try {
-      console.log(data);
+      console.log("form data --------", data);
       const res = paramData
         ? await submitFormHandel(paramData, data)
         : await submitFormHandel(data);

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef, useContext } from "react";
 import Image from "next/image";
 import styles from "./css/imageuplaodmodel.module.css";
@@ -45,6 +46,7 @@ export default function ImageUplodModel(props) {
 
   const handelSubmit = async (e) => {
     e.preventDefault();
+    console.log("model handler");
     try {
       const res = await uploadHandler(
         originalFile,
@@ -52,6 +54,7 @@ export default function ImageUplodModel(props) {
         imageFor,
         dataFor
       );
+      console.log("modle handler-2");
       console.log(res);
       // res.data.status === "success"
       if (res.data.status === "success") {

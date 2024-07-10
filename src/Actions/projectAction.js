@@ -52,3 +52,17 @@ export const updateIsFeatured = async (requestData) => {
   const method = "post";
   return performAPIAction(method, url, data, authToken);
 };
+
+export const UploadProjectImag = async (formData, projectId) => {
+  console.log(formData);
+  const url = `${API}/project/update-project-thumblin/${projectId}`;
+  const method = "patch";
+  return ImageAPIAction(method, url, formData, authToken);
+};
+
+export const UploadProjectGallery = async (formData, projectId) => {
+  console.log(formData);
+  const url = `${API}/project/update-project-gallery/${projectId}`;
+  const method = "post";
+  return ImageAPIAction(method, url, formData, authToken);
+};
