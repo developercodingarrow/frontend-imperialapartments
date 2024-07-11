@@ -38,7 +38,7 @@ export default function GalleryUploaderModel(props) {
     e.preventDefault();
     console.log("model handler");
     try {
-      const res = await uploadHandler(images, formData, imageFor, dataFor);
+      const res = await uploadHandler(images, imageFor, dataFor);
       console.log("modle handler-2");
       console.log(res);
       // res.data.status === "success"

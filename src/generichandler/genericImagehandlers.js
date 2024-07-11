@@ -20,12 +20,12 @@ export const genericSingleImageHandler = (uploadFunction) => {
 
 // This GENERIC HANDLER FOR UPLOAD SINGLE IMAGE
 export const genericMultiImageHandler = (uploadFunction) => {
-  return async (images, formData, imageFor, id) => {
+  return async (images, imageFor, id) => {
     // console.log(selectedFile, formData, imageFor, id);
     try {
       const formDataToSend = new FormData();
       images.forEach((image) => {
-        formDataToSend.append("projectGalley", image.fileObj);
+        formDataToSend.append(imageFor, image.fileObj);
         formDataToSend.append("altText", image.formData.altText);
         formDataToSend.append(
           "alternativeText",
