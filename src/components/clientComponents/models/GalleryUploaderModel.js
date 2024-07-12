@@ -11,9 +11,11 @@ import Image from "next/image";
 
 import { inputConfig } from "../../../JsonData/projectdata";
 import useCustomeGalleryUploader from "../../../custome-hooks/useCustomeGalleryUploader";
+import InputElements from "../elements/InputElements";
 
 export default function GalleryUploaderModel(props) {
-  const { uploadHandler, imageFor, dataFor } = props;
+  const { uploadHandler, imageFor, dataFor, apiImages, imageFiledHandler } =
+    props;
   const fileInputRef = useRef(null);
   const {
     images,
@@ -23,7 +25,9 @@ export default function GalleryUploaderModel(props) {
     handleRemoveImage,
     selectedImageId,
     handleSelectImage,
-  } = useCustomeGalleryUploader();
+    handleApiImageSelect,
+    isApiImageSelected,
+  } = useCustomeGalleryUploader(apiImages);
 
   const { handelCloseGalleryModel, galleryModelIsopen, setgalleryModelIsopen } =
     useContext(AppContext);
@@ -41,7 +45,7 @@ export default function GalleryUploaderModel(props) {
       const res = await uploadHandler(images, imageFor, dataFor);
       console.log("modle handler-2");
       console.log(res);
-      // res.data.status === "success"
+
       if (res.data.status === "success") {
         console.log("succes");
       }
@@ -49,6 +53,8 @@ export default function GalleryUploaderModel(props) {
       console.log(error);
     }
   };
+
+  console.log(apiImages);
   return (
     <>
       {galleryModelIsopen && (
@@ -78,35 +84,60 @@ export default function GalleryUploaderModel(props) {
                 <div className={styles.gallerybody_wrapper}>
                   <div className={styles.upload_container}>
                     <div className={styles.uploaded_images}>
-                      {images.length === 0 ? (
-                        <div className={styles.no_images_text}>
-                          There is no Image upoaded
-                        </div>
-                      ) : (
-                        images.map((image) => (
-                          <div
-                            key={image.id}
-                            className={styles.image_container}
-                            onClick={() => handleSelectImage(image.id)}
-                          >
-                            <Image
-                              src={image.file}
-                              alt={image.formData.altText}
-                              width={100}
-                              height={100}
-                            />
-                            <div className={styles.image_info}>
-                              {image.formData.title}
-                            </div>
-                            <div className={styles.remove_iconBox}>
-                              {" "}
-                              <IoRemoveCircleOutline
-                                onClick={() => handleRemoveImage(image.id)}
+                      <div className={styles.images_wrapper}>
+                        {apiImages.map((image, index) => {
+                          return (
+                            <div
+                              key={index}
+                              onClick={() => handleApiImageSelect(index)}
+                              className={styles.image_cardbox}
+                            >
+                              <Image
+                                src={`/projectGalley/${image.url}`}
+                                alt={image}
+                                width={300}
+                                height={300}
+                                className={styles.image_Style}
                               />
+
+                              <div className={styles.remove_iconBox}>
+                                {" "}
+                                <IoRemoveCircleOutline />
+                              </div>
                             </div>
+                          );
+                        })}
+                      </div>
+
+                      <div className={styles.images_wrapper}>
+                        {images.length === 0 ? (
+                          <div className={styles.no_images_text}>
+                            There is no Image upoaded
                           </div>
-                        ))
-                      )}
+                        ) : (
+                          images.map((image) => (
+                            <div
+                              key={image.id}
+                              className={styles.image_cardbox}
+                              onClick={() => handleSelectImage(image.id)}
+                            >
+                              <Image
+                                src={image.file}
+                                alt={image.formData.altText}
+                                width={100}
+                                height={100}
+                                className={styles.image_Style}
+                              />
+                              <div className={styles.remove_iconBox}>
+                                {" "}
+                                <IoRemoveCircleOutline
+                                  onClick={() => handleRemoveImage(image.id)}
+                                />
+                              </div>
+                            </div>
+                          ))
+                        )}
+                      </div>
                     </div>
                   </div>
 
@@ -115,13 +146,19 @@ export default function GalleryUploaderModel(props) {
                       <div>
                         {inputConfig.map((input, index) => (
                           <div className={styles.input_wrapper} key={index}>
-                            <label>{input.label}</label>
+                            {/* <label>{input.label}</label>
                             <input
                               type={input.type}
                               name={input.name}
                               placeholder={input.placeholder}
                               value={formData[input.name]}
                               onChange={handleInputChange}
+                            /> */}
+                            <InputElements
+                              lable={input.label}
+                              value={formData[input.name]}
+                              handelinput={handleInputChange}
+                              {...input}
                             />
                           </div>
                         ))}

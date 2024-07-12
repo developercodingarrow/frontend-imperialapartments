@@ -66,3 +66,10 @@ export const UploadProjectGallery = async (formData, projectId) => {
   const method = "post";
   return ImageAPIAction(method, url, formData, authToken);
 };
+
+export const updateGallerySingleImageFiled = async (slug, requestData) => {
+  const url = `${API}/project/update-gallery-single-image-field/${slug}`;
+  const method = "patch";
+  console.log(requestData);
+  return performAPIAction(method, url, requestData, authToken);
+};

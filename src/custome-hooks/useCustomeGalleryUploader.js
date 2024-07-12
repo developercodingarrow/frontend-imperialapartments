@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { UploadProjectGallery } from "../Actions/projectAction";
 
-export default function useCustomeGalleryUploader() {
+export default function useCustomeGalleryUploader(apiImages = []) {
   const [images, setImages] = useState([]);
   const [formData, setFormData] = useState({
     altText: "",
@@ -12,6 +12,7 @@ export default function useCustomeGalleryUploader() {
     description: "",
   });
   const [selectedImageId, setSelectedImageId] = useState(null);
+  const [isApiImageSelected, setIsApiImageSelected] = useState(false);
 
   console.log(images);
 
@@ -21,6 +22,21 @@ export default function useCustomeGalleryUploader() {
     const selectedImage = images.find((image) => image.id === id);
     if (selectedImage) {
       setFormData(selectedImage.formData);
+    }
+  };
+
+  const handleApiImageSelect = (index) => {
+    setSelectedImageId(index);
+    setIsApiImageSelected(true); // Add this line
+    const selectedImage = apiImages[index];
+    if (selectedImage) {
+      setFormData({
+        altText: selectedImage.altText,
+        alternativeText: selectedImage.alternativeText,
+        title: selectedImage.title,
+        caption: selectedImage.caption,
+        description: selectedImage.description,
+      });
     }
   };
 
@@ -38,14 +54,6 @@ export default function useCustomeGalleryUploader() {
     }
   };
 
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
-  // };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -61,25 +69,6 @@ export default function useCustomeGalleryUploader() {
       )
     );
   };
-
-  // const handleImageUpload = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     const newImage = {
-  //       id: images.length,
-  //       file: URL.createObjectURL(file),
-  //       formData: { ...formData },
-  //     };
-  //     setImages((prevImages) => [...prevImages, newImage]);
-  //     setFormData({
-  //       altText: "",
-  //       alternativeText: "",
-  //       title: "",
-  //       caption: "",
-  //       description: "",
-  //     });
-  //   }
-  // };
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -110,5 +99,7 @@ export default function useCustomeGalleryUploader() {
     handleRemoveImage,
     selectedImageId,
     handleSelectImage,
+    handleApiImageSelect,
+    isApiImageSelected,
   };
 }
