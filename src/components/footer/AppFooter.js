@@ -7,10 +7,13 @@ import {
   IoNewspaperOutline,
   FaWhatsapp,
 } from "../ApplicationIcon";
+import DekstopFooter from "../SSRcomponents/footer/DekstopFooter";
 export default function AppFooter() {
   return (
     <div className={styles.container}>
-      <div className={styles.dekstop_footer}>Dekstop footer</div>
+      <div className={styles.dekstop_footer}>
+        <DekstopFooter />
+      </div>
       <div className={styles.mobile_footer}>
         <div className={styles.icon_box}>
           <IoHomeOutline />

@@ -72,3 +72,72 @@ export const feature_links = [
     hrfLink: "/",
   },
 ];
+
+export const recentListing = [
+  {
+    name: "service apartment in gurgaon",
+    hrfLink: "/",
+  },
+  {
+    name: "hotel Rooms in gurgaon",
+    hrfLink: "/",
+  },
+  {
+    name: "Gust house in gurgaon",
+    hrfLink: "/",
+  },
+  {
+    name: "Corporate stay in gurgaon",
+    hrfLink: "/",
+  },
+  {
+    name: "service apartment near fortis",
+    hrfLink: "/",
+  },
+];
+
+export const recentBlog = [
+  {
+    name: "why service apartment is best",
+    hrfLink: "/",
+  },
+  {
+    name: "what is service apartmnet",
+    hrfLink: "/",
+  },
+  {
+    name: "Best service apartments",
+    hrfLink: "/",
+  },
+  {
+    name: "long stay service apartments",
+    hrfLink: "/",
+  },
+  {
+    name: "sort stay service apartments",
+    hrfLink: "/",
+  },
+];
+
+export const roomTypes = [
+  {
+    name: "Deluxe Rooms",
+    hrfLink: "/",
+  },
+  {
+    name: "1 Bhk Apartments",
+    hrfLink: "/",
+  },
+  {
+    name: "2 Bhk apartments",
+    hrfLink: "/",
+  },
+  {
+    name: "service apartments",
+    hrfLink: "/",
+  },
+  {
+    name: "Hotel Rooms",
+    hrfLink: "/",
+  },
+];

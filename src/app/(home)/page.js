@@ -10,8 +10,12 @@ import ProjectBoxCard from "../../components/SSRcomponents/cards/ProjectBoxCard"
 import PhotoShowCase from "../../components/SSRcomponents/static components/PhotoShowCase";
 import AboutSection from "../../components/SSRcomponents/homecomponent/AboutSection";
 import BlogCard from "../../components/SSRcomponents/cards/BlogCard";
+import FaqCard from "../../components/SSRcomponents/homecomponent/FaqCard";
+import { homepageFAQ } from "../../JsonData/faqData";
+import InteractiveFaqCard from "../../components/clientComponents/elements/InteractiveFaqCard";
 
 export default function HomePage() {
+  console.log("page compoent");
   return (
     <div className={styles.container}>
       <section className={styles.section_wrapper}>
@@ -58,7 +62,7 @@ export default function HomePage() {
       </section>
 
       <section className={styles.section_wrapper}>
-        {/* <FeatureCategories /> */}
+        <InteractiveFaqCard faqs={homepageFAQ} />;
       </section>
     </div>
   );

@@ -45,6 +45,7 @@ import { HiBuildingOffice2 } from "react-icons/hi2";
 import { CiLocationOn } from "react-icons/ci";
 import { GoUpload } from "react-icons/go";
 import { FaArrowRight } from "react-icons/fa6";
+import { IoIosArrowUp } from "react-icons/io";
 
 export {
   FaTrainSubway,
@@ -99,4 +100,5 @@ export {
   CiLocationOn,
   GoUpload,
   FaArrowRight,
+  IoIosArrowUp,
 };

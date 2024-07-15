@@ -12,6 +12,12 @@ export function AppContextProvider({ children }) {
   const [checkedOptions, setCheckedOptions] = useState([]);
   const [isOpen, setisOpen] = useState(false);
   const [galleryModelIsopen, setgalleryModelIsopen] = useState(false);
+  const [toggleArrow, settoggleArrow] = useState(true);
+
+  //
+  const handelToggleArrow = () => {
+    settoggleArrow(!toggleArrow);
+  };
 
   const handelEdiFormOpen = (id, data) => {
     seteditModelData(data);
@@ -72,6 +78,9 @@ export function AppContextProvider({ children }) {
         setgalleryModelIsopen,
         handelOpengalleryModel,
         handelCloseGalleryModel,
+        handelToggleArrow,
+        toggleArrow,
+        settoggleArrow,
       }}
     >
       {children}

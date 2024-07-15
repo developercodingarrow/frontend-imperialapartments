@@ -1,0 +1,41 @@
+.container {
+  background-color: rgba(0, 0, 0, 0.858);
+  color: var(--th-white-color);
+  padding: 50px 100px;
+}
+
+.inner_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+}
+
+.company_introColumn {
+  width: 25%;
+}
+
+.footer_linksColumns {
+  display: flex;
+  column-gap: 20px;
+  flex-grow: 1;
+}
+
+.logo_style {
+  width: 250px;
+  height: 70px;
+}
+
+.column_title {
+  margin-bottom: 20px;
+}
+
+.contact_columns {
+  width: 25%;
+}
+
+.filed_wrapper {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 10px;
+}

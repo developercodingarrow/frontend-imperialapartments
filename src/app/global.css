@@ -173,6 +173,9 @@ h4 {
   font-family: "Arimo", sans-serif;
   line-height: 1.1;
 }
+.justify_text_aline {
+  text-align: justify;
+}
 
 @media screen and (max-width: 600px) {
   a {
