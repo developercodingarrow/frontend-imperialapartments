@@ -14,8 +14,14 @@ import useCustomeGalleryUploader from "../../../custome-hooks/useCustomeGalleryU
 import InputElements from "../elements/InputElements";
 
 export default function GalleryUploaderModel(props) {
-  const { uploadHandler, imageFor, dataFor, apiImages, imageFiledHandler } =
-    props;
+  const {
+    uploadHandler,
+    imageFor,
+    dataFor,
+    apiImages,
+    imageFiledHandler,
+    deleteApiImage,
+  } = props;
   const fileInputRef = useRef(null);
   const {
     images,
@@ -27,6 +33,7 @@ export default function GalleryUploaderModel(props) {
     handleSelectImage,
     handleApiImageSelect,
     isApiImageSelected,
+    selectedApiImageID,
   } = useCustomeGalleryUploader(apiImages);
 
   const { handelCloseGalleryModel, galleryModelIsopen, setgalleryModelIsopen } =
@@ -38,9 +45,29 @@ export default function GalleryUploaderModel(props) {
     }
   };
 
+  console.log("selected image", selectedApiImageID);
+
   const handelSubmit = async (e) => {
     e.preventDefault();
-    console.log("model handler");
+
+    if (isApiImageSelected) {
+      console.log("api image");
+      const updatedImage = {
+        imageId: selectedApiImageID,
+        alternativeText: formData.alternativeText,
+        title: formData.title,
+        caption: formData.caption,
+        description: formData.description,
+      };
+
+      try {
+        const res = await imageFiledHandler(dataFor, updatedImage);
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
     try {
       const res = await uploadHandler(images, imageFor, dataFor);
       console.log("modle handler-2");
@@ -52,6 +79,13 @@ export default function GalleryUploaderModel(props) {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handelDeleteApiImg = async (imageId) => {
+    try {
+      const res = await deleteApiImage(dataFor, { imageId });
+      console.log(res);
+    } catch (error) {}
   };
 
   console.log(apiImages);
@@ -100,7 +134,10 @@ export default function GalleryUploaderModel(props) {
                                 className={styles.image_Style}
                               />
 
-                              <div className={styles.remove_iconBox}>
+                              <div
+                                className={styles.remove_iconBox}
+                                onClick={() => handelDeleteApiImg(image._id)}
+                              >
                                 {" "}
                                 <IoRemoveCircleOutline />
                               </div>
@@ -146,14 +183,6 @@ export default function GalleryUploaderModel(props) {
                       <div>
                         {inputConfig.map((input, index) => (
                           <div className={styles.input_wrapper} key={index}>
-                            {/* <label>{input.label}</label>
-                            <input
-                              type={input.type}
-                              name={input.name}
-                              placeholder={input.placeholder}
-                              value={formData[input.name]}
-                              onChange={handleInputChange}
-                            /> */}
                             <InputElements
                               lable={input.label}
                               value={formData[input.name]}

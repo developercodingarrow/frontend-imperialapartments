@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const useImageUpload = (uploadHandler, imageFor = null, itemId = null) => {
-  const [image, setImage] = useState(null); // this is prevImage
-  const [prevImage, setprevImage] = useState(null);
-  const [selectedFile, setSelectedFile] = useState(null);
+const useImageUpload = (apiImage) => {
+  const [image, setImage] = useState(null); // Initial image
+  const [prevImage, setprevImage] = useState(null); // Preview image
+  const [selectedFile, setSelectedFile] = useState(null); // Selected file
   const [imageName, setImageName] = useState(null);
   const [imageSize, setImageSize] = useState(null);
   const [sizePrefix, setSizePrefix] = useState(null);
@@ -12,12 +12,25 @@ const useImageUpload = (uploadHandler, imageFor = null, itemId = null) => {
   const [originalFile, setOriginalFile] = useState(null);
 
   const [formData, setFormData] = useState({
-    altText: "",
-    alternativeText: "",
-    title: "",
-    caption: "",
-    description: "",
+    altText: apiImage?.altText || "",
+    alternativeText: apiImage?.alternativeText || "",
+    title: apiImage?.title || "",
+    caption: apiImage?.caption || "",
+    description: apiImage?.description || "",
   });
+
+  useEffect(() => {
+    if (apiImage) {
+      setFormData({
+        altText: apiImage.altText,
+        alternativeText: apiImage.alternativeText,
+        title: apiImage.title,
+        caption: apiImage.caption,
+        description: apiImage.description,
+      });
+      setImageName(apiImage.title);
+    }
+  }, [apiImage]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -72,10 +85,6 @@ const useImageUpload = (uploadHandler, imageFor = null, itemId = null) => {
     }
   };
 
-  const UploadImage = () => {
-    uploadHandler(image, itemId);
-  };
-
   const removeImage = () => {
     // Logic for removing the image, e.g., set the image state to null
     setImage(null);
@@ -94,7 +103,6 @@ const useImageUpload = (uploadHandler, imageFor = null, itemId = null) => {
     formData, // used
     onSubmit, // used
 
-    UploadImage,
     fileInputKey,
     imageName,
     imageSize,

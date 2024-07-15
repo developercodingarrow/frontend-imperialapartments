@@ -13,11 +13,13 @@ export default function useCustomeGalleryUploader(apiImages = []) {
   });
   const [selectedImageId, setSelectedImageId] = useState(null);
   const [isApiImageSelected, setIsApiImageSelected] = useState(false);
+  const [selectedApiImageID, setselectedApiImageID] = useState(null);
 
   console.log(images);
 
   const handleSelectImage = (id) => {
     setSelectedImageId(id);
+    setIsApiImageSelected(false); // Add this line
     console.log(id);
     const selectedImage = images.find((image) => image.id === id);
     if (selectedImage) {
@@ -28,6 +30,7 @@ export default function useCustomeGalleryUploader(apiImages = []) {
   const handleApiImageSelect = (index) => {
     setSelectedImageId(index);
     setIsApiImageSelected(true); // Add this line
+    setselectedApiImageID(apiImages[index]._id);
     const selectedImage = apiImages[index];
     if (selectedImage) {
       setFormData({
@@ -101,5 +104,7 @@ export default function useCustomeGalleryUploader(apiImages = []) {
     handleSelectImage,
     handleApiImageSelect,
     isApiImageSelected,
+    selectedApiImageID,
+    setselectedApiImageID,
   };
 }

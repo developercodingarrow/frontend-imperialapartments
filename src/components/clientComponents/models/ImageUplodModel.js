@@ -13,13 +13,15 @@ import {
   TiCloudStorage,
   IoCloseCircle,
   IoRemoveCircleOutline,
+  GoUpload,
 } from "../../ApplicationIcon";
 import CardInput from "../formCards/CardInput";
 import useImageUpload from "../../../custome-hooks/useImageUpload";
 import { AppContext } from "../../../contextApi/AppContextApi";
+import InputElements from "../elements/InputElements";
 
 export default function ImageUplodModel(props) {
-  const { uploadHandler, imageFor, dataFor } = props;
+  const { uploadHandler, imageFor, dataFor, apiImage } = props;
   const fileInputRef = useRef(null);
   const { isOpen, setisOpen, handelOpenModel, handleModelClose } =
     useContext(AppContext);
@@ -36,9 +38,11 @@ export default function ImageUplodModel(props) {
     handleInputChange,
     formData,
     onSubmit,
-  } = useImageUpload();
+  } = useImageUpload(apiImage);
 
+  const imageUrl = apiImage?.url;
   const handleClick = () => {
+    console.log("handle cick");
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
@@ -80,23 +84,45 @@ export default function ImageUplodModel(props) {
             <form onSubmit={handelSubmit}>
               <div className={styles.model_Boody}>
                 {prevImage ? (
-                  <div className={styles.prev_uplod_container}>
-                    <div className={styles.prve_image_wrapper}>
-                      {" "}
+                  <div className={styles.prev_upload_container}>
+                    <div className={styles.prev_image_wrapper}>
                       <Image
                         src={prevImage}
-                        width={500}
-                        height={500}
-                        className={styles.prev_imag}
+                        width={200}
+                        height={200}
+                        className={styles.prev_image}
+                        alt={formData.altText}
                       />
                       <div className={styles.remove_icon}>
                         <IoRemoveCircleOutline onClick={removeImage} />
                       </div>
                     </div>
                   </div>
+                ) : apiImage?.url ? (
+                  <div className={styles.api_image_container}>
+                    <div className={styles.image_wrapper}>
+                      <Image
+                        src={`/projectthublin/${imageUrl}`}
+                        width={200}
+                        height={200}
+                        className={styles.image_style}
+                        alt={formData.altText}
+                      />
+                    </div>
+                    <div className={styles.upload_new_image}>
+                      <GoUpload onClick={handleClick} />
+                      <input
+                        type="file"
+                        onChange={handleImageChange}
+                        ref={fileInputRef}
+                        className={styles.image_input}
+                        style={{ display: "none" }}
+                      />
+                    </div>
+                  </div>
                 ) : (
                   <div
-                    className={styles.image_uplod_container}
+                    className={styles.image_upload_container}
                     onClick={handleClick}
                   >
                     <TiCloudStorage />
@@ -104,7 +130,7 @@ export default function ImageUplodModel(props) {
                       type="file"
                       onChange={handleImageChange}
                       ref={fileInputRef}
-                      className={styles.imageInput}
+                      className={styles.image_input}
                     />
                   </div>
                 )}
@@ -112,13 +138,11 @@ export default function ImageUplodModel(props) {
                 <div className={styles.input_container}>
                   {inputConfig.map((input, index) => (
                     <div className={styles.input_wrapper} key={index}>
-                      <label>{input.label}</label>
-                      <input
-                        type={input.type}
-                        name={input.name}
-                        placeholder={input.placeholder}
+                      <InputElements
+                        lable={input.label}
                         value={formData[input.name]}
-                        onChange={handleInputChange}
+                        handelinput={handleInputChange}
+                        {...input}
                       />
                     </div>
                   ))}

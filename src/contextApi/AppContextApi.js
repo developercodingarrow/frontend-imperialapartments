@@ -11,7 +11,7 @@ export function AppContextProvider({ children }) {
   const [chips, setChips] = useState([]);
   const [checkedOptions, setCheckedOptions] = useState([]);
   const [isOpen, setisOpen] = useState(false);
-  const [galleryModelIsopen, setgalleryModelIsopen] = useState(true);
+  const [galleryModelIsopen, setgalleryModelIsopen] = useState(false);
 
   const handelEdiFormOpen = (id, data) => {
     seteditModelData(data);

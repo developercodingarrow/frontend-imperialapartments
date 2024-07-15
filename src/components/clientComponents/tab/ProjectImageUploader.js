@@ -8,14 +8,19 @@ import { ImagesContext } from "../../../contextApi/ImageHandlersContextApi";
 import { AppContext } from "../../../contextApi/AppContextApi";
 import GalleryUploaderModel from "../models/GalleryUploaderModel";
 import { ProjectContext } from "../../../contextApi/ProjectContextApi";
-import { updateGallerySingleImageFiled } from "../../../Actions/projectAction";
+import {
+  updateGallerySingleImageFiled,
+  deleteImageFromGallery,
+} from "../../../Actions/projectAction";
+import GalleryCard from "./GalleryCard";
 
 export default function ProjectImageUploader() {
   const { handelOpengalleryModel } = useContext(AppContext);
   const { handelUplaodProjectThumblin, handeluplodProjectGalley } =
     useContext(ImagesContext);
 
-  const { handelGetSingleProject, imageArray } = useContext(ProjectContext);
+  const { handelGetSingleProject, imageArray, singleImage } =
+    useContext(ProjectContext);
 
   const params = useParams();
   const { slug } = params;
@@ -32,6 +37,7 @@ export default function ProjectImageUploader() {
         uploadHandler={handelUplaodProjectThumblin}
         imageFor="ProjectThumblin"
         dataFor={slug}
+        apiImage={singleImage}
       />
 
       <GalleryUploaderModel
@@ -40,13 +46,19 @@ export default function ProjectImageUploader() {
         dataFor={slug}
         apiImages={imageArray}
         imageFiledHandler={updateGallerySingleImageFiled}
+        deleteApiImage={deleteImageFromGallery}
       />
       <div className={styles.inner_container}>
         <div className={styles.section_container}>
-          <SingleImageUploader />
+          <SingleImageUploader apiImage={singleImage} />
         </div>
         <div className={styles.section_container}>
-          <button onClick={handelOpengalleryModel}>Upload Gallery </button>
+          {/* <button onClick={handelOpengalleryModel}>Upload Gallery </button> */}
+          <GalleryCard
+            apiImages={imageArray}
+            deleteApiImage={deleteImageFromGallery}
+            dataFor={slug}
+          />
         </div>
       </div>
     </div>

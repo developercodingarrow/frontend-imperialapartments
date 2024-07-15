@@ -1,9 +1,13 @@
 "use client";
 import { useState } from "react";
+import { usePathname, useParams } from "next/navigation";
 import styles from "./css/accordionform.module.css";
+import { updateOneProjectFAQ } from "../../../Actions/projectAction";
 
 const AccordionForm = () => {
-  const [accordions, setAccordions] = useState([{ title: "", content: "" }]);
+  const params = useParams();
+  const { slug } = params;
+  const [accordions, setAccordions] = useState([{ question: "", answer: "" }]);
 
   const handleInputChange = (index, event) => {
     const newAccordions = accordions.map((accordion, i) => {
@@ -16,12 +20,20 @@ const AccordionForm = () => {
   };
 
   const addAccordion = () => {
-    setAccordions([...accordions, { title: "", content: "" }]);
+    setAccordions([...accordions, { question: "", answer: "" }]);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(accordions);
+    try {
+      console.log(accordions);
+
+      const res = await updateOneProjectFAQ(slug, accordions);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+
     // You can now send 'accordions' to your server or handle it as needed
   };
 
@@ -33,17 +45,20 @@ const AccordionForm = () => {
             <div key={index} className={styles.accordionformitem}>
               <input
                 type="text"
-                name="title"
-                value={accordion.title}
+                name="question"
+                value={accordion.question}
                 onChange={(event) => handleInputChange(index, event)}
-                placeholder="Accordion Title"
+                placeholder="Accordion Question"
+                className={styles.input_style}
                 required
               />
+
               <textarea
-                name="content"
-                value={accordion.content}
+                name="answer"
+                value={accordion.answer}
                 onChange={(event) => handleInputChange(index, event)}
-                placeholder="Accordion Content"
+                placeholder="Accordion answer"
+                className={styles.textArea_style}
                 required
               />
             </div>
@@ -53,12 +68,12 @@ const AccordionForm = () => {
         <div className={styles.btn_wrapper}>
           <button
             type="button"
-            className={styles.button}
             onClick={addAccordion}
+            className={styles.btn_style}
           >
             Add
           </button>
-          <button className={styles.button} type="submit">
+          <button className={styles.btn_style} type="submit">
             Submit
           </button>
         </div>

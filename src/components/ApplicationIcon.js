@@ -43,6 +43,8 @@ import { FaTrainSubway } from "react-icons/fa6";
 import { FaRegHospital } from "react-icons/fa";
 import { HiBuildingOffice2 } from "react-icons/hi2";
 import { CiLocationOn } from "react-icons/ci";
+import { GoUpload } from "react-icons/go";
+import { FaArrowRight } from "react-icons/fa6";
 
 export {
   FaTrainSubway,
@@ -95,4 +97,6 @@ export {
   TfiEmail,
   IoIosCheckmarkCircleOutline,
   CiLocationOn,
+  GoUpload,
+  FaArrowRight,
 };

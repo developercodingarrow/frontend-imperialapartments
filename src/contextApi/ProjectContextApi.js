@@ -23,6 +23,7 @@ export default function ProjectContextApi({ children }) {
   const [contentdata, setcontentdata] = useState("");
   const [loading, setLoading] = useState(false);
   const [imageArray, setimageArray] = useState([]);
+  const [singleImage, setsingleImage] = useState(null);
 
   const handelGetAll = async () => {
     try {
@@ -46,10 +47,9 @@ export default function ProjectContextApi({ children }) {
       const overview = res.data.result?.overview || "";
       const resContent = res.data.result?.content || "";
       const images = res.data.result?.ProjectGallery || [];
-
-      console.log("gallery images -------------", images);
+      const thumblin = res.data.result?.ProjectThumblin;
+      setsingleImage(thumblin);
       setimageArray(images);
-
       setprojectOverview(overview);
       setcontentdata(resContent);
       setLoading(false);
@@ -106,6 +106,7 @@ export default function ProjectContextApi({ children }) {
         setprojectOverview,
         contentdata,
         imageArray,
+        singleImage,
       }}
     >
       {children}

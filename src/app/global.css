@@ -17,8 +17,10 @@
   /* -------------------------- */
   --th-white-color: #ffffff;
   --th-text-gray: #4e4e4e;
+  --th-text-color: rgb(42, 42, 46);
   --th-primary-color: #ed6789;
   --th-primary-darker: #d95e7e;
+  --th-preminery-bg: rgb(248, 248, 255);
   --th-muted: #afafaf;
   --th-separator: #dddddd;
   --th-dark-text: #343a40;
@@ -47,6 +49,7 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--th-primary-color);
 }
 
 ul {
@@ -66,20 +69,8 @@ h1 {
 }
 
 /* Sub heading */
-h2 {
-  font-size: var(--font24);
-  font-weight: 500;
-  font-family: sans-serif;
-  text-transform: capitalize;
-}
 
 /* hilight descreption */
-h4 {
-  color: var(--lightgraytext);
-  font-weight: 500;
-  font-size: 16px;
-  font-family: sans-serif;
-}
 
 .bottom_margin {
   margin-bottom: 10px;
@@ -122,7 +113,84 @@ span {
 .footer_wrapper {
 }
 
+/* REFECATOR sTYLES */
+
+h2 {
+  font-size: var(--font24);
+  font-weight: 400;
+  font-family: "Arimo", sans-serif;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: rgb(42, 42, 46);
+}
+h3 {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  font-family: "Arimo", sans-serif;
+  text-transform: capitalize;
+  word-spacing: 0px;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.small_text {
+  font-family: sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  line-height: 1.2;
+}
+
+.section_heading_Wrapeer {
+  margin-bottom: 30px;
+}
+
+.bottom_space {
+  margin-bottom: 20px;
+}
+
+.section_card_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 15px;
+  /* justify-content: space-between; */
+}
+
+.content_md_text {
+  font-size: 16px;
+  font-family: "Arimo", sans-serif;
+  line-height: 1.1;
+}
+
+.content_sm_text {
+  font-size: 14px;
+  font-family: "Arimo", sans-serif;
+  line-height: 1.1;
+}
+
 @media screen and (max-width: 600px) {
+  a {
+    font-size: 12px;
+  }
+  h3 {
+    font-size: 12px;
+    word-spacing: 1px;
+  }
+  .section_card_wrapper {
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-content: space-between;
+  }
+  .section_heading_Wrapeer {
+    margin-bottom: 20px;
+  }
+  /* end */
   .single_page_bodyLayout {
     width: 100%;
   }

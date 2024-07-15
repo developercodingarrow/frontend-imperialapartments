@@ -73,3 +73,19 @@ export const updateGallerySingleImageFiled = async (slug, requestData) => {
   console.log(requestData);
   return performAPIAction(method, url, requestData, authToken);
 };
+
+export const deleteImageFromGallery = async (slug, requestData) => {
+  const url = `${API}/project/delete-image-from-gallery/${slug}`;
+  const method = "post";
+  console.log(requestData);
+  return performAPIAction(method, url, requestData, authToken);
+};
+
+export const updateOneProjectFAQ = async (slug, requestData) => {
+  console.log("slug ---", slug);
+  console.log("requesteData ---", requestData);
+  const url = `${API}/project/create-project-faq/${slug}`;
+  const method = "post";
+  console.log(requestData);
+  return performAPIAction(method, url, requestData, authToken);
+};
